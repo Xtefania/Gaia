@@ -25,40 +25,41 @@
         android:layout_width="420dp"
         android:layout_height="750dp"
         app:srcCompat="@drawable/degradado_mascara"
-        tools:layout_editor_absoluteX="-11dp"
-        tools:layout_editor_absoluteY="-21dp" />
+        tools:layout_editor_absoluteX="-5dp"
+        tools:layout_editor_absoluteY="-9dp" />
 
     <View
         android:id="@+id/line-product5"
         android:layout_width="250dp"
         android:layout_height="2dp"
         android:background="@color/verde"
-        tools:layout_editor_absoluteX="92dp"
-        tools:layout_editor_absoluteY="375dp" />
+        tools:layout_editor_absoluteX="80dp"
+        tools:layout_editor_absoluteY="342dp" />
 
     <View
         android:id="@+id/line-product6"
         android:layout_width="250dp"
         android:layout_height="2dp"
         android:background="@color/verde"
-        tools:layout_editor_absoluteX="88dp"
-        tools:layout_editor_absoluteY="514dp" />
+        tools:layout_editor_absoluteX="80dp"
+        tools:layout_editor_absoluteY="585dp" />
 
     <TextView
         android:id="@+id/description-product-p2"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:text="Recuerda que nuestros tiempos de entrega se establecen entre los 4 y 15 dias hábiles despues de la compra"
+        android:textAlignment="textStart"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.571"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="539dp" />
+        tools:layout_editor_absoluteY="600dp" />
 
     <Button
         android:id="@+id/btn-añadir-carrito"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="236dp"
+        android:layout_marginBottom="256dp"
         android:backgroundTint="@color/verde"
         android:fontFamily="@font/alata"
         android:text="Calcular"
@@ -67,14 +68,14 @@
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.511"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btn-añadir-carrito2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="16dp"
         android:backgroundTint="@color/verde"
         android:fontFamily="@font/alata"
         android:text="Pagar Pedido"
@@ -83,7 +84,6 @@
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -96,7 +96,57 @@
         android:textColor="@color/black"
         android:textSize="14sp"
         tools:layout_editor_absoluteX="176dp"
-        tools:layout_editor_absoluteY="236dp" />
+        tools:layout_editor_absoluteY="215dp" />
+
+    <TextView
+        android:id="@+id/title-product3"
+        android:layout_width="103dp"
+        android:layout_height="27dp"
+        android:fontFamily="@font/alata"
+        android:text="Tarifa: $16.000"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        tools:layout_editor_absoluteX="80dp"
+        tools:layout_editor_absoluteY="480dp" />
+
+    <TextView
+        android:id="@+id/title-product4"
+        android:layout_width="87dp"
+        android:layout_height="34dp"
+        android:fontFamily="@font/alata"
+        android:text="Subtotal"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="80dp"
+        tools:layout_editor_absoluteY="535dp" />
+
+    <TextView
+        android:id="@+id/title-product6"
+        android:layout_width="98dp"
+        android:layout_height="32dp"
+        android:fontFamily="@font/alata"
+        android:text="$64.000 COP"
+        android:textAlignment="textStart"
+        android:textColor="@color/verde"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="232dp"
+        tools:layout_editor_absoluteY="537dp" />
+
+    <TextView
+        android:id="@+id/title-product5"
+        android:layout_width="163dp"
+        android:layout_height="32dp"
+        android:fontFamily="@font/alata"
+        android:text="Tarifa de envio estimada"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        tools:layout_editor_absoluteX="80dp"
+        tools:layout_editor_absoluteY="310dp" />
 
     <TextView
         android:id="@+id/title-product2"
@@ -158,11 +208,19 @@
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="112dp"
-        android:layout_height="165dp"
+        android:layout_width="102dp"
+        android:layout_height="111dp"
         app:srcCompat="@drawable/desodorante_2"
         tools:layout_editor_absoluteX="37dp"
-        tools:layout_editor_absoluteY="185dp" />
+        tools:layout_editor_absoluteY="183dp" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@android:drawable/ic_menu_add"
+        tools:layout_editor_absoluteX="291dp"
+        tools:layout_editor_absoluteY="310dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
