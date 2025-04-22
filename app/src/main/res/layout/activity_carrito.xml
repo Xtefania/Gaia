@@ -29,6 +29,60 @@
         tools:layout_editor_absoluteY="-21dp" />
 
     <TextView
+        android:id="@+id/description-product-p2"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="Recuerda que nuestros tiempos de entrega se establecen entre los 4 y 15 dias hábiles despues de la compra"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.571"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="539dp" />
+
+    <Button
+        android:id="@+id/btn-añadir-carrito"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="236dp"
+        android:backgroundTint="@color/verde"
+        android:fontFamily="@font/alata"
+        android:text="Calcular"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.511"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn-añadir-carrito2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:backgroundTint="@color/verde"
+        android:fontFamily="@font/alata"
+        android:text="Pagar Pedido"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/title-product2"
+        android:layout_width="162dp"
+        android:layout_height="47dp"
+        android:fontFamily="@font/alata"
+        android:text="Desodorante en roll-on $64.000"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        tools:layout_editor_absoluteX="176dp"
+        tools:layout_editor_absoluteY="236dp" />
+
+    <TextView
         android:id="@+id/title-product2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -87,12 +141,12 @@
         app:tint="@color/verde" />
 
     <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="116dp"
-        android:layout_height="93dp"
-        app:srcCompat="@drawable/imagen_carrito_desodorante"
-        tools:layout_editor_absoluteX="46dp"
-        tools:layout_editor_absoluteY="253dp" />
+        android:id="@+id/imageView3"
+        android:layout_width="112dp"
+        android:layout_height="165dp"
+        app:srcCompat="@drawable/desodorante_2"
+        tools:layout_editor_absoluteX="37dp"
+        tools:layout_editor_absoluteY="185dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
