@@ -3,4 +3,260 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"/>
+    android:layout_height="match_parent">
+
+    <View
+        android:id="@+id/vFondoColor2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/degradado_mascara"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--Inicio fondo-->
+
+
+        <ImageView
+            android:id="@+id/ivFondoImagen"
+            android:layout_width="740dp"
+            android:layout_height="460dp"
+            android:contentDescription="@string/imagen_fondo"
+            android:scaleType="centerCrop"
+            android:translationY="-25dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.501"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.060"
+            app:srcCompat="@drawable/fondo1" />
+
+        <!--Fin fondo-->
+
+        <!-- Inicio Header -->
+
+        <View
+            android:id="@+id/vFondoColor"
+            android:layout_width="419dp"
+            android:layout_height="733dp"
+            android:background="@drawable/degradado_mascara"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <ImageView
+            android:id="@+id/btn_menu"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="35dp"
+            android:src="@drawable/ic_menu_lines"
+            app:layout_constraintEnd_toStartOf="@+id/img_main_logo"
+            app:layout_constraintHorizontal_bias="0.129"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/verde" />
+
+        <ImageView
+            android:id="@+id/img_main_logo"
+            android:layout_width="140dp"
+            android:layout_height="110dp"
+            android:contentDescription="@string/imagen_fondo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/logo2" />
+
+        <!-- Fin Header -->
+
+
+        <ImageView
+            android:id="@+id/btn_cart"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="36dp"
+            android:src="@drawable/ic_cart_shopping"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/verde" />
+
+        <View
+            android:id="@+id/line-product"
+            android:layout_width="250dp"
+            android:layout_height="2dp"
+            android:background="@color/verde"
+            tools:layout_editor_absoluteX="99dp"
+            tools:layout_editor_absoluteY="429dp" />
+
+        <View
+            android:id="@+id/line-product2"
+            android:layout_width="250dp"
+            android:layout_height="2dp"
+            android:background="@color/verde"
+            tools:layout_editor_absoluteX="99dp"
+            tools:layout_editor_absoluteY="374dp" />
+
+        <View
+            android:id="@+id/line-product3"
+            android:layout_width="250dp"
+            android:layout_height="2dp"
+            android:background="@color/verde"
+            tools:layout_editor_absoluteX="100dp"
+            tools:layout_editor_absoluteY="322dp" />
+
+        <View
+            android:id="@+id/line-product4"
+            android:layout_width="250dp"
+            android:layout_height="2dp"
+            android:background="@color/verde"
+            tools:layout_editor_absoluteX="99dp"
+            tools:layout_editor_absoluteY="264dp" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/item-product3"
+        android:layout_width="128dp"
+        android:layout_height="32dp"
+        android:layout_marginBottom="412dp"
+        android:fontFamily="@font/alata"
+        android:text="Desodorantes"
+        android:textColor="@color/verde"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="103dp" />
+
+    <TextView
+        android:id="@+id/item-product4"
+        android:layout_width="171dp"
+        android:layout_height="35dp"
+        android:layout_marginBottom="304dp"
+        android:fontFamily="@font/alata"
+        android:text="Barrera Solar Mineral"
+        android:textColor="@color/verde"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="103dp" />
+
+    <TextView
+        android:id="@+id/item-product5"
+        android:layout_width="128dp"
+        android:layout_height="32dp"
+        android:layout_marginBottom="360dp"
+        android:fontFamily="@font/alata"
+        android:text="Balsamo Labial"
+        android:textColor="@color/verde"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="103dp" />
+
+    <TextView
+        android:id="@+id/item-product2"
+        android:layout_width="128dp"
+        android:layout_height="32dp"
+        android:layout_marginEnd="84dp"
+        android:layout_marginBottom="468dp"
+        android:fontFamily="@font/alata"
+        android:text="Jabones"
+        android:textColor="@color/verde"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imageView7" />
+
+    <ImageView
+        android:id="@+id/btn_location4"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="40dp"
+        android:src="@drawable/ic_location_pin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.279"
+        app:layout_constraintStart_toEndOf="@+id/img_main_logo2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/verde" />
+
+    <ImageView
+        android:id="@+id/img_main_logo2"
+        android:layout_width="140dp"
+        android:layout_height="110dp"
+        android:layout_marginBottom="20dp"
+        android:contentDescription="@string/imagen_fondo"
+        app:layout_constraintBottom_toTopOf="@+id/title-product"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo2" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/degradado_mascara" />
+
+    <TextView
+        android:id="@+id/title-product2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="556dp"
+        android:fontFamily="@font/alata"
+        android:text="Categorias"
+        android:textColor="@color/verde"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:srcCompat="@drawable/degradado_mascara" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@android:drawable/ic_menu_send"
+        tools:layout_editor_absoluteX="315dp"
+        tools:layout_editor_absoluteY="231dp" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@android:drawable/ic_menu_send"
+        tools:layout_editor_absoluteX="315dp"
+        tools:layout_editor_absoluteY="339dp" />
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@android:drawable/ic_menu_send"
+        tools:layout_editor_absoluteX="315dp"
+        tools:layout_editor_absoluteY="392dp" />
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@android:drawable/ic_menu_send"
+        tools:layout_editor_absoluteX="315dp"
+        tools:layout_editor_absoluteY="287dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
