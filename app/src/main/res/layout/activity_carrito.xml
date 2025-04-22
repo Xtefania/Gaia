@@ -86,5 +86,13 @@
         app:layout_constraintTop_toTopOf="parent"
         app:tint="@color/verde" />
 
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="116dp"
+        android:layout_height="93dp"
+        app:srcCompat="@drawable/imagen_carrito_desodorante"
+        tools:layout_editor_absoluteX="46dp"
+        tools:layout_editor_absoluteY="253dp" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
