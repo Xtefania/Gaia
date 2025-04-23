@@ -162,14 +162,6 @@
         app:layout_constraintStart_toEndOf="@+id/item-product"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <View
-        android:id="@+id/line-product5"
-        android:layout_width="250dp"
-        android:layout_height="2dp"
-        android:background="@color/green"
-        tools:layout_editor_absoluteX="80dp"
-        tools:layout_editor_absoluteY="312dp" />
-
     <TextView
         android:id="@+id/description-product-p2"
         android:layout_width="250dp"
@@ -177,21 +169,22 @@
         android:text="Recuerda que nuestros tiempos de entrega se establecen entre los 4 y 15 dias hábiles despues de la compra"
         android:textAlignment="textStart"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.534"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="600dp" />
+        tools:layout_editor_absoluteY="594dp" />
 
     <Button
         android:id="@+id/btn-añadir-carrito"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="256dp"
-        android:backgroundTint="@color/green"
+        android:backgroundTint="@color/white"
         android:fontFamily="@font/alata"
         android:text="Calcular"
         android:textAlignment="center"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/black"
         android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
@@ -249,17 +242,6 @@
         tools:layout_editor_absoluteX="233dp"
         tools:layout_editor_absoluteY="539dp" />
 
-    <TextView
-        android:id="@+id/title-product5"
-        android:layout_width="173dp"
-        android:layout_height="24dp"
-        android:fontFamily="@font/alata"
-        android:text="Tarifa de envio estimada"
-        android:textAlignment="textStart"
-        android:textColor="@color/black"
-        android:textSize="14sp"
-        tools:layout_editor_absoluteX="80dp"
-        tools:layout_editor_absoluteY="288dp" />
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="111dp"
@@ -275,8 +257,20 @@
         android:ems="10"
         android:inputType="text"
         android:text="Pais"
-        tools:layout_editor_absoluteX="80dp"
+        tools:layout_editor_absoluteX="81dp"
         tools:layout_editor_absoluteY="326dp" />
+
+    <EditText
+        android:id="@+id/editTextText9"
+        android:layout_width="261dp"
+        android:layout_height="39dp"
+        android:ems="10"
+        android:fontFamily="@font/alata"
+        android:inputType="text"
+        android:text="Tarifas de envio estimadas"
+        android:textSize="12sp"
+        tools:layout_editor_absoluteX="79dp"
+        tools:layout_editor_absoluteY="281dp" />
 
     <EditText
         android:id="@+id/editTextText8"
