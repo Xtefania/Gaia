@@ -76,8 +76,16 @@
             android:text="Categorias"
             android:textColor="@color/green"
             android:textSize="20sp"
-            tools:layout_editor_absoluteX="155dp"
-            tools:layout_editor_absoluteY="110dp" />
+            tools:layout_editor_absoluteX="146dp"
+            tools:layout_editor_absoluteY="132dp" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="265dp"
+            android:layout_height="397dp"
+            app:srcCompat="@drawable/form_view"
+            tools:layout_editor_absoluteX="73dp"
+            tools:layout_editor_absoluteY="218dp" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -130,8 +138,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logo2" />
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
