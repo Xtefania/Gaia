@@ -50,10 +50,10 @@
             android:background="@drawable/degradado_mascara"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintHorizontal_bias="0.969"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.529" />
+            app:layout_constraintVertical_bias="0.0" />
 
         <ImageView
             android:id="@+id/img_main_logo"
@@ -68,38 +68,6 @@
         <!-- Fin Header -->
 
 
-        <View
-            android:id="@+id/line-product"
-            android:layout_width="250dp"
-            android:layout_height="2dp"
-            android:background="@color/green"
-            tools:layout_editor_absoluteX="88dp"
-            tools:layout_editor_absoluteY="306dp" />
-
-        <View
-            android:id="@+id/line-product4"
-            android:layout_width="250dp"
-            android:layout_height="2dp"
-            android:background="@color/green"
-            tools:layout_editor_absoluteX="89dp"
-            tools:layout_editor_absoluteY="358dp" />
-
-        <View
-            android:id="@+id/line-product2"
-            android:layout_width="250dp"
-            android:layout_height="2dp"
-            android:background="@color/green"
-            tools:layout_editor_absoluteX="89dp"
-            tools:layout_editor_absoluteY="254dp" />
-
-        <View
-            android:id="@+id/line-product3"
-            android:layout_width="250dp"
-            android:layout_height="2dp"
-            android:background="@color/green"
-            tools:layout_editor_absoluteX="88dp"
-            tools:layout_editor_absoluteY="200dp" />
-
         <TextView
             android:id="@+id/title-product2"
             android:layout_width="wrap_content"
@@ -110,82 +78,6 @@
             android:textSize="20sp"
             tools:layout_editor_absoluteX="174dp"
             tools:layout_editor_absoluteY="110dp" />
-
-        <ImageView
-            android:id="@+id/imageView10"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:srcCompat="@android:drawable/ic_menu_send"
-            tools:layout_editor_absoluteX="306dp"
-            tools:layout_editor_absoluteY="168dp" />
-
-        <ImageView
-            android:id="@+id/imageView7"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:srcCompat="@android:drawable/ic_menu_send"
-            tools:layout_editor_absoluteX="307dp"
-            tools:layout_editor_absoluteY="214dp" />
-
-        <TextView
-            android:id="@+id/item-product2"
-            android:layout_width="128dp"
-            android:layout_height="32dp"
-            android:fontFamily="@font/alata"
-            android:text="Jabones"
-            android:textColor="@color/green"
-            android:textSize="16sp"
-            tools:layout_editor_absoluteX="100dp"
-            tools:layout_editor_absoluteY="168dp" />
-
-        <ImageView
-            android:id="@+id/imageView9"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:srcCompat="@android:drawable/ic_menu_send"
-            tools:layout_editor_absoluteX="307dp"
-            tools:layout_editor_absoluteY="265dp" />
-
-        <ImageView
-            android:id="@+id/imageView8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:srcCompat="@android:drawable/ic_menu_send"
-            tools:layout_editor_absoluteX="306dp"
-            tools:layout_editor_absoluteY="317dp" />
-
-        <TextView
-            android:id="@+id/item-product3"
-            android:layout_width="128dp"
-            android:layout_height="32dp"
-            android:fontFamily="@font/alata"
-            android:text="Desodorantes"
-            android:textColor="@color/green"
-            android:textSize="16sp"
-            tools:layout_editor_absoluteX="100dp"
-            tools:layout_editor_absoluteY="214dp" />
-
-        <TextView
-            android:id="@+id/item-product5"
-            android:layout_width="128dp"
-            android:layout_height="32dp"
-            android:fontFamily="@font/alata"
-            android:text="Balsamo Labial"
-            android:textColor="@color/green"
-            android:textSize="16sp"
-            tools:layout_editor_absoluteX="100dp"
-            tools:layout_editor_absoluteY="265dp" />
-
-        <TextView
-            android:id="@+id/item-product4"
-            android:layout_width="171dp"
-            android:layout_height="35dp"
-            android:fontFamily="@font/alata"
-            android:text="Barrera Solar Mineral"
-            android:textColor="@color/green"
-            android:textSize="16sp"
-            tools:layout_editor_absoluteX="100dp"
-            tools:layout_editor_absoluteY="314dp" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
