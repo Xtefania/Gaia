@@ -12,12 +12,12 @@
         android:contentDescription="@string/imagen_fondo"
         android:scaleType="centerCrop"
         android:translationY="-25dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btn-añadir-carrito"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintHorizontal_bias="0.465"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.060"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/fondo1" />
 
     <ImageView
@@ -32,13 +32,64 @@
         android:id="@+id/icon-more-product3"
         android:layout_width="22dp"
         android:layout_height="58dp"
-        android:layout_marginTop="288dp"
-        android:layout_marginEnd="72dp"
+        android:layout_marginTop="268dp"
+        android:layout_marginEnd="80dp"
         android:layout_marginBottom="60dp"
         android:fontFamily="@font/alata"
         android:text="+"
         android:textColor="@color/green"
         android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/line-product"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/item-product"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/icon-more-product5"
+        android:layout_width="43dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="236dp"
+        android:layout_marginEnd="176dp"
+        android:layout_marginBottom="60dp"
+        android:fontFamily="sans-serif"
+        android:text="＜1＞"
+        android:textColor="@color/green"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/line-product"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/item-product"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/icon-more-product"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="320dp"
+        android:layout_marginEnd="72dp"
+        android:layout_marginBottom="60dp"
+        android:fontFamily="@font/alata"
+        android:text="﹀"
+        android:textColor="@color/green"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/line-product"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/item-product"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/icon-more-product4"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="368dp"
+        android:layout_marginEnd="72dp"
+        android:layout_marginBottom="60dp"
+        android:fontFamily="@font/alata"
+        android:text="﹀"
+        android:textColor="@color/green"
+        android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/line-product"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -51,15 +102,15 @@
         android:layout_height="2dp"
         android:background="@color/green"
         tools:layout_editor_absoluteX="80dp"
-        tools:layout_editor_absoluteY="342dp" />
+        tools:layout_editor_absoluteY="312dp" />
 
     <View
         android:id="@+id/line-product6"
         android:layout_width="250dp"
         android:layout_height="2dp"
         android:background="@color/green"
-        tools:layout_editor_absoluteX="80dp"
-        tools:layout_editor_absoluteY="585dp" />
+        tools:layout_editor_absoluteX="81dp"
+        tools:layout_editor_absoluteY="569dp" />
 
     <TextView
         android:id="@+id/description-product-p2"
@@ -112,8 +163,8 @@
         android:textAlignment="textStart"
         android:textColor="@color/black"
         android:textSize="14sp"
-        tools:layout_editor_absoluteX="176dp"
-        tools:layout_editor_absoluteY="215dp" />
+        tools:layout_editor_absoluteX="183dp"
+        tools:layout_editor_absoluteY="189dp" />
 
     <TextView
         android:id="@+id/title-product3"
@@ -150,20 +201,20 @@
         android:textColor="@color/green"
         android:textSize="14sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="232dp"
-        tools:layout_editor_absoluteY="537dp" />
+        tools:layout_editor_absoluteX="233dp"
+        tools:layout_editor_absoluteY="539dp" />
 
     <TextView
         android:id="@+id/title-product5"
-        android:layout_width="163dp"
-        android:layout_height="32dp"
+        android:layout_width="173dp"
+        android:layout_height="24dp"
         android:fontFamily="@font/alata"
         android:text="Tarifa de envio estimada"
         android:textAlignment="textStart"
         android:textColor="@color/black"
         android:textSize="14sp"
         tools:layout_editor_absoluteX="80dp"
-        tools:layout_editor_absoluteY="310dp" />
+        tools:layout_editor_absoluteY="288dp" />
 
     <TextView
         android:id="@+id/title-product2"
@@ -224,12 +275,43 @@
         app:tint="@color/green" />
 
     <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="102dp"
-        android:layout_height="111dp"
-        app:srcCompat="@drawable/desodorante_2"
-        tools:layout_editor_absoluteX="37dp"
-        tools:layout_editor_absoluteY="183dp" />
+        android:id="@+id/imageView2"
+        android:layout_width="111dp"
+        android:layout_height="121dp"
+        app:srcCompat="@drawable/desodorante2"
+        tools:layout_editor_absoluteX="72dp"
+        tools:layout_editor_absoluteY="167dp" />
+
+    <EditText
+        android:id="@+id/editTextText"
+        android:layout_width="261dp"
+        android:layout_height="39dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Pais"
+        tools:layout_editor_absoluteX="80dp"
+        tools:layout_editor_absoluteY="326dp" />
+
+    <EditText
+        android:id="@+id/editTextText2"
+        android:layout_width="260dp"
+        android:layout_height="38dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Ciudad"
+        tools:layout_editor_absoluteX="80dp"
+        tools:layout_editor_absoluteY="371dp" />
+
+    <EditText
+        android:id="@+id/editTextText3"
+        android:layout_width="41dp"
+        android:layout_height="36dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Quitar"
+        android:textSize="12sp"
+        tools:layout_editor_absoluteX="253dp"
+        tools:layout_editor_absoluteY="230dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
