@@ -91,8 +91,9 @@
         android:layout_width="315dp"
         android:layout_height="494dp"
         app:srcCompat="@drawable/form_view"
-        tools:layout_editor_absoluteX="59dp"
-        tools:layout_editor_absoluteY="169dp" />
+        tools:layout_editor_absoluteX="48dp"
+        tools:layout_editor_absoluteY="167dp" />
+
     <TextView
         android:id="@+id/icon-more-product3"
         android:layout_width="22dp"
@@ -115,7 +116,7 @@
         android:layout_width="43dp"
         android:layout_height="30dp"
         android:layout_marginTop="236dp"
-        android:layout_marginEnd="176dp"
+        android:layout_marginEnd="168dp"
         android:layout_marginBottom="60dp"
         android:fontFamily="sans-serif"
         android:text="＜1＞"
@@ -168,14 +169,6 @@
         android:background="@color/green"
         tools:layout_editor_absoluteX="80dp"
         tools:layout_editor_absoluteY="312dp" />
-
-    <View
-        android:id="@+id/line-product6"
-        android:layout_width="250dp"
-        android:layout_height="2dp"
-        android:background="@color/green"
-        tools:layout_editor_absoluteX="81dp"
-        tools:layout_editor_absoluteY="569dp" />
 
     <TextView
         android:id="@+id/description-product-p2"
@@ -244,19 +237,6 @@
         tools:layout_editor_absoluteY="487dp" />
 
     <TextView
-        android:id="@+id/title-product4"
-        android:layout_width="87dp"
-        android:layout_height="34dp"
-        android:fontFamily="@font/alata"
-        android:text="Subtotal"
-        android:textAlignment="textStart"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="80dp"
-        tools:layout_editor_absoluteY="535dp" />
-
-    <TextView
         android:id="@+id/title-product6"
         android:layout_width="98dp"
         android:layout_height="32dp"
@@ -299,6 +279,18 @@
         tools:layout_editor_absoluteY="326dp" />
 
     <EditText
+        android:id="@+id/editTextText8"
+        android:layout_width="261dp"
+        android:layout_height="39dp"
+        android:ems="10"
+        android:fontFamily="@font/alata"
+        android:inputType="text"
+        android:text="Subtotal"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="75dp"
+        tools:layout_editor_absoluteY="532dp" />
+
+    <EditText
         android:id="@+id/editTextText2"
         android:layout_width="260dp"
         android:layout_height="38dp"
@@ -310,9 +302,10 @@
 
     <EditText
         android:id="@+id/editTextText3"
-        android:layout_width="41dp"
-        android:layout_height="36dp"
+        android:layout_width="50dp"
+        android:layout_height="39dp"
         android:ems="10"
+        android:fontFamily="@font/alata"
         android:inputType="text"
         android:text="Quitar"
         android:textSize="12sp"
