@@ -27,6 +27,12 @@
         <activity
             android:name=".Activities.MainHActivity"
             android:exported="false"/>
+        <activity
+            android:name=".Activities.LoginActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".Activities.InfoProductActivity"
+            android:exported="false"/>
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

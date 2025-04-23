@@ -2,10 +2,21 @@
     <string name="app_name">Gaia</string>
     <string name="registrate"><u>Regístrate</u></string>
     <string name="iniciar_sesion">INICIAR SESIÓN</string>
-    <string name="imagen_fondo">Imagen fondo.</string>
+    <string name="imagen_fondo">Imagen fondo</string>
     <string name="contrasena_olvidada"><u>¿Contraseña olvidada?</u></string>
     <string name="bienvenido">Bienvenido</string>
     <string name="continuar_google">Continuar con Google</string>
     <string name="correo_electronico">Correo electrónico</string>
     <string name="contrasena">Contraseña</string>
+    <string name="titulo_producto">Jabón sólido Karite Leche</string>
+    <string name="icono_menu">icono_menu</string>
+    <string name="icono_locacion">icono_locación</string>
+    <string name="icono_carrito_compra">icono_carrito_compra</string>
+    <string name="imagen_producto">imagen_producto</string>
+    <string name="precio_producto">$24.000</string>
+    <string name="descripcion">Descripción</string>
+    <string name="icono_mas">icono_mas</string>
+    <string name="ingredientes">Ingredientes</string>
+    <string name="anadir_al_carrito">Añadir al carrito</string>
+    <string name="lanzamiento">Lanzamiento</string>
 </resources>

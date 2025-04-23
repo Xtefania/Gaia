@@ -72,7 +72,7 @@
             android:id="@+id/line-product"
             android:layout_width="250dp"
             android:layout_height="2dp"
-            android:background="@color/verde"
+            android:background="@color/green"
             tools:layout_editor_absoluteX="88dp"
             tools:layout_editor_absoluteY="306dp" />
 
@@ -80,7 +80,7 @@
             android:id="@+id/line-product4"
             android:layout_width="250dp"
             android:layout_height="2dp"
-            android:background="@color/verde"
+            android:background="@color/green"
             tools:layout_editor_absoluteX="89dp"
             tools:layout_editor_absoluteY="358dp" />
 
@@ -88,7 +88,7 @@
             android:id="@+id/line-product2"
             android:layout_width="250dp"
             android:layout_height="2dp"
-            android:background="@color/verde"
+            android:background="@color/green"
             tools:layout_editor_absoluteX="89dp"
             tools:layout_editor_absoluteY="254dp" />
 
@@ -96,7 +96,7 @@
             android:id="@+id/line-product3"
             android:layout_width="250dp"
             android:layout_height="2dp"
-            android:background="@color/verde"
+            android:background="@color/green"
             tools:layout_editor_absoluteX="88dp"
             tools:layout_editor_absoluteY="200dp" />
 
@@ -106,7 +106,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/alata"
             android:text="Categorias"
-            android:textColor="@color/verde"
+            android:textColor="@color/green"
             android:textSize="20sp"
             tools:layout_editor_absoluteX="174dp"
             tools:layout_editor_absoluteY="110dp" />
@@ -133,7 +133,7 @@
             android:layout_height="32dp"
             android:fontFamily="@font/alata"
             android:text="Jabones"
-            android:textColor="@color/verde"
+            android:textColor="@color/green"
             android:textSize="16sp"
             tools:layout_editor_absoluteX="100dp"
             tools:layout_editor_absoluteY="168dp" />
@@ -160,7 +160,7 @@
             android:layout_height="32dp"
             android:fontFamily="@font/alata"
             android:text="Desodorantes"
-            android:textColor="@color/verde"
+            android:textColor="@color/green"
             android:textSize="16sp"
             tools:layout_editor_absoluteX="100dp"
             tools:layout_editor_absoluteY="214dp" />
@@ -171,7 +171,7 @@
             android:layout_height="32dp"
             android:fontFamily="@font/alata"
             android:text="Balsamo Labial"
-            android:textColor="@color/verde"
+            android:textColor="@color/green"
             android:textSize="16sp"
             tools:layout_editor_absoluteX="100dp"
             tools:layout_editor_absoluteY="265dp" />
@@ -182,7 +182,7 @@
             android:layout_height="35dp"
             android:fontFamily="@font/alata"
             android:text="Barrera Solar Mineral"
-            android:textColor="@color/verde"
+            android:textColor="@color/green"
             android:textSize="16sp"
             tools:layout_editor_absoluteX="100dp"
             tools:layout_editor_absoluteY="314dp" />
@@ -201,7 +201,7 @@
         app:layout_constraintHorizontal_bias="0.129"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:tint="@color/verde" />
+        app:tint="@color/green" />
 
     <ImageView
         android:id="@+id/btn_location4"
@@ -213,7 +213,7 @@
         app:layout_constraintHorizontal_bias="0.279"
         app:layout_constraintStart_toEndOf="@+id/img_main_logo2"
         app:layout_constraintTop_toTopOf="parent"
-        app:tint="@color/verde" />
+        app:tint="@color/green" />
 
     <ImageView
         android:id="@+id/btn_cart2"
@@ -224,7 +224,7 @@
         android:src="@drawable/ic_cart_shopping"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:tint="@color/verde" />
+        app:tint="@color/green" />
 
     <ImageView
         android:id="@+id/img_main_logo2"

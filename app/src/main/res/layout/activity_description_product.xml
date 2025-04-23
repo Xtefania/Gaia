@@ -7,9 +7,8 @@
 
     <!--Inicio fondo-->
 
-
     <ImageView
-        android:id="@+id/ivFondoImagen"
+        android:id="@+id/iv_fondo_imagen"
         android:layout_width="740dp"
         android:layout_height="460dp"
         android:contentDescription="@string/imagen_fondo"
@@ -23,12 +22,8 @@
         app:layout_constraintVertical_bias="0.060"
         app:srcCompat="@drawable/fondo1" />
 
-    <!--Fin fondo-->
-
-    <!-- Inicio Header -->
-
     <View
-        android:id="@+id/vFondoColor"
+        android:id="@+id/v_fondo_color"
         android:layout_width="410dp"
         android:layout_height="735dp"
         android:background="@drawable/degradado_mascara"
@@ -39,29 +34,32 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
+    <!--Fin fondo -->
+
+    <!-- Inicio Header -->
+
     <ImageView
         android:id="@+id/btn_menu"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_marginStart="30dp"
         android:layout_marginTop="35dp"
+        android:contentDescription="@string/icono_menu"
         android:src="@drawable/ic_menu_lines"
         app:layout_constraintEnd_toStartOf="@+id/img_main_logo"
         app:layout_constraintHorizontal_bias="0.129"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:tint="@color/verde" />
+        app:tint="@color/green" />
 
     <ImageView
         android:id="@+id/img_main_logo"
         android:layout_width="140dp"
         android:layout_height="110dp"
-        android:layout_marginBottom="20dp"
         android:contentDescription="@string/imagen_fondo"
-        app:layout_constraintBottom_toTopOf="@+id/title-product"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logo2" />
 
     <ImageView
@@ -70,10 +68,11 @@
         android:layout_height="25dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="35dp"
+        android:contentDescription="@string/icono_locacion"
         android:src="@drawable/ic_location_pin"
         app:layout_constraintStart_toEndOf="@+id/img_main_logo"
         app:layout_constraintTop_toTopOf="parent"
-        app:tint="@color/verde" />
+        app:tint="@color/green" />
 
     <ImageView
         android:id="@+id/btn_cart"
@@ -81,14 +80,14 @@
         android:layout_height="25dp"
         android:layout_marginTop="35dp"
         android:layout_marginEnd="30dp"
+        android:contentDescription="@string/icono_carrito_compra"
         android:src="@drawable/ic_cart_shopping"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btn_location"
         app:layout_constraintTop_toTopOf="parent"
-        app:tint="@color/verde" />
+        app:tint="@color/green" />
 
     <!-- Fin Header -->
-
 
     <TextView
         android:id="@+id/title-product"
@@ -96,7 +95,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/alata"
         android:text="Jabón sólido Karite Leche"
-        android:textColor="@color/verde"
+        android:textColor="@color/green"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/amount-product"
         app:layout_constraintEnd_toEndOf="parent"
@@ -109,7 +108,7 @@
         android:layout_marginBottom="8dp"
         android:fontFamily="@font/alata"
         android:text="$250gr"
-        android:textColor="@color/verde"
+        android:textColor="@color/green"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/price-product"
         app:layout_constraintEnd_toEndOf="parent"
@@ -122,7 +121,7 @@
         android:layout_marginBottom="20dp"
         android:fontFamily="@font/alata"
         android:text="$24.000"
-        android:textColor="@color/verde"
+        android:textColor="@color/green"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/icon-more-product"
         app:layout_constraintEnd_toEndOf="parent"
@@ -136,7 +135,7 @@
         android:layout_marginBottom="8dp"
         android:fontFamily="@font/alata"
         android:text="Descripción"
-        android:textColor="@color/verde"
+        android:textColor="@color/green"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/view"
         tools:layout_editor_absoluteX="81dp" />
@@ -146,7 +145,7 @@
         android:layout_width="250dp"
         android:layout_height="2dp"
         android:layout_marginBottom="32dp"
-        android:background="@color/verde"
+        android:background="@color/green"
         app:layout_constraintBottom_toTopOf="@+id/btn-añadir-carrito"
         tools:layout_editor_absoluteX="80dp" />
 
@@ -158,7 +157,7 @@
         android:layout_marginBottom="8dp"
         android:fontFamily="@font/alata"
         android:text="+"
-        android:textColor="@color/verde"
+        android:textColor="@color/green"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/view"
         tools:layout_editor_absoluteX="318dp" />
@@ -211,7 +210,7 @@
         android:layout_marginBottom="4dp"
         android:fontFamily="@font/alata"
         android:text="Ingredientes"
-        android:textColor="@color/verde"
+        android:textColor="@color/green"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/line-product"
         app:layout_constraintEnd_toStartOf="@+id/textView4"
@@ -226,7 +225,7 @@
         android:layout_marginBottom="4dp"
         android:fontFamily="@font/alata"
         android:text="+"
-        android:textColor="@color/verde"
+        android:textColor="@color/green"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/line-product"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -236,7 +235,7 @@
         android:layout_width="250dp"
         android:layout_height="2dp"
         android:layout_marginBottom="20dp"
-        android:background="@color/verde"
+        android:background="@color/green"
         app:layout_constraintBottom_toTopOf="@+id/description-product-p1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -246,7 +245,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
-        android:backgroundTint="@color/verde"
+        android:backgroundTint="@color/green"
         android:fontFamily="@font/alata"
         android:text="Añadir al carrito"
         android:textAlignment="center"
