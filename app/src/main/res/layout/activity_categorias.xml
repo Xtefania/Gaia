@@ -254,6 +254,7 @@
         android:layout_marginStart="225dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="276dp"
+        android:fontFamily="@font/alata"
         android:text="Eau De Toilette"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -264,9 +265,30 @@
         android:id="@+id/textView11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="40dp"
-        tools:layout_editor_absoluteY="544dp" />
+        android:layout_marginStart="79dp"
+        android:layout_marginEnd="276dp"
+        android:fontFamily="@font/alata"
+        android:text="Eau de perfum"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/imageView2"
+        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="79dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="316dp"
+        android:fontFamily="@font/alata"
+        android:text="Perfume"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/imageView2"
+        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
