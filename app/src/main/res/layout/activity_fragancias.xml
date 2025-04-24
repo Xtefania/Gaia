@@ -11,26 +11,28 @@
         android:layout_height="1089dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.475"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.553"
+        app:layout_constraintVertical_bias="0.525"
         app:srcCompat="@drawable/fondo1cc" />
 
     <ImageView
         android:id="@+id/imageView12"
-        android:layout_width="407dp"
-        android:layout_height="733dp"
+        android:layout_width="418dp"
+        android:layout_height="740dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/degradado_mascara" />
 
     <ImageView
         android:id="@+id/imageView18"
-        android:layout_width="200dp"
-        android:layout_height="88dp"
+        android:layout_width="188dp"
+        android:layout_height="76dp"
         android:layout_marginStart="105dp"
         android:layout_marginEnd="104dp"
         android:layout_marginBottom="802dp"
@@ -42,8 +44,8 @@
 
     <ImageView
         android:id="@+id/imageView23"
-        android:layout_width="25dp"
-        android:layout_height="37dp"
+        android:layout_width="21dp"
+        android:layout_height="32dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="44dp"
@@ -58,17 +60,18 @@
 
     <ImageView
         android:id="@+id/imageView24"
-        android:layout_width="26dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="28dp"
+        android:layout_width="24dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="36dp"
         app:layout_constraintStart_toEndOf="@+id/imageView18"
         app:layout_constraintTop_toTopOf="@+id/imageView12"
         app:srcCompat="@drawable/ic_location_pin" />
 
     <ImageView
         android:id="@+id/imageView25"
-        android:layout_width="29dp"
-        android:layout_height="37dp"
+        android:layout_width="27dp"
+        android:layout_height="36dp"
         android:layout_marginStart="352dp"
         android:layout_marginTop="28dp"
         android:layout_marginEnd="28dp"
@@ -98,8 +101,8 @@
 
     <ImageView
         android:id="@+id/imageView27"
-        android:layout_width="85dp"
-        android:layout_height="136dp"
+        android:layout_width="103dp"
+        android:layout_height="149dp"
         android:layout_marginStart="58dp"
         android:layout_marginTop="166dp"
         android:layout_marginEnd="268dp"
@@ -112,8 +115,8 @@
 
     <ImageView
         android:id="@+id/imageView28"
-        android:layout_width="84dp"
-        android:layout_height="142dp"
+        android:layout_width="112dp"
+        android:layout_height="140dp"
         android:layout_marginStart="61dp"
         android:layout_marginTop="302dp"
         android:layout_marginEnd="264dp"
@@ -124,8 +127,8 @@
 
     <ImageView
         android:id="@+id/imageView29"
-        android:layout_width="86dp"
-        android:layout_height="153dp"
+        android:layout_width="112dp"
+        android:layout_height="174dp"
         android:layout_marginStart="59dp"
         android:layout_marginEnd="264dp"
         android:layout_marginBottom="295dp"
@@ -147,9 +150,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/imageView12"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.1"
         app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="@+id/imageView12" />
+        app:layout_constraintTop_toTopOf="@+id/imageView12"
+        app:layout_constraintVertical_bias="0.857" />
 
     <TextView
         android:id="@+id/textView25"
@@ -212,8 +216,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="@+id/imageView" />
+        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/textView28"
@@ -227,6 +233,7 @@
         android:text="$ 90.000.00"
         app:layout_constraintBottom_toBottomOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="@+id/imageView12"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/imageView12"
         app:layout_constraintTop_toTopOf="@+id/imageView12" />
 
@@ -242,6 +249,7 @@
         android:text="75 ml"
         app:layout_constraintBottom_toBottomOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="@+id/imageView12"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/imageView12"
         app:layout_constraintTop_toTopOf="@+id/imageView12" />
 
@@ -290,5 +298,39 @@
         app:layout_constraintEnd_toEndOf="@+id/imageView"
         app:layout_constraintStart_toStartOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+    <EditText
+        android:id="@+id/editTextTextMultiLine"
+        android:layout_width="335dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="221dp"
+        android:layout_marginTop="464dp"
+        android:layout_marginEnd="212dp"
+        android:layout_marginBottom="428dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView12"
+        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+    <EditText
+        android:id="@+id/editTextTextMultiLine2"
+        android:layout_width="336dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="38dp"
+        android:layout_marginTop="424dp"
+        android:layout_marginEnd="34dp"
+        android:layout_marginBottom="440dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="@+id/imageView12"
+        app:layout_constraintStart_toStartOf="@+id/imageView12"
+        app:layout_constraintTop_toTopOf="@+id/imageView12" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
