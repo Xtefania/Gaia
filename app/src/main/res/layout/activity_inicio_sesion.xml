@@ -108,9 +108,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logo2" />
 
-
     <Button
-        android:id="@+id/bt_inicio_sesion"
+        android:id="@+id/btn_inicio_sesion"
         android:layout_width="260dp"
         android:layout_height="48dp"
         android:layout_marginTop="20dp"
@@ -153,7 +152,7 @@
         app:iconTint="@null"
         app:layout_constraintEnd_toEndOf="@+id/form_background"
         app:layout_constraintStart_toStartOf="@+id/form_background"
-        app:layout_constraintTop_toBottomOf="@+id/bt_inicio_sesion"
+        app:layout_constraintTop_toBottomOf="@+id/btn_inicio_sesion"
         app:strokeColor="@color/green"
         app:strokeWidth="2dp" />
 

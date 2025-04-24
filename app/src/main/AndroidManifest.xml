@@ -31,7 +31,19 @@
             android:name=".Activities.LoginActivity"
             android:exported="false"/>
         <activity
+            android:name=".Activities.RegisterActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".Activities.CategoriesActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".Activities.ListProductActivity"
+            android:exported="false"/>
+        <activity
             android:name=".Activities.InfoProductActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".Activities.DescriptionProductActivity"
             android:exported="false"/>
         <meta-data
             android:name="preloaded_fonts"

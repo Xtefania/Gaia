@@ -21,4 +21,10 @@
     <string name="lanzamiento">Lanzamiento</string>
     <string name="recupera_contrasena">Recupera tu contraseña</string>
     <string name="recuperar">Recuperar</string>
+    <string name="categorias">Categorias</string>
+    <string name="fragancias">Fragancias</string>
+    <string name="text_description">Formulado con una base 100% vegetal y enriquecido con la nutritiva manteca de Karité.</string>
+    <string name="text_description_p2">Está formulado sin aceite de Palma y enriquecido con extracto de Karité, el cual tiene propiedades suavizantes y nutritivas.</string>
+    <string name="text_description_p3">99% ingredientes de origen natural.</string>
+    <string name="text_description_p4">Producto para toda la familia.</string>
 </resources>

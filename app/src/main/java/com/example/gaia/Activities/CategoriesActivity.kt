@@ -2,23 +2,23 @@ package com.example.gaia.Activities
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
+import android.widget.ImageView
 import com.example.gaia.R
 import androidx.appcompat.app.AppCompatActivity
 
-class LoginActivity : AppCompatActivity() {
+class CategoriesActivity : AppCompatActivity() {
     // Renderización
     override fun onCreate(savedInstanceState: Bundle?) {
         // - Vista principal
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_inicio_sesion)
+        setContentView(R.layout.activity_categorias)
 
         // Navegación
 
         //  - Vista categorias de productos
-        val btnLogin = findViewById<Button>(R.id.btn_inicio_sesion)
-        btnLogin.setOnClickListener {
-            val intent = Intent(this, CategoriesActivity::class.java)
+        val btnShowCategory = findViewById<ImageView>(R.id.btn_show_category)
+        btnShowCategory.setOnClickListener {
+            val intent = Intent(this, ListProductActivity::class.java)
             startActivity(intent)
         }
     }

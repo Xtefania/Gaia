@@ -1,13 +1,28 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Gaia</string>
-    <string name="registrate"><u>Regístrese</u></string>
+    <string name="registrate"><u>Regístrate</u></string>
     <string name="iniciar_sesion">INICIAR SESIÓN</string>
-    <string name="imagen_fondo">Imagen fondo.</string>
+    <string name="imagen_fondo">Imagen fondo</string>
     <string name="contrasena_olvidada"><u>¿Contraseña olvidada?</u></string>
     <string name="bienvenido">Bienvenido</string>
     <string name="continuar_google">Continuar con Google</string>
     <string name="correo_electronico">Correo electrónico</string>
     <string name="contrasena">Contraseña</string>
+    <string name="titulo_producto">Jabón sólido Karite Leche</string>
+    <string name="icono_menu">icono_menu</string>
+    <string name="icono_locacion">icono_locación</string>
+    <string name="icono_carrito_compra">icono_carrito_compra</string>
+    <string name="imagen_producto">imagen_producto</string>
+    <string name="precio_producto">$24.000</string>
+    <string name="descripcion">Descripción</string>
+    <string name="icono_mas">icono_mas</string>
+    <string name="ingredientes">Ingredientes</string>
+    <string name="anadir_al_carrito">Añadir al carrito</string>
+    <string name="lanzamiento">Lanzamiento</string>
     <string name="recupera_contrasena">Recupera tu contraseña</string>
+    <string name="recuperar">Recuperar</string>
+    <string name="categorias">Categorias</string>
+    <string name="fragancias">Fragancias</string>
+    <string name="text_description">Formulado con una base 100% vegetal y enriquecido con la nutritiva manteca de Karité.</string>
+    <string name="text_description_p2">Está formulado sin aceite de Palma y enriquecido con extracto de Karité, el cual tiene propiedades suavizantes y nutritivas.</string>
 </resources>

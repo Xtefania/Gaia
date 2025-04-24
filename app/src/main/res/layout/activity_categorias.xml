@@ -5,10 +5,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <!--Inicio fondo-->
+
+    <ImageView
+        android:id="@+id/iv_fondo_imagen"
+        android:layout_width="740dp"
+        android:layout_height="460dp"
+        android:contentDescription="@string/imagen_fondo"
+        android:scaleType="centerCrop"
+        android:translationY="-25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/fondo1" />
+
     <View
-        android:id="@+id/vFondoColor2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/v_fondo_color"
+        android:layout_width="410dp"
+        android:layout_height="735dp"
         android:background="@drawable/degradado_mascara"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -17,194 +34,192 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    <!--Fin fondo -->
 
-        <!--Inicio fondo-->
-
-
-        <ImageView
-            android:id="@+id/ivFondoImagen"
-            android:layout_width="740dp"
-            android:layout_height="460dp"
-            android:contentDescription="@string/imagen_fondo"
-            android:scaleType="centerCrop"
-            android:translationY="-25dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.501"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.060"
-            app:srcCompat="@drawable/fondo1" />
-
-        <!--Fin fondo-->
-
-        <!-- Inicio Header -->
-
-        <!-- Fin Header -->
-
-
-        <View
-            android:id="@+id/vFondoColor"
-            android:layout_width="477dp"
-            android:layout_height="872dp"
-            android:background="@drawable/degradado_mascara"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <TextView
-            android:id="@+id/title-product2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/alata"
-            android:text="Categorias"
-            android:textColor="@color/green"
-            android:textSize="24sp"
-            tools:layout_editor_absoluteX="145dp"
-            tools:layout_editor_absoluteY="133dp" />
-
-        <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="265dp"
-            android:layout_height="397dp"
-            app:srcCompat="@drawable/form_view"
-            tools:layout_editor_absoluteX="73dp"
-            tools:layout_editor_absoluteY="218dp" />
-
-        <EditText
-            android:id="@+id/editTextText4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:fontFamily="@font/alata"
-            android:inputType="text"
-            android:text="Jabones"
-            android:textColor="@color/green"
-            tools:layout_editor_absoluteX="86dp"
-            tools:layout_editor_absoluteY="253dp" />
-
-        <EditText
-            android:id="@+id/editTextText5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:fontFamily="@font/alata"
-            android:inputType="text"
-            android:text="Barrera Solar Mineral"
-            android:textColor="@color/green"
-            tools:layout_editor_absoluteX="86dp"
-            tools:layout_editor_absoluteY="388dp" />
-
-        <EditText
-            android:id="@+id/editTextText6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:fontFamily="@font/alata"
-            android:inputType="text"
-            android:text="Balsamo Labial"
-            android:textColor="@color/green"
-            tools:layout_editor_absoluteX="86dp"
-            tools:layout_editor_absoluteY="343dp" />
-
-        <EditText
-            android:id="@+id/editTextText7"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:fontFamily="@font/alata"
-            android:inputType="text"
-            android:text="Desodorantes"
-            android:textColor="@color/green"
-            tools:layout_editor_absoluteX="86dp"
-            tools:layout_editor_absoluteY="298dp" />
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="33dp"
-            android:layout_height="29dp"
-            android:text=">"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            tools:layout_editor_absoluteX="301dp"
-            tools:layout_editor_absoluteY="260dp" />
-
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="33dp"
-            android:layout_height="29dp"
-            android:text=">"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            tools:layout_editor_absoluteX="301dp"
-            tools:layout_editor_absoluteY="302dp" />
-
-        <TextView
-            android:id="@+id/textView5"
-            android:layout_width="33dp"
-            android:layout_height="29dp"
-            android:text=">"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            tools:layout_editor_absoluteX="301dp"
-            tools:layout_editor_absoluteY="351dp" />
-
-        <TextView
-            android:id="@+id/textView6"
-            android:layout_width="33dp"
-            android:layout_height="29dp"
-            android:text=">"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            tools:layout_editor_absoluteX="301dp"
-            tools:layout_editor_absoluteY="399dp" />
-
-        <ImageView
-            android:id="@+id/img_main_logo2"
-            android:layout_width="140dp"
-            android:layout_height="110dp"
-            android:contentDescription="@string/imagen_fondo"
-            app:srcCompat="@drawable/logo2"
-            tools:layout_editor_absoluteX="126dp" />
-
-        <ImageView
-            android:id="@+id/btn_location4"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:src="@drawable/ic_location_pin"
-            app:tint="@color/green"
-            tools:layout_editor_absoluteX="301dp"
-            tools:layout_editor_absoluteY="40dp" />
-
-        <ImageView
-            android:id="@+id/btn_menu2"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:src="@drawable/ic_menu_lines"
-            app:tint="@color/green"
-            tools:layout_editor_absoluteX="25dp"
-            tools:layout_editor_absoluteY="40dp" />
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- Inicio Header -->
 
     <ImageView
-        android:id="@+id/btn_cart2"
+        android:id="@+id/btn_menu"
         android:layout_width="25dp"
         android:layout_height="25dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="32dp"
-        android:src="@drawable/ic_cart_shopping"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="45dp"
+        android:contentDescription="@string/icono_menu"
+        android:src="@drawable/ic_menu_lines"
+        app:layout_constraintEnd_toStartOf="@+id/img_main_logo"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:tint="@color/green" />
 
+    <ImageView
+        android:id="@+id/img_main_logo"
+        android:layout_width="140dp"
+        android:layout_height="110dp"
+        android:layout_marginTop="4dp"
+        android:contentDescription="@string/imagen_fondo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo2" />
+
+    <ImageView
+        android:id="@+id/btn_location"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="45dp"
+        android:contentDescription="@string/icono_locacion"
+        android:src="@drawable/ic_location_pin"
+        app:layout_constraintStart_toEndOf="@+id/img_main_logo"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/green" />
+
+    <ImageView
+        android:id="@+id/btn_cart"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="30dp"
+        android:contentDescription="@string/icono_carrito_compra"
+        android:src="@drawable/ic_cart_shopping"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_location"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/green" />
+
+    <!-- Fin Header -->
+
+    <TextView
+        android:id="@+id/tv_categorias"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/alata"
+        android:text="@string/categorias"
+        android:textColor="@color/green"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_main_logo" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="270dp"
+        android:layout_height="400dp"
+        android:layout_marginTop="80dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_categorias"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/form_view" />
+
+    <TextView
+        android:id="@+id/editTextText4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:ems="10"
+        android:fontFamily="@font/alata"
+        android:text="Jabones"
+        android:textColor="@color/green"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/imageView3"
+        app:layout_constraintStart_toStartOf="@+id/imageView3"
+        app:layout_constraintTop_toTopOf="@+id/imageView3" />
+
+    <ImageView
+        android:id="@+id/btn_show_category"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:contentDescription="@string/icono_carrito_compra"
+        android:src="@drawable/ic_arrow_right"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextText4"
+        app:layout_constraintEnd_toEndOf="@+id/editTextText4"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/editTextText4"
+        app:layout_constraintTop_toTopOf="@+id/editTextText4"
+        app:layout_constraintVertical_bias="1.0"
+        app:tint="@color/green" />
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/textView"-->
+    <!--        android:layout_width="33dp"-->
+    <!--        android:layout_height="29dp"-->
+    <!--        android:text=">"-->
+    <!--        android:textSize="24sp"-->
+    <!--        android:textStyle="bold"-->
+    <!--        app:layout_constraintBottom_toBottomOf="@+id/editTextText4"-->
+    <!--        app:layout_constraintEnd_toEndOf="@+id/editTextText4"-->
+    <!--        app:layout_constraintTop_toTopOf="@+id/editTextText4"-->
+    <!--        app:layout_constraintVertical_bias="0.3" />-->
+
+    <!--        <EditText-->
+    <!--            android:id="@+id/editTextText5"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:ems="10"-->
+    <!--            android:fontFamily="@font/alata"-->
+    <!--            android:inputType="text"-->
+    <!--            android:text="Barrera Solar Mineral"-->
+    <!--            android:textColor="@color/green"-->
+    <!--            tools:layout_editor_absoluteX="86dp"-->
+    <!--            tools:layout_editor_absoluteY="388dp" />-->
+
+    <!--        <EditText-->
+    <!--            android:id="@+id/editTextText6"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:ems="10"-->
+    <!--            android:fontFamily="@font/alata"-->
+    <!--            android:inputType="text"-->
+    <!--            android:text="Balsamo Labial"-->
+    <!--            android:textColor="@color/green"-->
+    <!--            tools:layout_editor_absoluteX="86dp"-->
+    <!--            tools:layout_editor_absoluteY="343dp" />-->
+
+    <!--        <EditText-->
+    <!--            android:id="@+id/editTextText7"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:ems="10"-->
+    <!--            android:fontFamily="@font/alata"-->
+    <!--            android:inputType="text"-->
+    <!--            android:text="Desodorantes"-->
+    <!--            android:textColor="@color/green"-->
+    <!--            tools:layout_editor_absoluteX="86dp"-->
+    <!--            tools:layout_editor_absoluteY="298dp" />-->
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/textView3"-->
+    <!--            android:layout_width="33dp"-->
+    <!--            android:layout_height="29dp"-->
+    <!--            android:text=">"-->
+    <!--            android:textSize="24sp"-->
+    <!--            android:textStyle="bold"-->
+    <!--            tools:layout_editor_absoluteX="301dp"-->
+    <!--            tools:layout_editor_absoluteY="302dp" />-->
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/textView5"-->
+    <!--            android:layout_width="33dp"-->
+    <!--            android:layout_height="29dp"-->
+    <!--            android:text=">"-->
+    <!--            android:textSize="24sp"-->
+    <!--            android:textStyle="bold"-->
+    <!--            tools:layout_editor_absoluteX="301dp"-->
+    <!--            tools:layout_editor_absoluteY="351dp" />-->
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/textView6"-->
+    <!--            android:layout_width="33dp"-->
+    <!--            android:layout_height="29dp"-->
+    <!--            android:text=">"-->
+    <!--            android:textSize="24sp"-->
+    <!--            android:textStyle="bold"-->
+    <!--            tools:layout_editor_absoluteX="301dp"-->
+    <!--            tools:layout_editor_absoluteY="399dp" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
