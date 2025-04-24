@@ -9,4 +9,5 @@
     <string name="continuar_google">Continuar con Google</string>
     <string name="correo_electronico">Correo electrónico</string>
     <string name="contrasena">Contraseña</string>
+    <string name="recupera_contrasena">Recupera tu contraseña</string>
 </resources>

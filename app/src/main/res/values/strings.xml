@@ -19,4 +19,6 @@
     <string name="ingredientes">Ingredientes</string>
     <string name="anadir_al_carrito">Añadir al carrito</string>
     <string name="lanzamiento">Lanzamiento</string>
+    <string name="recupera_contrasena">Recupera tu contraseña</string>
+    <string name="recuperar">Recuperar</string>
 </resources>
