@@ -56,4 +56,23 @@
     <string name="_50_000">50.000</string>
     <string name="tu_carrito">Tu carrito</string>
     <string name="quitar">Quitar</string>
+    <string name="eau_de_parfum">Eau De Parfum</string>
+    <string name="Todo">todo</string>
+    <string name="tu_carrito1">Tu Carrito</string>
+    <string name="_64_000_00">$ 64.000,00</string>
+    <string name="tarifas_de_env_o_estimadas">Tarifas de envío estimadas</string>
+    <string name="pais_regi_n">Pais/Región</string>
+    <string name="ciudad_provincia">Ciudad/provincia</string>
+    <string name="colombia">Colombia</string>
+    <string name="bogot">Bogotá</string>
+    <string name="subtotal">Subtotal</string>
+    <string name="_64_000_00_cop">$ 64.000,00 COP</string>
+    <string name="tarifa_16_000_00">Tarifa: $ 16.000,00</string>
+    <string name="recuerda_que_nuestros_tiempos_de_entrega_se_establecen_entre_los_4_y_15_d_as_h_biles_despu_s_de_la_compr">Recuerda que nuestros tiempos de entrega se establecen entre los 4 y 15 días hábiles después de la comprá</string>
+    <string name="quitars">Quitar</string>
+    <string name="_1"><![CDATA[< 1 >]]></string>
+    <string name="calcular">Calcular</string>
+    <string name="pagar_pedido">Pagar Pedido</string>
+    <string name="todo">TODO</string>
+    <string name="todos">TODO</string>
 </resources>
