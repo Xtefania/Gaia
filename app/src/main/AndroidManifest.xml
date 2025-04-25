@@ -23,28 +23,34 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".Activities.MainHActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".Activities.LoginActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".Activities.RegisterActivity"
-            android:exported="false"/>
+            android:exported="false" />
+        <activity
+            android:name=".Activities.OlvidoContrasenaActivity"
+            android:exported="false" />
         <activity
             android:name=".Activities.CategoriesActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".Activities.ListProductActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".Activities.InfoProductActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".Activities.DescriptionProductActivity"
-            android:exported="false"/>
+            android:exported="false" />
+        <activity
+            android:name=".Activities.MembersProductActivity"
+            android:exported="false" />
 
         <meta-data
             android:name="preloaded_fonts"

@@ -9,18 +9,14 @@
 
     <ImageView
         android:id="@+id/iv_fondo_imagen"
-        android:layout_width="740dp"
-        android:layout_height="460dp"
-        android:contentDescription="@string/imagen_fondo"
-        android:scaleType="centerCrop"
-        android:translationY="-25dp"
+        android:layout_width="781dp"
+        android:layout_height="1089dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/fondo1" />
+        app:layout_constraintVertical_bias="0.8"
+        app:srcCompat="@drawable/fondo1cc" />
 
     <View
         android:id="@+id/v_fondo_color"
@@ -124,13 +120,13 @@
         android:id="@+id/card_description"
         android:layout_width="300dp"
         android:layout_height="300dp"
-        android:padding="16dp"
         android:layout_marginTop="28dp"
+        android:background="@drawable/form_view"
+        android:padding="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_price_product"
-        android:background="@drawable/form_view">
+        app:layout_constraintTop_toBottomOf="@+id/tv_price_product">
 
         <TextView
             android:id="@+id/tv_descripcion"
@@ -149,7 +145,7 @@
             app:layout_constraintVertical_bias="0.0" />
 
         <ImageView
-            android:id="@+id/btn_plus_descripcion"
+            android:id="@+id/btn_minus_descripcion"
             android:layout_width="15dp"
             android:layout_height="15dp"
             android:contentDescription="@string/icono_mas"
@@ -248,7 +244,7 @@
             app:layout_constraintVertical_bias="0.0" />
 
         <ImageView
-            android:id="@+id/btn_plus_ìngredientes"
+            android:id="@+id/btn_plus_members"
             android:layout_width="15dp"
             android:layout_height="15dp"
             android:contentDescription="@string/icono_mas"

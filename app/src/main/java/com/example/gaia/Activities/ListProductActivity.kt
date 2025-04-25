@@ -12,12 +12,12 @@ class ListProductActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         // - Vista principal
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_list_product)
+        setContentView(R.layout.activity_fragancias)
 
         // Navegación
 
-        //  - Vista categorias de productos
-        val cardProduct = findViewById<ConstraintLayout>(R.id.card_product)
+        //  - Vista detalle del producto
+        val cardProduct = findViewById<ImageView>(R.id.iv_product_1)
         cardProduct.setOnClickListener {
             val intent = Intent(this, InfoProductActivity::class.java)
             startActivity(intent)

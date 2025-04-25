@@ -3,23 +3,23 @@ package com.example.gaia.Activities
 import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageView
-import android.widget.TextView
 import com.example.gaia.R
 import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.widget.ConstraintLayout
 
-class CategoriesActivity : AppCompatActivity() {
+class MembersProductActivity : AppCompatActivity() {
     // Renderización
     override fun onCreate(savedInstanceState: Bundle?) {
         // - Vista principal
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_categorias)
+        setContentView(R.layout.activity_members_product)
 
         // Navegación
 
-        //  - Vista categorias de productos
-        val btnListProductsCategory = findViewById<TextView>(R.id.tv_item_category_1)
-        btnListProductsCategory.setOnClickListener {
-            val intent = Intent(this, ListProductActivity::class.java)
+        //  - Vista detalle descripción
+        val descriptionProduct = findViewById<ImageView>(R.id.btn_minus_members)
+        descriptionProduct.setOnClickListener {
+            val intent = Intent(this, DescriptionProductActivity::class.java)
             startActivity(intent)
         }
     }

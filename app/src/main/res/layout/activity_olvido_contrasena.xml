@@ -93,20 +93,20 @@
         app:srcCompat="@drawable/logo2" />
 
 
-    <Button
-        android:id="@+id/bt_inicio_sesion"
-        android:layout_width="260dp"
-        android:layout_height="48dp"
-        android:backgroundTint="@color/green"
-        android:fontFamily="@font/alata"
-        android:text="@string/recuperar"
-        android:textAlignment="center"
-        android:textColor="#FFFFFF"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/form_background"
-        app:layout_constraintHorizontal_bias="0.514"
-        app:layout_constraintStart_toStartOf="@+id/form_background"
-        tools:layout_editor_absoluteY="500dp" />
+<!--    <Button-->
+<!--        android:id="@+id/bt_inicio_sesion"-->
+<!--        android:layout_width="260dp"-->
+<!--        android:layout_height="48dp"-->
+<!--        android:backgroundTint="@color/green"-->
+<!--        android:fontFamily="@font/alata"-->
+<!--        android:text="@string/recuperar"-->
+<!--        android:textAlignment="center"-->
+<!--        android:textColor="#FFFFFF"-->
+<!--        android:textSize="16sp"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/form_background"-->
+<!--        app:layout_constraintHorizontal_bias="0.514"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/form_background"-->
+<!--        tools:layout_editor_absoluteY="500dp" />-->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

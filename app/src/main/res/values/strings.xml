@@ -27,4 +27,10 @@
     <string name="text_description_p2">Está formulado sin aceite de Palma y enriquecido con extracto de Karité, el cual tiene propiedades suavizantes y nutritivas.</string>
     <string name="text_description_p3">99% ingredientes de origen natural.</string>
     <string name="text_description_p4">Producto para toda la familia.</string>
+    <string name="text_members_t1">MANTECA DE KARITÉ ORGÁNICA</string>
+    <string name="text_members_p1">Rica en ácidos grasos insaponificables, la manteca de karité es un ingrediente de belleza ideal para hidratar, nutrir, proteger, regenerar y ayudar con la cicatrización.</string>
+    <string name="text_members_t2">LECHE DE KARITÉ</string>
+    <string name="text_members_p2">Conocida por sus propiedades hidratantes, nutritivas y protectoras.</string>
+    <string name="text_members_t3">ACEITE DE COCO</string>
+    <string name="text_members_p3">Rico en ácidos grasos, ayuda a nutrir, suavizar y proteger la piel y el cabello</string>
 </resources>

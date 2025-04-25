@@ -6,12 +6,13 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/tv_splahs"
-        android:layout_width="460dp"
+        android:id="@+id/tv_bienvenidos"
+        android:layout_width="514dp"
         android:layout_height="match_parent"
         android:background="@drawable/fondo1"
         android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

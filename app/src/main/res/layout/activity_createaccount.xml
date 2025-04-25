@@ -22,8 +22,8 @@
 
     <View
         android:id="@+id/v_fondo_color2"
-        android:layout_width="410dp"
-        android:layout_height="735dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:background="@drawable/degradado_mascara"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -51,7 +51,6 @@
         android:background="@drawable/form_view_white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.444"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.765" />
@@ -60,41 +59,37 @@
         android:id="@+id/textViewCrearCuenta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="184dp"
+        android:layout_marginTop="24dp"
         android:text="Crear cuenta"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/form_background2"
+        app:layout_constraintStart_toStartOf="@+id/form_background2"
+        app:layout_constraintTop_toTopOf="@+id/form_background2" />
 
     <TextView
         android:id="@+id/textViewtextoSecundarioPregunta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="232dp"
         android:text="¿Nuevo por aqui?"
         android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/form_background2"
+        app:layout_constraintStart_toStartOf="@+id/form_background2"
+        app:layout_constraintTop_toBottomOf="@+id/textViewCrearCuenta" />
 
     <TextView
         android:id="@+id/textViewtextoSecundarioInvitacion"
         android:layout_width="276dp"
         android:layout_height="35dp"
-        android:layout_marginTop="248dp"
         android:gravity="center"
         android:text="¡Completa tu registro y descubre ofertas especiales para ti!"
         android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/form_background2"
+        app:layout_constraintStart_toStartOf="@+id/form_background2"
+        app:layout_constraintTop_toBottomOf="@+id/textViewtextoSecundarioPregunta" />
 
     <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="315dp"
         android:layout_height="351dp"
         android:fillViewport="true"
@@ -381,13 +376,14 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <Button
-                android:id="@+id/btnRegistrarse"
+                android:id="@+id/btn_register"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:backgroundTint="@color/green"
                 android:text="Registrarse"
                 android:textColor="@android:color/white" />
+
         </LinearLayout>
 
     </ScrollView>

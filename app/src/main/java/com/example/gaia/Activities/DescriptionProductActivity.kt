@@ -2,7 +2,9 @@ package com.example.gaia.Activities
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.ImageView
+import android.widget.TextView
 import com.example.gaia.R
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -16,11 +18,31 @@ class DescriptionProductActivity : AppCompatActivity() {
 
         // Navegación
 
-//        //  - Vista categorias de productos
-//        val cardProduct = findViewById<ConstraintLayout>(R.id.card_product)
-//        cardProduct.setOnClickListener {
-//            val intent = Intent(this, InfoProductActivity::class.java)
-//            startActivity(intent)
+        //  - Vista info productos
+        val infoProduct = findViewById<ImageView>(R.id.btn_minus_descripcion)
+        infoProduct.setOnClickListener {
+            val intent = Intent(this, InfoProductActivity::class.java)
+            startActivity(intent)
+        }
+
+        //  - Vista detalles intregrantes
+        val cardProduct = findViewById<ImageView>(R.id.btn_plus_members)
+        cardProduct.setOnClickListener {
+            val intent = Intent(this, MembersProductActivity::class.java)
+            startActivity(intent)
+        }
+
+        // Obtener referencias de los TextView
+//        val titleDescription = findViewById<TextView>(R.id.tv_descripcion)
+//        val contentDescription = findViewById<TextView>(R.id.contentDescription)
+//        // Lógica para alternar visibilidad
+//        titleDescription.setOnClickListener {
+//            toggleVisibility(contentDescription)
 //        }
     }
+
+    // Función para mostrar/ocultar el contenido
+//    private fun toggleVisibility(view: View) {
+//        view.visibility = if (view.visibility == View.GONE) View.VISIBLE else View.GONE
+//    }
 }
