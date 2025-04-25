@@ -5,25 +5,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <!--    Inicio fondo -->
 
     <ImageView
-        android:id="@+id/ivFondoImagen"
-        android:layout_width="740dp"
-        android:layout_height="460dp"
+        android:id="@+id/iv_fondo_imagen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:contentDescription="@string/imagen_fondo"
         android:scaleType="centerCrop"
-        android:translationY="-25dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/fondo1" />
-
-    <!--Fin fondo-->
+        app:srcCompat="@drawable/fondo2" />
 
     <View
-        android:id="@+id/vFondoColor"
+        android:id="@+id/v_fondo_color"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/degradado_mascara"
@@ -32,8 +30,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!--Fin fondo-->
+
+    <ImageView
+        android:id="@+id/iv_imagen_logo"
+        android:layout_width="200dp"
+        android:layout_height="107dp"
+        android:layout_marginTop="48dp"
+        android:contentDescription="@string/imagen_fondo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo2" />
+
     <View
-        android:id="@+id/form_background"
+        android:id="@+id/v_form_background"
         android:layout_width="338dp"
         android:layout_height="416dp"
         android:layout_marginStart="32dp"
@@ -55,58 +66,61 @@
         android:text="@string/bienvenido"
         android:textAlignment="center"
         android:textColor="@color/green"
+        android:textColorHint="@color/black"
         android:textSize="14sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/form_background"
+        app:layout_constraintEnd_toEndOf="@+id/v_form_background"
         app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="@+id/form_background"
-        app:layout_constraintTop_toTopOf="@+id/form_background" />
-
-
-    <!--   reeeeeeeeevisar!!!     -->
-
+        app:layout_constraintStart_toStartOf="@+id/v_form_background"
+        app:layout_constraintTop_toTopOf="@+id/v_form_background" />
 
     <EditText
-        android:id="@+id/campo_correo"
+        android:id="@+id/et_campo_correo"
         android:layout_width="260dp"
-        android:layout_height="44dp"
+        android:layout_height="48dp"
         android:layout_marginTop="28dp"
+        android:autofillHints="emailAddress"
         android:backgroundTint="@color/green"
         android:fontFamily="@font/alata"
         android:hint="@string/correo_electronico"
         android:inputType="textEmailAddress"
-        android:textColor="@color/grey"
-        app:layout_constraintEnd_toEndOf="@+id/form_background"
-        app:layout_constraintHorizontal_bias="0.513"
-        app:layout_constraintStart_toStartOf="@+id/form_background"
+        android:textColor="@color/black"
+        android:textColorHint="@color/grisOscuro"
+        app:layout_constraintEnd_toEndOf="@+id/v_form_background"
+        app:layout_constraintStart_toStartOf="@+id/v_form_background"
         app:layout_constraintTop_toBottomOf="@+id/tv_welcome" />
 
     <EditText
-        android:id="@+id/campo_contrasena"
+        android:id="@+id/et_campo_contrasena"
         android:layout_width="260dp"
-        android:layout_height="44dp"
+        android:layout_height="48dp"
         android:layout_marginTop="8dp"
+        android:autofillHints="password"
         android:backgroundTint="@color/green"
-        android:ems="10"
         android:fontFamily="@font/alata"
         android:hint="@string/contrasena"
         android:inputType="textPassword"
-        android:textColor="@color/grey"
-        app:layout_constraintEnd_toEndOf="@+id/form_background"
+        android:textColor="@color/black"
+        android:textColorHint="@color/grisOscuro"
+        app:layout_constraintEnd_toEndOf="@+id/v_form_background"
         app:layout_constraintHorizontal_bias="0.513"
-        app:layout_constraintStart_toStartOf="@+id/form_background"
-        app:layout_constraintTop_toBottomOf="@+id/campo_correo" />
+        app:layout_constraintStart_toStartOf="@+id/v_form_background"
+        app:layout_constraintTop_toBottomOf="@+id/et_campo_correo" />
 
-    <ImageView
-        android:id="@+id/imagen_logo"
-        android:layout_width="200dp"
-        android:layout_height="107dp"
-        android:layout_marginTop="48dp"
-        android:contentDescription="@string/imagen_fondo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo2" />
+    <TextView
+        android:id="@+id/tv_contrasena_olv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/alata"
+        android:text="@string/contrasena_olvidada"
+        android:textAlignment="center"
+        android:textColor="@color/green"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/v_form_background"
+        app:layout_constraintHorizontal_bias="0.797"
+        app:layout_constraintStart_toStartOf="@+id/v_form_background"
+        app:layout_constraintTop_toBottomOf="@+id/et_campo_contrasena" />
 
     <Button
         android:id="@+id/btn_inicio_sesion"
@@ -119,27 +133,12 @@
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/form_background"
-        app:layout_constraintStart_toStartOf="@+id/form_background"
+        app:layout_constraintEnd_toEndOf="@+id/v_form_background"
+        app:layout_constraintStart_toStartOf="@+id/v_form_background"
         app:layout_constraintTop_toBottomOf="@+id/tv_contrasena_olv" />
 
-    <TextView
-        android:id="@+id/tv_contrasena_olv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:fontFamily="@font/alata"
-        android:text="@string/contrasena_olvidada"
-        android:textAlignment="center"
-        android:textColor="@color/green"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="@+id/form_background"
-        app:layout_constraintHorizontal_bias="0.797"
-        app:layout_constraintStart_toStartOf="@+id/form_background"
-        app:layout_constraintTop_toBottomOf="@+id/campo_contrasena" />
-
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/bt_google"
+        android:id="@+id/btn_google"
         android:layout_width="260dp"
         android:layout_height="48dp"
         android:layout_marginTop="16dp"
@@ -150,12 +149,11 @@
         android:textSize="14sp"
         app:icon="@drawable/logogoogle"
         app:iconTint="@null"
-        app:layout_constraintEnd_toEndOf="@+id/form_background"
-        app:layout_constraintStart_toStartOf="@+id/form_background"
+        app:layout_constraintEnd_toEndOf="@+id/v_form_background"
+        app:layout_constraintStart_toStartOf="@+id/v_form_background"
         app:layout_constraintTop_toBottomOf="@+id/btn_inicio_sesion"
         app:strokeColor="@color/green"
         app:strokeWidth="2dp" />
-
 
     <TextView
         android:id="@+id/tv_register"
@@ -167,9 +165,9 @@
         android:textAlignment="center"
         android:textColor="@color/green"
         android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="@+id/form_background"
-        app:layout_constraintStart_toStartOf="@+id/form_background"
-        app:layout_constraintTop_toBottomOf="@+id/bt_google" />
+        app:layout_constraintEnd_toEndOf="@+id/v_form_background"
+        app:layout_constraintStart_toStartOf="@+id/v_form_background"
+        app:layout_constraintTop_toBottomOf="@+id/btn_google" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

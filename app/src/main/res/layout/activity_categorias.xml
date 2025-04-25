@@ -5,28 +5,32 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="781dp"
-        android:layout_height="1089dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.558"
-        app:srcCompat="@drawable/fondo1cc" />
+    <!--    Inicio fondo -->
 
     <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="486dp"
-        android:layout_height="893dp"
+        android:id="@+id/iv_fondo_imagen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/imagen_fondo"
+        android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/degradado_mascara" />
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/fondo2" />
+
+    <View
+        android:id="@+id/v_fondo_color"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/degradado_mascara"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--Fin fondo-->
 
     <!-- Inicio Header -->
 
@@ -83,257 +87,414 @@
     <!-- Fin Header -->
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tv_categorias"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="155dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="144dp"
+        android:layout_marginTop="16dp"
         android:fontFamily="@font/alata"
-        android:text="Categorias"
+        android:text="@string/categorias"
         android:textColor="@color/green"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/iv_main_logo" />
 
-    <EditText
-        android:id="@+id/editTextText"
-        android:layout_width="343dp"
-        android:layout_height="45dp"
-        android:layout_marginEnd="222dp"
-        android:layout_marginBottom="448dp"
-        android:ems="10"
-        android:fontFamily="@font/alata"
-        android:inputType="text"
-        android:text="Maquillaje"
-        android:textColor="@color/green"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
-        app:layout_constraintHorizontal_bias="1.0"
+    <!--    Categoria Maquillaje -->
+
+    <!--    Contenido Maquillaje -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_category_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="464dp"
+        android:background="@android:color/transparent"
+        android:paddingHorizontal="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.38" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_categorias"
+        app:layout_constraintVertical_bias="0.365">
 
-    <EditText
-        android:id="@+id/editTextText3"
-        android:layout_width="340dp"
-        android:layout_height="42dp"
-        android:layout_marginStart="219dp"
-        android:layout_marginTop="96dp"
-        android:layout_marginEnd="36dp"
-        android:ems="10"
-        android:fontFamily="@font/alata"
-        android:inputType="text"
-        android:text="Cuidados Diarios"
-        android:textColor="@color/green"
-        android:textStyle="bold"
+        <TextView
+            android:id="@+id/tv_maquillaje"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/alata"
+            android:padding="2dp"
+            android:text="@string/maquillaje"
+            android:textColor="@color/green"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <ImageView
+            android:id="@+id/btn_plus_1"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:contentDescription="@string/icono_mas"
+            android:src="@drawable/ic_arrow_right"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/green" />
+
+        <View
+            android:id="@+id/v_linea_1"
+            android:layout_width="wrap_content"
+            android:layout_height="2dp"
+            android:background="@color/green"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_category_products_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="200dp"
+        android:background="@android:color/transparent"
+        android:paddingHorizontal="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cl_category_1"
+        app:layout_constraintVertical_bias="0.0">
 
-    <EditText
-        android:id="@+id/editTextText4"
-        android:layout_width="337dp"
-        android:layout_height="43dp"
-        android:layout_marginStart="237dp"
-        android:layout_marginTop="108dp"
-        android:layout_marginEnd="36dp"
-        android:ems="10"
-        android:fontFamily="@font/alata"
-        android:inputType="text"
-        android:text="Fragancias"
-        android:textColor="@color/green"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText3" />
+        <TextView
+            android:id="@+id/tv_c1_p1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/alata"
+            android:text="@string/labial_hidratante"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tv_item_category_1"
-        android:layout_width="113dp"
-        android:layout_height="25dp"
-        android:layout_marginStart="219dp"
+        <TextView
+            android:id="@+id/tv_c1_p2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/alata"
+            android:text="@string/labial_hidratante"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_c1_p1" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <!--    Categoria Cuidados Diarios -->
+
+    <!--    Contenido Cuidados Diarios -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_category_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="264dp"
-        android:fontFamily="@font/alata"
-        android:text="Labial Hidratante"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText" />
+        android:background="@android:color/transparent"
+        android:paddingHorizontal="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/cl_category_products_1">
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="119dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="219dp"
-        android:layout_marginTop="24dp"
-        android:fontFamily="@font/alata"
-        android:text="Balsamo Labial"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="@+id/tv_item_category_1" />
+        <TextView
+            android:id="@+id/tv_cuidados_diarios"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/alata"
+            android:padding="2dp"
+            android:text="@string/cuidados_diarios"
+            android:textColor="@color/green"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
+        <ImageView
+            android:id="@+id/btn_plus_2"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:contentDescription="@string/icono_mas"
+            android:src="@drawable/ic_arrow_right"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/green" />
+
+        <View
+            android:id="@+id/v_linea_2"
+            android:layout_width="wrap_content"
+            android:layout_height="2dp"
+            android:background="@color/green"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_category_products_2"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="219dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="300dp"
-        android:fontFamily="@font/alata"
-        android:text="Gloss Labial"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.333"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/tv_item_category_1" />
+        android:background="@android:color/transparent"
+        android:paddingHorizontal="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/cl_category_2"
+        tools:layout_editor_absoluteX="16dp">
 
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="223dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="332dp"
-        android:fontFamily="@font/alata"
-        android:text="Jabon"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText3" />
+        <TextView
+            android:id="@+id/tv_c2_p1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/alata"
+            android:text="@string/labial_hidratante"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="224dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="308dp"
-        android:fontFamily="@font/alata"
-        android:text="Exfoliante"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="@+id/textView5" />
+        <TextView
+            android:id="@+id/tv_c2_p2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/alata"
+            android:text="@string/labial_hidratante"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_c2_p1" />
 
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="84dp"
-        android:layout_height="25dp"
-        android:layout_marginStart="225dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="288dp"
-        android:fontFamily="@font/alata"
-        android:text="Desodorante"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="@+id/textView6" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="136dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="79dp"
-        android:layout_marginEnd="236dp"
-        android:fontFamily="@font/alata"
-        android:text="Barrera Solar Mineral"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/imageView2"
-        app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="20dp" />
+    <!--    <EditText-->
+    <!--        android:id="@+id/editTextText3"-->
+    <!--        android:layout_width="340dp"-->
+    <!--        android:layout_height="42dp"-->
+    <!--        android:layout_marginStart="219dp"-->
+    <!--        android:layout_marginTop="96dp"-->
+    <!--        android:layout_marginEnd="36dp"-->
+    <!--        android:ems="10"-->
+    <!--        android:fontFamily="@font/alata"-->
+    <!--        android:inputType="text"-->
+    <!--        android:text="Cuidados Diarios"-->
+    <!--        android:textColor="@color/green"-->
+    <!--        android:textStyle="bold"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="0.0"-->
+    <!--        app:layout_constraintStart_toStartOf="@+id/imageView"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/editTextText" />-->
 
-    <TextView
-        android:id="@+id/textView10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="225dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="276dp"
-        android:fontFamily="@font/alata"
-        android:text="Eau De Toilette"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText4" />
+    <!--    <EditText-->
+    <!--        android:id="@+id/editTextText4"-->
+    <!--        android:layout_width="337dp"-->
+    <!--        android:layout_height="43dp"-->
+    <!--        android:layout_marginStart="237dp"-->
+    <!--        android:layout_marginTop="108dp"-->
+    <!--        android:layout_marginEnd="36dp"-->
+    <!--        android:ems="10"-->
+    <!--        android:fontFamily="@font/alata"-->
+    <!--        android:inputType="text"-->
+    <!--        android:text="Fragancias"-->
+    <!--        android:textColor="@color/green"-->
+    <!--        android:textStyle="bold"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="1.0"-->
+    <!--        app:layout_constraintStart_toStartOf="@+id/imageView"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/editTextText3" />-->
 
-    <TextView
-        android:id="@+id/textView11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="79dp"
-        android:layout_marginEnd="276dp"
-        android:fontFamily="@font/alata"
-        android:text="Eau de perfum"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/imageView2"
-        app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="79dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="316dp"
-        android:fontFamily="@font/alata"
-        android:text="Perfume"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/imageView2"
-        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+    <!--    <TextView-->
+    <!--        android:id="@+id/textView3"-->
+    <!--        android:layout_width="119dp"-->
+    <!--        android:layout_height="20dp"-->
+    <!--        android:layout_marginStart="219dp"-->
+    <!--        android:layout_marginTop="24dp"-->
+    <!--        android:fontFamily="@font/alata"-->
+    <!--        android:text="Balsamo Labial"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="0.0"-->
+    <!--        app:layout_constraintStart_toStartOf="@+id/imageView"-->
+    <!--        app:layout_constraintTop_toTopOf="@+id/tv_item_category_1" />-->
 
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="31dp"
-        android:layout_height="26dp"
-        android:layout_marginStart="305dp"
-        android:layout_marginTop="7dp"
-        android:layout_marginEnd="7dp"
-        app:layout_constraintEnd_toEndOf="@+id/editTextText"
-        app:layout_constraintStart_toStartOf="@+id/editTextText"
-        app:layout_constraintTop_toTopOf="@+id/editTextText"
-        app:srcCompat="@drawable/icono_flecha" />
+    <!--    <TextView-->
+    <!--        android:id="@+id/textView4"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginStart="219dp"-->
+    <!--        android:layout_marginTop="20dp"-->
+    <!--        android:layout_marginEnd="300dp"-->
+    <!--        android:fontFamily="@font/alata"-->
+    <!--        android:text="Gloss Labial"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="0.333"-->
+    <!--        app:layout_constraintStart_toStartOf="@+id/imageView"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/tv_item_category_1" />-->
 
-    <ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="31dp"
-        android:layout_height="26dp"
-        android:layout_marginStart="520dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="231dp"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="@+id/editTextText3"
-        app:srcCompat="@drawable/icono_flecha" />
+    <!--    <TextView-->
+    <!--        android:id="@+id/textView5"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginStart="223dp"-->
+    <!--        android:layout_marginTop="8dp"-->
+    <!--        android:layout_marginEnd="332dp"-->
+    <!--        android:fontFamily="@font/alata"-->
+    <!--        android:text="Jabon"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="0.0"-->
+    <!--        app:layout_constraintStart_toStartOf="@+id/imageView"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/editTextText3" />-->
 
-    <ImageView
-        android:id="@+id/imageView8"
-        android:layout_width="31dp"
-        android:layout_height="26dp"
-        android:layout_marginStart="519dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="232dp"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="@+id/editTextText4"
-        app:srcCompat="@drawable/icono_flecha" />
+    <!--    <TextView-->
+    <!--        android:id="@+id/textView6"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginStart="224dp"-->
+    <!--        android:layout_marginTop="20dp"-->
+    <!--        android:layout_marginEnd="308dp"-->
+    <!--        android:fontFamily="@font/alata"-->
+    <!--        android:text="Exfoliante"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="0.0"-->
+    <!--        app:layout_constraintStart_toStartOf="@+id/imageView"-->
+    <!--        app:layout_constraintTop_toTopOf="@+id/textView5" />-->
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/textView7"-->
+    <!--        android:layout_width="84dp"-->
+    <!--        android:layout_height="25dp"-->
+    <!--        android:layout_marginStart="225dp"-->
+    <!--        android:layout_marginTop="24dp"-->
+    <!--        android:layout_marginEnd="288dp"-->
+    <!--        android:fontFamily="@font/alata"-->
+    <!--        android:text="Desodorante"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="1.0"-->
+    <!--        app:layout_constraintStart_toStartOf="@+id/imageView"-->
+    <!--        app:layout_constraintTop_toTopOf="@+id/textView6" />-->
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/textView9"-->
+    <!--        android:layout_width="136dp"-->
+    <!--        android:layout_height="20dp"-->
+    <!--        android:layout_marginStart="79dp"-->
+    <!--        android:layout_marginEnd="236dp"-->
+    <!--        android:fontFamily="@font/alata"-->
+    <!--        android:text="Barrera Solar Mineral"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="1.0"-->
+    <!--        app:layout_constraintStart_toStartOf="@+id/imageView2"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/textView7" />-->
+
+    <!--    <androidx.constraintlayout.widget.Guideline-->
+    <!--        android:id="@+id/guideline"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:orientation="vertical"-->
+    <!--        app:layout_constraintGuide_begin="20dp" />-->
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/textView10"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginStart="225dp"-->
+    <!--        android:layout_marginTop="8dp"-->
+    <!--        android:layout_marginEnd="276dp"-->
+    <!--        android:fontFamily="@font/alata"-->
+    <!--        android:text="Eau De Toilette"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="0.0"-->
+    <!--        app:layout_constraintStart_toStartOf="@+id/imageView"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/editTextText4" />-->
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/textView11"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginStart="79dp"-->
+    <!--        android:layout_marginEnd="276dp"-->
+    <!--        android:fontFamily="@font/alata"-->
+    <!--        android:text="Eau de perfum"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="0.0"-->
+    <!--        app:layout_constraintStart_toStartOf="@+id/imageView2"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/textView10" />-->
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/textView8"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginStart="79dp"-->
+    <!--        android:layout_marginTop="20dp"-->
+    <!--        android:layout_marginEnd="316dp"-->
+    <!--        android:fontFamily="@font/alata"-->
+    <!--        android:text="Perfume"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="0.0"-->
+    <!--        app:layout_constraintStart_toStartOf="@+id/imageView2"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/textView10" />-->
+
+    <!--    <ImageView-->
+    <!--        android:id="@+id/imageView5"-->
+    <!--        android:layout_width="31dp"-->
+    <!--        android:layout_height="26dp"-->
+    <!--        android:layout_marginStart="305dp"-->
+    <!--        android:layout_marginTop="7dp"-->
+    <!--        android:layout_marginEnd="7dp"-->
+    <!--        app:layout_constraintEnd_toEndOf="@+id/editTextText"-->
+    <!--        app:layout_constraintStart_toStartOf="@+id/editTextText"-->
+    <!--        app:layout_constraintTop_toTopOf="@+id/editTextText"-->
+    <!--        app:srcCompat="@drawable/icono_flecha" />-->
+
+    <!--    <ImageView-->
+    <!--        android:id="@+id/imageView7"-->
+    <!--        android:layout_width="31dp"-->
+    <!--        android:layout_height="26dp"-->
+    <!--        android:layout_marginStart="520dp"-->
+    <!--        android:layout_marginTop="4dp"-->
+    <!--        android:layout_marginEnd="231dp"-->
+    <!--        app:layout_constraintEnd_toEndOf="@+id/imageView"-->
+    <!--        app:layout_constraintHorizontal_bias="0.0"-->
+    <!--        app:layout_constraintStart_toStartOf="@+id/imageView"-->
+    <!--        app:layout_constraintTop_toTopOf="@+id/editTextText3"-->
+    <!--        app:srcCompat="@drawable/icono_flecha" />-->
+
+    <!--    <ImageView-->
+    <!--        android:id="@+id/imageView8"-->
+    <!--        android:layout_width="31dp"-->
+    <!--        android:layout_height="26dp"-->
+    <!--        android:layout_marginStart="519dp"-->
+    <!--        android:layout_marginTop="4dp"-->
+    <!--        android:layout_marginEnd="232dp"-->
+    <!--        app:layout_constraintEnd_toEndOf="@+id/imageView"-->
+    <!--        app:layout_constraintHorizontal_bias="0.0"-->
+    <!--        app:layout_constraintStart_toStartOf="@+id/imageView"-->
+    <!--        app:layout_constraintTop_toTopOf="@+id/editTextText4"-->
+    <!--        app:srcCompat="@drawable/icono_flecha" />-->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

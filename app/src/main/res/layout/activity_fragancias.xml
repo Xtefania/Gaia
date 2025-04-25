@@ -5,29 +5,32 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="781dp"
-        android:layout_height="1089dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.475"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.525"
-        app:srcCompat="@drawable/fondo1cc" />
+    <!--    Inicio fondo -->
 
     <ImageView
-        android:id="@+id/imageView12"
-        android:layout_width="418dp"
-        android:layout_height="740dp"
+        android:id="@+id/iv_fondo_imagen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/imagen_fondo"
+        android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/degradado_mascara" />
+        app:srcCompat="@drawable/fondo2" />
+
+    <View
+        android:id="@+id/v_fondo_color"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/degradado_mascara"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--Fin fondo-->
 
     <!-- Inicio Header -->
 
@@ -39,14 +42,14 @@
         android:layout_marginTop="45dp"
         android:contentDescription="@string/icono_menu"
         android:src="@drawable/ic_menu_lines"
-        app:layout_constraintEnd_toStartOf="@+id/img_main_logo"
+        app:layout_constraintEnd_toStartOf="@+id/iv_main_logo"
         app:layout_constraintHorizontal_bias="0.1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:tint="@color/green" />
 
     <ImageView
-        android:id="@+id/img_main_logo"
+        android:id="@+id/iv_main_logo"
         android:layout_width="140dp"
         android:layout_height="110dp"
         android:layout_marginTop="4dp"
@@ -64,7 +67,7 @@
         android:layout_marginTop="45dp"
         android:contentDescription="@string/icono_locacion"
         android:src="@drawable/ic_location_pin"
-        app:layout_constraintStart_toEndOf="@+id/img_main_logo"
+        app:layout_constraintStart_toEndOf="@+id/iv_main_logo"
         app:layout_constraintTop_toTopOf="parent"
         app:tint="@color/green" />
 
@@ -84,253 +87,522 @@
     <!-- Fin Header -->
 
     <TextView
-        android:id="@+id/textView13"
+        android:id="@+id/tv_titulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:layout_marginBottom="755dp"
+        android:layout_marginTop="16dp"
         android:fontFamily="@font/alata"
-        android:text="Fragancias"
+        android:text="@string/fragancias"
+        android:textColor="@color/green"
         android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView12" />
+        app:layout_constraintTop_toBottomOf="@+id/iv_main_logo" />
 
 
-    <ImageView
-        android:id="@+id/iv_product_1"
-        android:layout_width="103dp"
-        android:layout_height="149dp"
-        android:layout_marginStart="58dp"
-        android:layout_marginTop="166dp"
-        android:layout_marginEnd="268dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView28"
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.058"
-        app:layout_constraintStart_toStartOf="@+id/imageView12"
-        app:layout_constraintTop_toTopOf="@+id/imageView12"
-        app:srcCompat="@drawable/fragancia1" />
-
-    <ImageView
-        android:id="@+id/imageView28"
-        android:layout_width="112dp"
-        android:layout_height="140dp"
-        android:layout_marginStart="61dp"
-        android:layout_marginTop="302dp"
-        android:layout_marginEnd="264dp"
-        app:layout_constraintEnd_toEndOf="@+id/imageView12"
-        app:layout_constraintStart_toStartOf="@+id/imageView12"
-        app:layout_constraintTop_toTopOf="@+id/imageView12"
-        app:srcCompat="@drawable/fragancia2" />
-
-    <ImageView
-        android:id="@+id/imageView29"
-        android:layout_width="112dp"
-        android:layout_height="174dp"
-        android:layout_marginStart="59dp"
-        android:layout_marginEnd="264dp"
-        android:layout_marginBottom="295dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/imageView12"
-        app:srcCompat="@drawable/fragancia3" />
-
-    <TextView
-        android:id="@+id/textView17"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="349dp"
-        android:layout_marginTop="207dp"
-        android:layout_marginEnd="112dp"
-        android:layout_marginBottom="504dp"
-        android:fontFamily="@font/alata"
-        android:text="Eau de Toilette Spray"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView12"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.1"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="@+id/imageView12"
-        app:layout_constraintVertical_bias="0.857" />
-
-    <TextView
-        android:id="@+id/textView25"
-        android:layout_width="37dp"
-        android:layout_height="28dp"
-        android:layout_marginStart="347dp"
-        android:layout_marginTop="231dp"
-        android:layout_marginEnd="395dp"
-        android:layout_marginBottom="480dp"
-        android:fontFamily="@font/alata"
-        android:text="50 ml"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView12"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="@+id/imageView12" />
-
-    <TextView
-        android:id="@+id/textView26"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="347dp"
-        android:layout_marginTop="255dp"
-        android:layout_marginEnd="348dp"
-        android:layout_marginBottom="456dp"
-        android:fontFamily="@font/alata"
-        android:text="$ 50.000,00"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView12"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="@+id/imageView12" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_titulo"
+        app:layout_constraintVertical_bias="0.3">
 
-    <TextView
-        android:id="@+id/textView27"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="345dp"
-        android:layout_marginTop="529dp"
-        android:layout_marginEnd="341dp"
-        android:layout_marginBottom="539dp"
-        android:fontFamily="@font/alata"
-        android:text="Eau da Parfum"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="@+id/imageView" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="40dp">
 
-    <TextView
-        android:id="@+id/textView30"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="345dp"
-        android:layout_marginTop="529dp"
-        android:layout_marginEnd="341dp"
-        android:layout_marginBottom="539dp"
-        android:fontFamily="@font/alata"
-        android:text="Eau da Parfum"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
-        app:layout_constraintVertical_bias="1.0" />
+            <!-- Producto 1 -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_producto_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:background="@android:color/transparent"
+                android:paddingHorizontal="20dp">
 
-    <TextView
-        android:id="@+id/textView28"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="160dp"
-        android:layout_marginTop="376dp"
-        android:layout_marginEnd="162dp"
-        android:layout_marginBottom="494dp"
-        android:fontFamily="@font/alata"
-        android:text="$ 90.000.00"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="@+id/imageView12"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/imageView12"
-        app:layout_constraintTop_toTopOf="@+id/imageView12" />
+                <ImageView
+                    android:id="@+id/iv_imagen_producto_1"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:contentDescription="@string/imagen_producto"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:srcCompat="@drawable/fragancia1" />
 
-    <TextView
-        android:id="@+id/textView29"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="161dp"
-        android:layout_marginTop="354dp"
-        android:layout_marginEnd="210dp"
-        android:layout_marginBottom="516dp"
-        android:fontFamily="@font/alata"
-        android:text="75 ml"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="@+id/imageView12"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/imageView12"
-        app:layout_constraintTop_toTopOf="@+id/imageView12" />
+                <TextView
+                    android:id="@+id/tv_titulo_producto_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/alata"
+                    android:text="@string/eau_de_toilette_spray"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.302"
+                    app:layout_constraintStart_toEndOf="@+id/iv_imagen_producto_1"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView31"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="348dp"
-        android:layout_marginTop="702dp"
-        android:layout_marginEnd="394dp"
-        android:layout_marginBottom="207dp"
-        android:fontFamily="@font/alata"
-        android:text="50 ml"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView12"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="@+id/imageView" />
+                <TextView
+                    android:id="@+id/tv_cantidad_producto_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/alata"
+                    android:text="@string/_50_ml"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.132"
+                    app:layout_constraintStart_toEndOf="@+id/iv_imagen_producto_1"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_titulo_producto_1" />
 
-    <TextView
-        android:id="@+id/textView33"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="346dp"
-        android:layout_marginTop="724dp"
-        android:layout_marginEnd="344dp"
-        android:layout_marginBottom="185dp"
-        android:fontFamily="@font/alata"
-        android:text="$ 190.000.00"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView12"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="@+id/imageView" />
+                <TextView
+                    android:id="@+id/tv_precio_producto_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/alata"
+                    android:text="@string/_50_000"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.154"
+                    app:layout_constraintStart_toEndOf="@+id/iv_imagen_producto_1"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_cantidad_producto_1" />
 
-    <TextView
-        android:id="@+id/textView32"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="348dp"
-        android:layout_marginTop="680dp"
-        android:layout_marginEnd="379dp"
-        android:layout_marginBottom="229dp"
-        android:fontFamily="@font/alata"
-        android:text="Perfume"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView12"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="@+id/imageView" />
+                <View
+                    android:id="@+id/v_linea_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/grisOscuro"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_imagen_producto_1" />
 
-    <EditText
-        android:id="@+id/editTextTextMultiLine"
-        android:layout_width="335dp"
-        android:layout_height="51dp"
-        android:layout_marginStart="221dp"
-        android:layout_marginTop="464dp"
-        android:layout_marginEnd="212dp"
-        android:layout_marginBottom="428dp"
-        android:ems="10"
-        android:gravity="start|top"
-        android:inputType="textMultiLine"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView12"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="@+id/imageView" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <EditText
-        android:id="@+id/editTextTextMultiLine2"
-        android:layout_width="336dp"
-        android:layout_height="46dp"
-        android:layout_marginStart="38dp"
-        android:layout_marginTop="424dp"
-        android:layout_marginEnd="34dp"
-        android:layout_marginBottom="440dp"
-        android:ems="10"
-        android:gravity="start|top"
-        android:inputType="textMultiLine"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="@+id/imageView12"
-        app:layout_constraintStart_toStartOf="@+id/imageView12"
-        app:layout_constraintTop_toTopOf="@+id/imageView12" />
+            <!-- Producto 2 -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_producto_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:background="@android:color/transparent"
+                android:paddingHorizontal="20dp">
+
+                <ImageView
+                    android:id="@+id/iv_imagen_producto_2"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:contentDescription="@string/imagen_producto"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:srcCompat="@drawable/fragancia1" />
+
+                <TextView
+                    android:id="@+id/tv_titulo_producto_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/alata"
+                    android:text="@string/eau_de_toilette_spray"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.302"
+                    app:layout_constraintStart_toEndOf="@+id/iv_imagen_producto_2"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_cantidad_producto_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/alata"
+                    android:text="@string/_50_ml"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.132"
+                    app:layout_constraintStart_toEndOf="@+id/iv_imagen_producto_2"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_titulo_producto_2" />
+
+                <TextView
+                    android:id="@+id/tv_precio_producto_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/alata"
+                    android:text="@string/_50_000"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.154"
+                    app:layout_constraintStart_toEndOf="@+id/iv_imagen_producto_2"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_cantidad_producto_2" />
+
+                <View
+                    android:id="@+id/v_linea_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/grisOscuro"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_imagen_producto_2" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Producto 3 -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_producto_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:background="@android:color/transparent"
+                android:paddingHorizontal="20dp">
+
+                <ImageView
+                    android:id="@+id/iv_imagen_producto_3"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:contentDescription="@string/imagen_producto"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:srcCompat="@drawable/fragancia1" />
+
+                <TextView
+                    android:id="@+id/tv_titulo_producto_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/alata"
+                    android:text="@string/eau_de_toilette_spray"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.302"
+                    app:layout_constraintStart_toEndOf="@+id/iv_imagen_producto_3"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_cantidad_producto_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/alata"
+                    android:text="@string/_50_ml"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.132"
+                    app:layout_constraintStart_toEndOf="@+id/iv_imagen_producto_3"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_titulo_producto_3" />
+
+                <TextView
+                    android:id="@+id/tv_precio_producto_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/alata"
+                    android:text="@string/_50_000"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.154"
+                    app:layout_constraintStart_toEndOf="@+id/iv_imagen_producto_3"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_cantidad_producto_3" />
+
+                <View
+                    android:id="@+id/v_linea_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/grisOscuro"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_imagen_producto_3" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Producto 4 -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_producto_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:background="@android:color/transparent"
+                android:paddingHorizontal="20dp">
+
+                <ImageView
+                    android:id="@+id/iv_imagen_producto_4"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:contentDescription="@string/imagen_producto"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:srcCompat="@drawable/fragancia1" />
+
+                <TextView
+                    android:id="@+id/tv_titulo_producto_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/alata"
+                    android:text="@string/eau_de_toilette_spray"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.302"
+                    app:layout_constraintStart_toEndOf="@+id/iv_imagen_producto_4"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_cantidad_producto_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/alata"
+                    android:text="@string/_50_ml"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.132"
+                    app:layout_constraintStart_toEndOf="@+id/iv_imagen_producto_4"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_titulo_producto_4" />
+
+                <TextView
+                    android:id="@+id/tv_precio_producto_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/alata"
+                    android:text="@string/_50_000"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.154"
+                    app:layout_constraintStart_toEndOf="@+id/iv_imagen_producto_4"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_cantidad_producto_4" />
+
+                <View
+                    android:id="@+id/v_linea_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/grisOscuro"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_imagen_producto_4" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+    <!--    <ImageView-->
+    <!--        android:id="@+id/imageView28"-->
+    <!--        android:layout_width="112dp"-->
+    <!--        android:layout_height="140dp"-->
+    <!--        android:layout_marginStart="61dp"-->
+    <!--        android:layout_marginTop="302dp"-->
+    <!--        android:layout_marginEnd="264dp"-->
+    <!--        app:layout_constraintEnd_toEndOf="@+id/imageView12"-->
+    <!--        app:layout_constraintStart_toStartOf="@+id/imageView12"-->
+    <!--        app:layout_constraintTop_toTopOf="@+id/imageView12"-->
+    <!--        app:srcCompat="@drawable/fragancia2" />-->
+
+    <!--    <ImageView-->
+    <!--        android:id="@+id/imageView29"-->
+    <!--        android:layout_width="112dp"-->
+    <!--        android:layout_height="174dp"-->
+    <!--        android:layout_marginStart="59dp"-->
+    <!--        android:layout_marginEnd="264dp"-->
+    <!--        android:layout_marginBottom="295dp"-->
+    <!--        app:layout_constraintBottom_toBottomOf="@+id/imageView"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="@+id/imageView12"-->
+    <!--        app:srcCompat="@drawable/fragancia3" />-->
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/textView17"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginStart="349dp"-->
+    <!--        android:layout_marginTop="207dp"-->
+    <!--        android:layout_marginEnd="112dp"-->
+    <!--        android:layout_marginBottom="504dp"-->
+    <!--        android:fontFamily="@font/alata"-->
+    <!--        android:text="Eau de Toilette Spray"-->
+    <!--        android:textStyle="bold"-->
+    <!--        app:layout_constraintBottom_toBottomOf="@+id/imageView12"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="0.1"-->
+    <!--        app:layout_constraintStart_toStartOf="@+id/imageView"-->
+    <!--        app:layout_constraintTop_toTopOf="@+id/imageView12"-->
+    <!--        app:layout_constraintVertical_bias="0.857" />-->
+
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/textView26"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginStart="347dp"-->
+    <!--        android:layout_marginTop="255dp"-->
+    <!--        android:layout_marginEnd="348dp"-->
+    <!--        android:layout_marginBottom="456dp"-->
+    <!--        android:fontFamily="@font/alata"-->
+    <!--        android:text="$ 50.000,00"-->
+    <!--        app:layout_constraintBottom_toBottomOf="@+id/imageView12"-->
+    <!--        app:layout_constraintEnd_toEndOf="@+id/imageView"-->
+    <!--        app:layout_constraintHorizontal_bias="0.0"-->
+    <!--        app:layout_constraintStart_toStartOf="@+id/imageView"-->
+    <!--        app:layout_constraintTop_toTopOf="@+id/imageView12" />-->
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/textView27"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginStart="345dp"-->
+    <!--        android:layout_marginTop="529dp"-->
+    <!--        android:layout_marginEnd="341dp"-->
+    <!--        android:layout_marginBottom="539dp"-->
+    <!--        android:fontFamily="@font/alata"-->
+    <!--        android:text="Eau da Parfum"-->
+    <!--        android:textStyle="bold"-->
+    <!--        app:layout_constraintBottom_toBottomOf="@+id/imageView"-->
+    <!--        app:layout_constraintEnd_toEndOf="@+id/imageView"-->
+    <!--        app:layout_constraintStart_toStartOf="@+id/imageView"-->
+    <!--        app:layout_constraintTop_toTopOf="@+id/imageView" />-->
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/textView30"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginStart="345dp"-->
+    <!--        android:layout_marginTop="529dp"-->
+    <!--        android:layout_marginEnd="341dp"-->
+    <!--        android:layout_marginBottom="539dp"-->
+    <!--        android:fontFamily="@font/alata"-->
+    <!--        android:text="Eau da Parfum"-->
+    <!--        android:textStyle="bold"-->
+    <!--        app:layout_constraintBottom_toBottomOf="@+id/imageView"-->
+    <!--        app:layout_constraintEnd_toEndOf="@+id/imageView"-->
+    <!--        app:layout_constraintHorizontal_bias="1.0"-->
+    <!--        app:layout_constraintStart_toStartOf="@+id/imageView"-->
+    <!--        app:layout_constraintTop_toTopOf="@+id/imageView"-->
+    <!--        app:layout_constraintVertical_bias="1.0" />-->
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/textView28"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginStart="160dp"-->
+    <!--        android:layout_marginTop="376dp"-->
+    <!--        android:layout_marginEnd="162dp"-->
+    <!--        android:layout_marginBottom="494dp"-->
+    <!--        android:fontFamily="@font/alata"-->
+    <!--        android:text="$ 90.000.00"-->
+    <!--        app:layout_constraintBottom_toBottomOf="@+id/imageView"-->
+    <!--        app:layout_constraintEnd_toEndOf="@+id/imageView12"-->
+    <!--        app:layout_constraintHorizontal_bias="1.0"-->
+    <!--        app:layout_constraintStart_toStartOf="@+id/imageView12"-->
+    <!--        app:layout_constraintTop_toTopOf="@+id/imageView12" />-->
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/textView29"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginStart="161dp"-->
+    <!--        android:layout_marginTop="354dp"-->
+    <!--        android:layout_marginEnd="210dp"-->
+    <!--        android:layout_marginBottom="516dp"-->
+    <!--        android:fontFamily="@font/alata"-->
+    <!--        android:text="75 ml"-->
+    <!--        app:layout_constraintBottom_toBottomOf="@+id/imageView"-->
+    <!--        app:layout_constraintEnd_toEndOf="@+id/imageView12"-->
+    <!--        app:layout_constraintHorizontal_bias="1.0"-->
+    <!--        app:layout_constraintStart_toStartOf="@+id/imageView12"-->
+    <!--        app:layout_constraintTop_toTopOf="@+id/imageView12" />-->
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/textView31"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginStart="348dp"-->
+    <!--        android:layout_marginTop="702dp"-->
+    <!--        android:layout_marginEnd="394dp"-->
+    <!--        android:layout_marginBottom="207dp"-->
+    <!--        android:fontFamily="@font/alata"-->
+    <!--        android:text="50 ml"-->
+    <!--        app:layout_constraintBottom_toBottomOf="@+id/imageView12"-->
+    <!--        app:layout_constraintEnd_toEndOf="@+id/imageView"-->
+    <!--        app:layout_constraintStart_toStartOf="@+id/imageView"-->
+    <!--        app:layout_constraintTop_toTopOf="@+id/imageView" />-->
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/textView33"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginStart="346dp"-->
+    <!--        android:layout_marginTop="724dp"-->
+    <!--        android:layout_marginEnd="344dp"-->
+    <!--        android:layout_marginBottom="185dp"-->
+    <!--        android:fontFamily="@font/alata"-->
+    <!--        android:text="$ 190.000.00"-->
+    <!--        app:layout_constraintBottom_toBottomOf="@+id/imageView12"-->
+    <!--        app:layout_constraintEnd_toEndOf="@+id/imageView"-->
+    <!--        app:layout_constraintStart_toStartOf="@+id/imageView"-->
+    <!--        app:layout_constraintTop_toTopOf="@+id/imageView" />-->
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/textView32"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginStart="348dp"-->
+    <!--        android:layout_marginTop="680dp"-->
+    <!--        android:layout_marginEnd="379dp"-->
+    <!--        android:layout_marginBottom="229dp"-->
+    <!--        android:fontFamily="@font/alata"-->
+    <!--        android:text="Perfume"-->
+    <!--        android:textStyle="bold"-->
+    <!--        app:layout_constraintBottom_toBottomOf="@+id/imageView12"-->
+    <!--        app:layout_constraintEnd_toEndOf="@+id/imageView"-->
+    <!--        app:layout_constraintStart_toStartOf="@+id/imageView"-->
+    <!--        app:layout_constraintTop_toTopOf="@+id/imageView" />-->
+
+    <!--    <EditText-->
+    <!--        android:id="@+id/editTextTextMultiLine"-->
+    <!--        android:layout_width="335dp"-->
+    <!--        android:layout_height="51dp"-->
+    <!--        android:layout_marginStart="221dp"-->
+    <!--        android:layout_marginTop="464dp"-->
+    <!--        android:layout_marginEnd="212dp"-->
+    <!--        android:layout_marginBottom="428dp"-->
+    <!--        android:ems="10"-->
+    <!--        android:gravity="start|top"-->
+    <!--        android:inputType="textMultiLine"-->
+    <!--        app:layout_constraintBottom_toBottomOf="@+id/imageView12"-->
+    <!--        app:layout_constraintEnd_toEndOf="@+id/imageView"-->
+    <!--        app:layout_constraintHorizontal_bias="0.0"-->
+    <!--        app:layout_constraintStart_toStartOf="@+id/imageView"-->
+    <!--        app:layout_constraintTop_toTopOf="@+id/imageView" />-->
+
+    <!--    <EditText-->
+    <!--        android:id="@+id/editTextTextMultiLine2"-->
+    <!--        android:layout_width="336dp"-->
+    <!--        android:layout_height="46dp"-->
+    <!--        android:layout_marginStart="38dp"-->
+    <!--        android:layout_marginTop="424dp"-->
+    <!--        android:layout_marginEnd="34dp"-->
+    <!--        android:layout_marginBottom="440dp"-->
+    <!--        android:ems="10"-->
+    <!--        android:gravity="start|top"-->
+    <!--        android:inputType="textMultiLine"-->
+    <!--        app:layout_constraintBottom_toBottomOf="@+id/imageView"-->
+    <!--        app:layout_constraintEnd_toEndOf="@+id/imageView12"-->
+    <!--        app:layout_constraintStart_toStartOf="@+id/imageView12"-->
+    <!--        app:layout_constraintTop_toTopOf="@+id/imageView12" />-->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

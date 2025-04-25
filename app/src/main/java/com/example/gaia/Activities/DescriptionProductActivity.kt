@@ -25,10 +25,17 @@ class DescriptionProductActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        //  - Vista detalles intregrantes
+        //  - Vista detalles intredientes
         val cardProduct = findViewById<ImageView>(R.id.btn_plus_members)
         cardProduct.setOnClickListener {
             val intent = Intent(this, MembersProductActivity::class.java)
+            startActivity(intent)
+        }
+
+        //  - Vista carrito
+        val carrito = findViewById<ImageView>(R.id.btn_cart)
+        carrito.setOnClickListener {
+            val intent = Intent(this, CarritoActivity::class.java)
             startActivity(intent)
         }
 

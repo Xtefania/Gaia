@@ -30,6 +30,13 @@ class InfoProductActivity : AppCompatActivity() {
             val intent = Intent(this, MembersProductActivity::class.java)
             startActivity(intent)
         }
+
+        //  - Vista carrito
+        val carrito = findViewById<ImageView>(R.id.btn_cart)
+        carrito.setOnClickListener {
+            val intent = Intent(this, CarritoActivity::class.java)
+            startActivity(intent)
+        }
     }
 
 //    // Función para mostrar/ocultar el contenido

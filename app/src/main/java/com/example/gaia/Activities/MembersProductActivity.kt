@@ -22,5 +22,12 @@ class MembersProductActivity : AppCompatActivity() {
             val intent = Intent(this, DescriptionProductActivity::class.java)
             startActivity(intent)
         }
+
+        //  - Vista carrito
+        val carrito = findViewById<ImageView>(R.id.btn_cart)
+        carrito.setOnClickListener {
+            val intent = Intent(this, CarritoActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
