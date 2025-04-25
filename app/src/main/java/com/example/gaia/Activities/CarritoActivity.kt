@@ -9,7 +9,7 @@ class CarritoActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         // - Vista principal
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_carrito2)
+        setContentView(R.layout.activity_carrito)
 
         // Navegación
 
