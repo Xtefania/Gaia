@@ -18,14 +18,14 @@ class CategoriesActivity : AppCompatActivity() {
         // Navegación
 
         //  - Vista categorias de productos
-        val btnListProductsCategory = findViewById<ConstraintLayout>(R.id.cl_category_products_1)
+        val btnListProductsCategory = findViewById<TextView>(R.id.textView2)
         btnListProductsCategory.setOnClickListener {
             val intent = Intent(this, ListProductActivity::class.java)
             startActivity(intent)
         }
 
         //  - Vista carrito
-        val carrito = findViewById<ImageView>(R.id.btn_cart)
+        val carrito = findViewById<ImageView>(R.id.imageView6)
         carrito.setOnClickListener {
             val intent = Intent(this, CarritoActivity::class.java)
             startActivity(intent)
