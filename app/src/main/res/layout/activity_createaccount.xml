@@ -379,7 +379,7 @@
                     android:id="@+id/editTextGender"
                     android:layout_width="match_parent"
                     android:layout_height="46dp"
-                    android:inputType="date"
+                    android:inputType="text"
                     android:padding="8dp"
                     android:textSize="14sp" />
             </com.google.android.material.textfield.TextInputLayout>
