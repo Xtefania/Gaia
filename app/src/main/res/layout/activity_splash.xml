@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/tv_bienvenidos"
+    <ImageView
+        android:id="@+id/iv_bienvenidos"
         android:layout_width="514dp"
         android:layout_height="match_parent"
         android:background="@drawable/fondo1"
