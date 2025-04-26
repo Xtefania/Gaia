@@ -3,6 +3,7 @@ package com.example.gaia.Activities
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -32,9 +33,24 @@ class InfoProductActivity : AppCompatActivity() {
         }
 
         //  - Vista carrito
+        //  - Desde icono
         val carrito = findViewById<ImageView>(R.id.btn_cart)
         carrito.setOnClickListener {
             val intent = Intent(this, CarritoActivity::class.java)
+            startActivity(intent)
+        }
+
+        //  - Desde btn Añadir al carrito
+        val btnAnadirCarrito = findViewById<Button>(R.id.btn_anadir_carrito)
+        btnAnadirCarrito.setOnClickListener {
+            val intent = Intent(this, CarritoActivity::class.java)
+            startActivity(intent)
+        }
+
+        //  - Vista ubicación
+        val btnUbicacion = findViewById<ImageView>(R.id.btn_location)
+        btnUbicacion.setOnClickListener {
+            val intent = Intent(this, UbicacionActivity::class.java)
             startActivity(intent)
         }
     }

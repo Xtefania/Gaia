@@ -29,5 +29,12 @@ class MembersProductActivity : AppCompatActivity() {
             val intent = Intent(this, CarritoActivity::class.java)
             startActivity(intent)
         }
+
+        //  - Vista ubicación
+        val btnUbicacion = findViewById<ImageView>(R.id.btn_location)
+        btnUbicacion.setOnClickListener {
+            val intent = Intent(this, UbicacionActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
