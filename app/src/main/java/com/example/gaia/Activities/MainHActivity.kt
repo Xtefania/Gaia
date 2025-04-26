@@ -17,8 +17,8 @@ class MainHActivity : AppCompatActivity() {
         // Navegación
 
         //  - Vista iniciar sesión
-        val btnLogin = findViewById<Button>(R.id.btn_inicio_sesion)
-        btnLogin.setOnClickListener {
+        val btnLogin1 = findViewById<Button>(R.id.btn_inicio_sesion1)
+        btnLogin1.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
         }

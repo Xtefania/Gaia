@@ -70,11 +70,12 @@
 
     <ImageView
         android:id="@+id/iv_imagen_logo2"
-        android:layout_width="200dp"
-        android:layout_height="107dp"
-        android:layout_marginTop="48dp"
+        android:layout_width="140dp"
+        android:layout_height="110dp"
+        android:layout_marginTop="4dp"
         android:contentDescription="@string/imagen_fondo"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logo2" />
@@ -83,15 +84,14 @@
         android:id="@+id/textView14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="100dp"
+        android:layout_marginTop="16dp"
         android:fontFamily="@font/alata"
-        android:text="Encuentra tu tienda"
+        android:text="@string/encuentra_tu_tienda"
         android:textColor="@color/green"
         android:textSize="24sp"
-        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_imagen_logo2"
-        android:layout_marginTop="16dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_imagen_logo2" />
 
     <ImageView
         android:id="@+id/iv_imagen_map"
@@ -130,7 +130,7 @@
             android:id="@+id/text_direccion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Carrera 15 # 124-30, Piso 1 - Local 25\nCentro Comercial Unicentro\nBogotá, Colombia"
+            android:text="@string/direccion"
             android:textColor="#000000"
             android:textSize="16sp"
             android:layout_marginBottom="16dp"
@@ -140,7 +140,7 @@
             android:id="@+id/text_horario"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Horarios:\nLunes a Sábado: 10:00 a.m. a 8:00 p.m. |\nDomingos y Festivos 11:00 a.m. a 7:00 p.m."
+            android:text="@string/horarios"
             android:textColor="#000000"
             android:textSize="16sp"
             android:layout_marginBottom="16dp"
@@ -150,7 +150,7 @@
             android:id="@+id/text_contacto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Contacto: +57 300757575"
+            android:text="@string/contacto"
             android:textColor="#000000"
             android:textSize="16sp"
             android:background="@android:color/transparent" />

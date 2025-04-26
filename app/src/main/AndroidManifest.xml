@@ -54,6 +54,9 @@
         <activity
             android:name=".Activities.CarritoActivity"
             android:exported="false" />
+        <activity
+            android:name=".Activities.UbicacionActivity"
+            android:exported="false" />
 
         <meta-data
             android:name="preloaded_fonts"

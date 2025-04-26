@@ -120,4 +120,8 @@
     <string name="todoiiio">TODO</string>
     <string name="Ubicacion">TODO</string>
     <string name="degradado">TODO</string>
+    <string name="encuentra_tu_tienda">Encuentra tu tienda</string>
+    <string name="direccion">Carrera 15 # 124-30, Piso 1 - Local 25\nCentro Comercial Unicentro\nBogotá, Colombia</string>
+    <string name="horarios">Horarios:\nLunes a Sábado: 10:00 a.m. a 8:00 p.m. |\nDomingos y Festivos 11:00 a.m. a 7:00 p.m.</string>
+    <string name="contacto">Contacto: +57 300757575</string>
 </resources>
