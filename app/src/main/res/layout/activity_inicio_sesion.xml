@@ -123,7 +123,7 @@
         app:layout_constraintTop_toBottomOf="@+id/et_campo_contrasena" />
 
     <Button
-        android:id="@+id/btn_inicio_sesion"
+        android:id="@+id/btn_inicio_sesion2"
         android:layout_width="260dp"
         android:layout_height="48dp"
         android:layout_marginTop="20dp"
@@ -131,7 +131,7 @@
         android:fontFamily="@font/alata"
         android:text="@string/iniciar_sesion"
         android:textAlignment="center"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/white"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@+id/v_form_background"
         app:layout_constraintStart_toStartOf="@+id/v_form_background"
@@ -151,12 +151,12 @@
         app:iconTint="@null"
         app:layout_constraintEnd_toEndOf="@+id/v_form_background"
         app:layout_constraintStart_toStartOf="@+id/v_form_background"
-        app:layout_constraintTop_toBottomOf="@+id/btn_inicio_sesion"
+        app:layout_constraintTop_toBottomOf="@+id/btn_inicio_sesion2"
         app:strokeColor="@color/green"
         app:strokeWidth="2dp" />
 
     <TextView
-        android:id="@+id/tv_register"
+        android:id="@+id/tv_registrese"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
