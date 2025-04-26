@@ -19,8 +19,7 @@ class MainHActivity : AppCompatActivity() {
         //  - Vista iniciar sesión
         val btnLogin = findViewById<Button>(R.id.btn_inicio_sesion)
         btnLogin.setOnClickListener {
-            val intent = Intent(this, CarritoActivity::class.java)
-//            val intent = Intent(this, LoginActivity::class.java)
+            val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
         }
 
