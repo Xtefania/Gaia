@@ -52,9 +52,14 @@
     <string name="genero_opcional">Género (Opcional)</string>
     <string name="registrarse">Registrarse</string>
     <string name="explicacion_email">Campo para ingresar el email</string>
+    <string name="maquillaje">Maquillaje</string>
+    <string name="labial_hidratante">Labial Hidratante</string>
     <string name="cuidados_diarios">Cuidados Diarios</string>
-    <string name="_50_000">50.000</string>
+    <string name="eau_de_toilette_spray">Eau de Toilette Spray</string>
+    <string name="_50_ml">50 ml</string>
+    <string name="_50_000">$ 50.000</string>
     <string name="tu_carrito">Tu carrito</string>
+    <string name="desodorante_roll_on">Desodorante Roll-on</string>
     <string name="quitar">Quitar</string>
     <string name="eau_de_parfum">Eau De Parfum</string>
     <string name="Todo">todo</string>
@@ -118,7 +123,9 @@
     <string name="perfume">Perfume</string>
     <string name="todiii">TODO</string>
     <string name="todoiiio">TODO</string>
+    <string name="iconoflecha">TODO</string>
     <string name="Ubicacion">TODO</string>
+    <string name="barras">TODO</string>
     <string name="degradado">TODO</string>
     <string name="encuentra_tu_tienda">Encuentra tu tienda</string>
     <string name="direccion">Carrera 15 # 124-30, Piso 1 - Local 25\nCentro Comercial Unicentro\nBogotá, Colombia</string>
