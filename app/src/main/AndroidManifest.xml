@@ -13,7 +13,7 @@
         android:theme="@style/Theme.Gaia"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".Activities.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,6 +21,43 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.MainHActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.OlvidoContrasenaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.CategoriesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.ListProductActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.InfoProductActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.DescriptionProductActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.MembersProductActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.CarritoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.UbicacionActivity"
+            android:exported="false" />
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
