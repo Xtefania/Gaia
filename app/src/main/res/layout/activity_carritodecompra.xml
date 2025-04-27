@@ -39,32 +39,28 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/degradado_mascara" />
 
+
             <ImageView
                 android:id="@+id/imageView11"
                 android:layout_width="32dp"
                 android:layout_height="25dp"
-                android:layout_marginStart="64dp"
-                android:layout_marginTop="49dp"
-                android:layout_marginEnd="315dp"
-                android:layout_marginBottom="778dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="52dp"
                 android:contentDescription="@string/Todo"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/img_main_logo3"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/ic_menu_lines"
                 app:tint="@color/green" />
 
-
             <ImageView
                 android:id="@+id/imageView14"
-                android:layout_width="35dp"
-                android:layout_height="29dp"
-                android:layout_marginStart="48dp"
-                android:layout_marginTop="84dp"
+                android:layout_width="32dp"
+                android:layout_height="28dp"
+                android:layout_marginStart="36dp"
+                android:layout_marginTop="36dp"
                 android:contentDescription="@string/Todo"
-                app:layout_constraintStart_toEndOf="@+id/img_main_logo3"
-                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/imageView13"
+                app:layout_constraintTop_toTopOf="@+id/imageView2"
                 app:srcCompat="@drawable/ic_cart_shopping"
                 app:tint="@color/green" />
 
@@ -72,14 +68,10 @@
                 android:id="@+id/imageView13"
                 android:layout_width="35dp"
                 android:layout_height="28dp"
-                android:layout_marginStart="283dp"
-                android:layout_marginTop="48dp"
-                android:layout_marginEnd="99dp"
-                android:layout_marginBottom="778dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="36dp"
                 android:contentDescription="@string/Todo"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/img_main_logo3"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/ic_location_pin"
                 app:tint="@color/green" />
@@ -88,13 +80,8 @@
                 android:id="@+id/img_main_logo3"
                 android:layout_width="140dp"
                 android:layout_height="110dp"
-                android:layout_marginStart="135dp"
-                android:layout_marginTop="4dp"
-                android:layout_marginEnd="136dp"
-                android:layout_marginBottom="738dp"
+                android:layout_marginStart="136dp"
                 android:contentDescription="@string/imagen_fondo"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/logo2" />
@@ -103,72 +90,57 @@
                 android:id="@+id/textView14"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="160dp"
-                android:layout_marginTop="113dp"
-                android:layout_marginEnd="144dp"
-                android:layout_marginBottom="702dp"
+                android:layout_marginStart="148dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="156dp"
                 android:fontFamily="@font/alata"
                 android:text="@string/tu_carrito1"
                 android:textColor="@color/green"
                 android:textSize="24sp"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@+id/img_main_logo3" />
 
             <ImageView
                 android:id="@+id/imageView15"
                 android:layout_width="297dp"
                 android:layout_height="578dp"
-                android:layout_marginStart="67dp"
-                android:layout_marginTop="198dp"
-                android:layout_marginEnd="51dp"
-                android:layout_marginBottom="91dp"
+                android:layout_marginTop="20dp"
                 android:contentDescription="@string/todi"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView14"
                 app:srcCompat="@drawable/form_view" />
 
             <ImageView
                 android:id="@+id/imageView16"
                 android:layout_width="109dp"
                 android:layout_height="105dp"
-                android:layout_marginStart="81dp"
-                android:layout_marginTop="215dp"
-                android:layout_marginEnd="228dp"
-                android:layout_marginBottom="540dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="32dp"
                 android:contentDescription="@string/todoo"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/imageView15"
+                app:layout_constraintTop_toTopOf="@+id/imageView15"
                 app:srcCompat="@drawable/desodorante2" />
 
             <ImageView
                 android:id="@+id/imageView17"
                 android:layout_width="105dp"
                 android:layout_height="101dp"
-                android:layout_marginStart="84dp"
-                android:layout_marginTop="349dp"
-                android:layout_marginEnd="222dp"
-                android:layout_marginBottom="402dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="28dp"
                 android:contentDescription="@string/todito"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/imageView15"
+                app:layout_constraintTop_toBottomOf="@+id/imageView16"
                 app:srcCompat="@drawable/fragancia1" />
 
             <TextView
                 android:id="@+id/textView12"
                 android:layout_width="140dp"
                 android:layout_height="26dp"
-                android:layout_marginStart="12dp"
-                android:layout_marginTop="28dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="32dp"
                 android:fontFamily="@font/alata"
                 android:text="@string/desodorante_rollon"
                 app:layout_constraintStart_toEndOf="@+id/imageView16"
@@ -178,19 +150,19 @@
                 android:id="@+id/textView13"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="12dp"
-                android:layout_marginTop="60dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="12dp"
                 android:fontFamily="@font/alata"
                 android:text="@string/_64_00000"
                 app:layout_constraintStart_toEndOf="@+id/imageView16"
-                app:layout_constraintTop_toTopOf="@+id/imageView15" />
+                app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
             <TextView
                 android:id="@+id/textView15"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="12dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="12dp"
                 android:fontFamily="@font/alata"
                 android:text="@string/_1_quitar"
                 app:layout_constraintStart_toEndOf="@+id/imageView16"
@@ -234,16 +206,12 @@
                 android:id="@+id/textView19"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="84dp"
-                android:layout_marginTop="482dp"
-                android:layout_marginEnd="159dp"
-                android:layout_marginBottom="352dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="20dp"
                 android:fontFamily="@font/alata"
                 android:text="@string/tarifa_de_env_o_estimadas"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintStart_toStartOf="@+id/imageView15"
+                app:layout_constraintTop_toBottomOf="@+id/imageView17" />
 
             <ImageView
                 android:id="@+id/imageView21"
@@ -486,8 +454,10 @@
                 android:background="?android:attr/listDivider"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.722"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
 
             <View
                 android:id="@+id/divider2"
