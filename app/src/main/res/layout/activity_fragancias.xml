@@ -118,6 +118,7 @@
             android:padding="40dp">
 
             <!-- Producto 1 -->
+
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/cl_producto_1"
                 android:layout_width="match_parent"
@@ -186,6 +187,7 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
+            <!-- Producto 2 -->
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/cl_producto_2"
                 android:layout_width="match_parent"

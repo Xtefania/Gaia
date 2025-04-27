@@ -143,7 +143,6 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/card_description"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_titulo_producto" />
 
@@ -155,9 +154,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
         android:background="@android:color/transparent"
-        app:layout_constraintBottom_toTopOf="@+id/card_ingredientes"
+        app:layout_constraintBottom_toTopOf="@+id/card_members"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_price_product">
 
@@ -211,7 +209,6 @@
         android:background="@android:color/transparent"
         app:layout_constraintBottom_toTopOf="@+id/btn_anadir_carrito"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/card_description">
 

@@ -7,12 +7,12 @@ import android.widget.ImageView
 import com.example.gaia.R
 import androidx.appcompat.app.AppCompatActivity
 
-class DescriptionProductActivity : AppCompatActivity() {
+class IngredientsProductActivity : AppCompatActivity() {
     // Renderización
     override fun onCreate(savedInstanceState: Bundle?) {
         // - Vista principal
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_description_product)
+        setContentView(R.layout.activity_ingredients_product)
 
         // Navegación
 
@@ -38,17 +38,10 @@ class DescriptionProductActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        //  - Vista info productos
-        val infoProduct = findViewById<ImageView>(R.id.btn_minus_descripcion)
-        infoProduct.setOnClickListener {
-            val intent = Intent(this, InfoProductActivity::class.java)
-            startActivity(intent)
-        }
-
-        //  - Vista ingredientes producto
-        val cardProduct = findViewById<ImageView>(R.id.btn_plus_members)
-        cardProduct.setOnClickListener {
-            val intent = Intent(this, IngredientsProductActivity::class.java)
+        //  - Vista descripción producto
+        val descriptionProduct = findViewById<ImageView>(R.id.btn_minus_members)
+        descriptionProduct.setOnClickListener {
+            val intent = Intent(this, DescriptionProductActivity::class.java)
             startActivity(intent)
         }
     }

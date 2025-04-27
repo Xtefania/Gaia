@@ -17,6 +17,20 @@ class ListProductActivity : AppCompatActivity() {
 
         // Navegación
 
+        //  - Vista ubicación
+        val btnUbicacion = findViewById<ImageView>(R.id.btn_location)
+        btnUbicacion.setOnClickListener {
+            val intent = Intent(this, UbicacionActivity::class.java)
+            startActivity(intent)
+        }
+
+        //  - Vista carrito
+        val carrito = findViewById<ImageView>(R.id.btn_cart)
+        carrito.setOnClickListener {
+            val intent = Intent(this, CarritoActivity::class.java)
+            startActivity(intent)
+        }
+
         //  - Vista detalle del producto
         //  - Lógica principal
 //        val cardProduct = findViewById<ConstraintLayout>(R.id.cl_producto_1)
@@ -41,21 +55,6 @@ class ListProductActivity : AppCompatActivity() {
                 val intent = Intent(this, InfoProductActivity::class.java)
                 startActivity(intent)
             }
-        }
-
-
-        //  - Vista carrito
-        val carrito = findViewById<ImageView>(R.id.btn_cart)
-        carrito.setOnClickListener {
-            val intent = Intent(this, CarritoActivity::class.java)
-            startActivity(intent)
-        }
-
-        //  - Vista ubicación
-        val btnUbicacion = findViewById<ImageView>(R.id.btn_location)
-        btnUbicacion.setOnClickListener {
-            val intent = Intent(this, UbicacionActivity::class.java)
-            startActivity(intent)
         }
     }
 }

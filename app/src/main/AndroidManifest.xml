@@ -49,7 +49,7 @@
             android:name=".Activities.DescriptionProductActivity"
             android:exported="false" />
         <activity
-            android:name=".Activities.MembersProductActivity"
+            android:name=".Activities.IngredientsProductActivity"
             android:exported="false" />
         <activity
             android:name=".Activities.CarritoActivity"
