@@ -3,6 +3,7 @@ package com.example.gaia.Activities
 import android.app.DatePickerDialog
 import android.content.Intent
 import android.os.Bundle
+import android.util.Patterns
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -89,12 +90,24 @@ class RegisterActivity : AppCompatActivity() {
             return
         }
 
+        // Validar formato del correo electrónico
+        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+            Toast.makeText(this, "Correo electrónico no válido", Toast.LENGTH_SHORT).show()
+            return
+        }
+       
         if (password != repetirPassword) {
             Toast.makeText(this, "Las contraseñas no coinciden", Toast.LENGTH_SHORT).show()
             return
         }
 
-        // SharedPreferences
+        if (!esPasswordValida(password)) {
+            Toast.makeText(this, "La contraseña debe tener al menos 8 caracteres, una mayúscula, una minúscula, un número y un carácter especial", Toast.LENGTH_LONG).show()
+            return
+        }
+
+
+            // SharedPreferences
         val sharedPreferences = getSharedPreferences("UsuariosApp", MODE_PRIVATE)
         if (sharedPreferences.contains(email)) {
             Toast.makeText(this, "Ya existe un usuario con este correo", Toast.LENGTH_SHORT).show()
@@ -116,6 +129,12 @@ class RegisterActivity : AppCompatActivity() {
         val intent = Intent(this, LoginActivity::class.java)
         startActivity(intent)
         finish()
+    }
+
+    // Validar formato Contraseña
+    private fun esPasswordValida(password: String): Boolean {
+        val regex = Regex("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@#\$%^&+=!]).{8,}\$")
+        return regex.matches(password)
     }
 
     // Función hashearContrasena()
