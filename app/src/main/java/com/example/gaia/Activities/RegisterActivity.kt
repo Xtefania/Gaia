@@ -8,6 +8,9 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import android.net.Uri
+import android.Manifest
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.gaia.R
 import com.google.android.material.textfield.TextInputEditText
@@ -18,9 +21,9 @@ import java.util.HexFormat
 
 class RegisterActivity : AppCompatActivity() {
 
-    // FALTA FOTO DE PERFIL -----------------
 
     // Declaración de variables
+    private lateinit var agregarFotoImageView: ImageView
     private lateinit var nombreEditText: EditText
     private lateinit var apellidoEditText: EditText
     private lateinit var emailEditText: EditText
@@ -31,6 +34,9 @@ class RegisterActivity : AppCompatActivity() {
     private lateinit var generoEditText: EditText
     private lateinit var crearCuentaButton: Button
 
+    //Guardar la URI de la imagen
+    private var uriFotoPerfil: Uri? = null
+
 
 
     // Renderización
@@ -39,7 +45,10 @@ class RegisterActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_createaccount)
 
+
+
         // Inicialización de variables
+        agregarFotoImageView = findViewById(R.id.iv_AgregarFoto)
         nombreEditText = findViewById(R.id.editTextNombre)
         apellidoEditText = findViewById(R.id.editTextLastName)
         emailEditText = findViewById(R.id.editTextEmail)
@@ -71,9 +80,52 @@ class RegisterActivity : AppCompatActivity() {
             datePicker.show()
         }
 
+        // Agregar foto perfil
+        agregarFotoImageView.setOnClickListener {
+            val intent = Intent(Intent.ACTION_PICK)
+            intent.type = "image/*"
+            intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
+            startActivityForResult(intent, 100)
+        }
+
     }
 
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if (requestCode == 100 && resultCode == RESULT_OK) {
+            uriFotoPerfil = data?.data
+            uriFotoPerfil?.let {
+                agregarFotoImageView.setImageURI(it)
+            }
+        }
+    }
+
+
+    // Mayor de edad
+    private fun esMayorDeEdad(fechaNacimiento: String): Boolean {
+        val partes = fechaNacimiento.split("/")
+        if (partes.size != 3) return false
+
+        val dia = partes[0].toIntOrNull() ?: return false
+        val mes = partes[1].toIntOrNull()?.minus(1) ?: return false // Calendar usa meses de 0 a 11
+        val anio = partes[2].toIntOrNull() ?: return false
+
+        val fechaNacimientoCalendar = Calendar.getInstance()
+        fechaNacimientoCalendar.set(anio, mes, dia)
+
+        val hoy = Calendar.getInstance()
+        val hace18Anios = Calendar.getInstance()
+        hace18Anios.add(Calendar.YEAR, -18)
+
+        return fechaNacimientoCalendar <= hace18Anios
+    }
+
+
     private fun registrarUsuario() {
+
+        //FALTAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA FOTOOOOOOOOOOOOOOOOOO????????????????????????????????????
+
         val nombre = nombreEditText.text.toString().trim() // trim() elimina espacios al principio y al final
         val apellido = apellidoEditText.text.toString().trim()
         val email = emailEditText.text.toString().trim()
@@ -83,10 +135,18 @@ class RegisterActivity : AppCompatActivity() {
         val fechaNacimiento = fechaNacimientoEditText.text.toString().trim()
         val genero = generoEditText.text.toString().trim()
 
+
+
         // Validación
         if (nombre.isEmpty() || apellido.isEmpty() || email.isEmpty() || password.isEmpty() ||
             repetirPassword.isEmpty() || telefono.isEmpty() || fechaNacimiento.isEmpty()) {
             Toast.makeText(this, "Por favor, completa todos los campos", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        // Validar mayor de edad
+        if (!esMayorDeEdad(fechaNacimiento)) {
+            Toast.makeText(this, "Debes tener al menos 18 años para registrarte", Toast.LENGTH_SHORT).show()
             return
         }
 
@@ -102,7 +162,7 @@ class RegisterActivity : AppCompatActivity() {
         }
 
         if (!esPasswordValida(password)) {
-            Toast.makeText(this, "La contraseña debe tener al menos 8 caracteres, una mayúscula, una minúscula, un número y un carácter especial", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "La contraseña no cumple con los requisitos mínimos", Toast.LENGTH_LONG).show()
             return
         }
 
@@ -122,6 +182,9 @@ class RegisterActivity : AppCompatActivity() {
         editor.putString("telefono", telefono)
         editor.putString("fechaNacimiento", fechaNacimiento)
         editor.putString("genero", genero)
+        uriFotoPerfil?.let {
+            editor.putString("fotoPerfilUri", it.toString())
+        }
         editor.apply()
 
         Toast.makeText(this, "Cuenta creada exitosamente", Toast.LENGTH_SHORT).show()

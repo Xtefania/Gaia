@@ -124,7 +124,22 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
+            <ImageView
+                android:id="@+id/iv_AgregarFoto"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="8dp"
+                android:contentDescription="@string/agregar_foto"
+                android:padding="12dp"
+                android:src="@drawable/ic_camera"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.504"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textViewFoto" />
+
+            <!--<com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/fab_agregar_foto"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -137,7 +152,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/textViewFoto"
                 app:srcCompat="@drawable/ic_camera"
-                app:tint="@android:color/white" />
+                app:tint="@android:color/white" />-->
 
             <!-- Nombre -->
             <TextView
