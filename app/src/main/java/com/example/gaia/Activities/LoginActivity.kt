@@ -10,7 +10,6 @@ import androidx.appcompat.app.AppCompatActivity
 class LoginActivity : AppCompatActivity() {
     // Renderización
     override fun onCreate(savedInstanceState: Bundle?) {
-
         // - Vista principal
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_inicio_sesion)
