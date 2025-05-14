@@ -5,30 +5,40 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.widget.ConstraintLayout
 import com.example.gaia.R
+import com.example.gaia.db.DbProductos
+import com.example.gaia.models.Producto
 
 class DescriptionProductActivity : AppCompatActivity() {
 
-    // Referencias a elementos de la vista
+    // Referencias a los elementos de la vista
     private lateinit var btnUbicacion: ImageView
     private lateinit var btnCarrito: ImageView
     private lateinit var btnAnadirCarrito: Button
     private lateinit var btnInfoProducto: ImageView
-    private lateinit var btnIngredientes: ImageView
     private lateinit var tvDescripcion: TextView
+
+    // Variables globales
+    private var idProducto = 0
+    private var producto: Producto? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_description_product)
 
-        // Inicializa vistas
         initViews()
 
-        // Muestra la descripción del producto
-        loadDescription()
+        idProducto = intent.getIntExtra("ID_PRODUCTO", -1)
+        if (idProducto != -1) {
+            loadProductData(idProducto)
+        } else {
+            Toast.makeText(this, "ID inválido", Toast.LENGTH_SHORT).show()
+            finish()
+        }
 
-        // Configura los eventos de clic
         setupListeners()
     }
 
@@ -40,45 +50,56 @@ class DescriptionProductActivity : AppCompatActivity() {
         btnCarrito = findViewById(R.id.btn_cart)
         btnAnadirCarrito = findViewById(R.id.btn_anadir_carrito)
         btnInfoProducto = findViewById(R.id.btn_minus_descripcion)
-        btnIngredientes = findViewById(R.id.btn_plus_members)
         tvDescripcion = findViewById(R.id.tv_description_product_p1)
     }
 
     /**
-     * Configura los listeners para los botones de navegación
+     * Carga los datos del producto desde la base de datos
      */
-    private fun setupListeners() {
-        // Navegar a ubicación
-        btnUbicacion.setOnClickListener {
-            startActivity(Intent(this, UbicacionActivity::class.java))
-        }
+    private fun loadProductData(idProducto: Int) {
+        val dbProductos = DbProductos(this)
+        producto = dbProductos.getProductoById(idProducto)
 
-        // Ir al carrito desde el ícono
-        btnCarrito.setOnClickListener {
-            startActivity(Intent(this, CarritoActivity::class.java))
-        }
-
-        // Ir al carrito desde el botón
-        btnAnadirCarrito.setOnClickListener {
-            startActivity(Intent(this, CarritoActivity::class.java))
-        }
-
-        // Volver a la vista de información del producto
-        btnInfoProducto.setOnClickListener {
-            startActivity(Intent(this, InfoProductActivity::class.java))
-        }
-
-        // Ir a ingredientes del producto
-        btnIngredientes.setOnClickListener {
-            startActivity(Intent(this, IngredientsProductActivity::class.java))
+        producto?.let {
+            tvDescripcion.text = it.descripcion
+        } ?: run {
+            Toast.makeText(this, "Producto no encontrado", Toast.LENGTH_SHORT).show()
         }
     }
 
     /**
-     * Obtiene y muestra la descripción del producto desde el Intent
+     * Configura las acciones de los botones
      */
-    private fun loadDescription() {
-        val descripcion = intent.getStringExtra("descripcion")
-        tvDescripcion.text = descripcion ?: "Sin descripción disponible"
+    private fun setupListeners() {
+        // Navegar a la actividad de ubicación
+        btnUbicacion.setOnClickListener { startActivity(UbicacionActivity::class.java) }
+
+        // Ir al carrito desde el ícono
+        btnCarrito.setOnClickListener { startActivity(CarritoActivity::class.java) }
+
+        // Ir al carrito desde el botón
+        btnAnadirCarrito.setOnClickListener { startActivity(CarritoActivity::class.java) }
+
+        // Volver a la vista de información del producto
+        btnInfoProducto.setOnClickListener { startActivity(InfoProductActivity::class.java) }
+
+        // Ir a ingredientes del producto
+        findViewById<ImageView>(R.id.btn_plus_members).setOnClickListener {
+            producto?.let {
+                val intent = Intent(this, IngredientsProductActivity::class.java)
+                intent.putExtra("ID_PRODUCTO", idProducto)
+                startActivity(intent)
+            } ?: run {
+                Toast.makeText(this, "Producto no encontrado", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
+    /**
+     * Función de extensión para iniciar actividad
+     */
+    private fun startActivity(activityClass: Class<*>) {
+        val intent = Intent(this, activityClass)
+        startActivity(intent)
     }
 }

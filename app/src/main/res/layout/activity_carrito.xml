@@ -1,430 +1,439 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="match_parent">
+
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewCarrito"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent"
+            android:padding="16dp" />
 
-            <ImageView
-                android:id="@+id/ivFondoImagen3"
-                android:layout_width="740dp"
-                android:layout_height="460dp"
-                android:contentDescription="@string/imagen_fondo"
-                android:scaleType="centerCrop"
-                android:translationY="-25dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.501"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0"
-                app:srcCompat="@drawable/fondo1" />
+        <!--        <androidx.constraintlayout.widget.ConstraintLayout-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content">-->
 
-
-            <ImageView
-                android:id="@+id/imageView2"
-                android:layout_width="495dp"
-                android:layout_height="939dp"
-                android:contentDescription="@string/degradado"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0"
-                app:srcCompat="@drawable/degradado_mascara" />
-
-            <ImageView
-                android:id="@+id/imageView11"
-                android:layout_width="32dp"
-                android:layout_height="25dp"
-                android:layout_marginTop="40dp"
-                android:layout_marginEnd="52dp"
-                android:contentDescription="@string/Todo"
-                app:layout_constraintEnd_toStartOf="@+id/img_main_logo3"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_menu_lines"
-                app:tint="@color/green" />
-
-            <ImageView
-                android:id="@+id/imageView14"
-                android:layout_width="32dp"
-                android:layout_height="28dp"
-                android:layout_marginStart="36dp"
-                android:layout_marginTop="36dp"
-                android:contentDescription="@string/Todo"
-                app:layout_constraintStart_toStartOf="@+id/imageView13"
-                app:layout_constraintTop_toTopOf="@+id/imageView2"
-                app:srcCompat="@drawable/ic_cart_shopping"
-                app:tint="@color/green" />
-
-            <ImageView
-                android:id="@+id/imageView13"
-                android:layout_width="35dp"
-                android:layout_height="28dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="36dp"
-                android:contentDescription="@string/Todo"
-                app:layout_constraintStart_toEndOf="@+id/img_main_logo3"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_location_pin"
-                app:tint="@color/green" />
-
-            <ImageView
-                android:id="@+id/img_main_logo3"
-                android:layout_width="140dp"
-                android:layout_height="110dp"
-                android:layout_marginStart="124dp"
-                android:contentDescription="@string/imagen_fondo"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/logo2" />
-
-            <TextView
-                android:id="@+id/textView14"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="148dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="156dp"
-                android:fontFamily="@font/alata"
-                android:text="@string/tu_carrito1"
-                android:textColor="@color/green"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/img_main_logo3" />
-
-            <ImageView
-                android:id="@+id/imageView15"
-                android:layout_width="297dp"
-                android:layout_height="578dp"
-                android:layout_marginTop="24dp"
-                android:contentDescription="@string/todi"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView14"
-                app:srcCompat="@drawable/form_view" />
-
-            <ImageView
-                android:id="@+id/imageView16"
-                android:layout_width="109dp"
-                android:layout_height="105dp"
-                android:layout_marginStart="12dp"
-                android:layout_marginTop="32dp"
-                android:contentDescription="@string/todoo"
-                app:layout_constraintStart_toStartOf="@+id/imageView15"
-                app:layout_constraintTop_toTopOf="@+id/imageView15"
-                app:srcCompat="@drawable/desodorante2" />
-
-            <ImageView
-                android:id="@+id/imageView17"
-                android:layout_width="105dp"
-                android:layout_height="101dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="28dp"
-                android:contentDescription="@string/todito"
-                app:layout_constraintStart_toStartOf="@+id/imageView15"
-                app:layout_constraintTop_toBottomOf="@+id/imageView16"
-                app:srcCompat="@drawable/fragancia1" />
-
-            <TextView
-                android:id="@+id/textView12"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="32dp"
-                android:fontFamily="@font/alata"
-                android:text="@string/desodorante_rollon"
-                app:layout_constraintStart_toEndOf="@+id/imageView16"
-                app:layout_constraintTop_toTopOf="@+id/imageView15" />
-
-            <TextView
-                android:id="@+id/textView13"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:fontFamily="@font/alata"
-                android:text="@string/_64_00000"
-                app:layout_constraintStart_toEndOf="@+id/imageView16"
-                app:layout_constraintTop_toBottomOf="@+id/textView12" />
-
-            <TextView
-                android:id="@+id/textView15"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:fontFamily="@font/alata"
-                android:text="@string/_1_quitar"
-                app:layout_constraintStart_toEndOf="@+id/imageView16"
-                app:layout_constraintTop_toBottomOf="@+id/textView13" />
-
-            <TextView
-                android:id="@+id/textView16"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="188dp"
-                android:fontFamily="@font/alata"
-                android:text="@string/eau_de_toilette_sprey"
-                app:layout_constraintStart_toEndOf="@+id/imageView17"
-                app:layout_constraintTop_toTopOf="@+id/imageView15"
-                tools:ignore="MissingConstraints" />
-
-            <TextView
-                android:id="@+id/textView17"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:fontFamily="@font/alata"
-                android:text="@string/_50_00000"
-                app:layout_constraintStart_toEndOf="@+id/imageView17"
-                app:layout_constraintTop_toBottomOf="@+id/textView16" />
-
-            <TextView
-                android:id="@+id/textView18"
-                android:layout_width="100dp"
-                android:layout_height="25dp"
-                android:layout_marginStart="20dp"
-                android:fontFamily="@font/alata"
-                android:text="@string/_2_quitar"
-                app:layout_constraintStart_toEndOf="@+id/imageView17"
-                app:layout_constraintTop_toBottomOf="@+id/textView17" />
-
-            <TextView
-                android:id="@+id/textView19"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="20dp"
-                android:fontFamily="@font/alata"
-                android:text="@string/tarifa_de_env_o_estimadas"
-                app:layout_constraintStart_toStartOf="@+id/imageView15"
-                app:layout_constraintTop_toBottomOf="@+id/imageView17" />
-
-            <ImageView
-                android:id="@+id/imageView21"
-                android:layout_width="255dp"
-                android:layout_height="37dp"
-                android:layout_marginStart="119dp"
-                android:layout_marginTop="12dp"
-                android:contentDescription="@string/todoooo"
-                app:layout_constraintStart_toStartOf="@+id/imageView2"
-                app:layout_constraintTop_toTopOf="@+id/divider2"
-                app:srcCompat="@drawable/form_view_white" />
-
-            <ImageView
-                android:id="@+id/imageView22"
-                android:layout_width="255dp"
-                android:layout_height="37dp"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="12dp"
-                android:contentDescription="@string/todooooooooo"
-                app:layout_constraintStart_toStartOf="@+id/imageView15"
-                app:layout_constraintTop_toBottomOf="@+id/imageView21"
-                app:srcCompat="@drawable/form_view_white" />
-
-            <TextView
-                android:id="@+id/textView20"
-                android:layout_width="70dp"
-                android:layout_height="19dp"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="16dp"
-                android:fontFamily="@font/alata"
-                android:text="@string/colombian"
-                app:layout_constraintStart_toStartOf="@+id/imageView15"
-                app:layout_constraintTop_toTopOf="@+id/textView22" />
-
-            <TextView
-                android:id="@+id/textView21"
-                android:layout_width="72dp"
-                android:layout_height="26dp"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="44dp"
-                android:fontFamily="@font/alata"
-                android:text="@string/bogota"
-                app:layout_constraintStart_toStartOf="@+id/imageView15"
-                app:layout_constraintTop_toTopOf="@+id/textView20" />
-
-            <TextView
-                android:id="@+id/textView22"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="12dp"
-                android:fontFamily="@font/alata"
-                android:text="@string/paisregion"
-                android:textColor="#8E8888"
-                android:textSize="10sp"
-                app:layout_constraintStart_toStartOf="@+id/imageView15"
-                app:layout_constraintTop_toTopOf="@+id/divider2"
-                tools:ignore="SmallSp" />
-
-            <TextView
-                android:id="@+id/textView24"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:fontFamily="@font/alata"
-                android:text="@string/ciudadprovincia"
-                android:textColor="#8E8888"
-                android:textSize="10sp"
-                app:layout_constraintStart_toStartOf="@+id/imageView15"
-                app:layout_constraintTop_toTopOf="@+id/imageView22"
-                tools:ignore="SmallSp" />
-
-            <Button
-                android:id="@+id/button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="104dp"
-                android:layout_marginTop="12dp"
-                android:backgroundTint="@color/white"
-                android:fontFamily="@font/alata"
-                android:text="@string/calculare"
-                android:textColor="#0B0B0B"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="@+id/imageView15"
-                app:layout_constraintTop_toBottomOf="@+id/imageView22" />
-
-            <Button
-                android:id="@+id/button2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="177dp"
-                android:layout_marginTop="720dp"
-                android:layout_marginEnd="157dp"
-                android:layout_marginBottom="39dp"
-                android:backgroundTint="@color/green"
-                android:fontFamily="@font/alata"
-                android:text="@string/pagarpedido"
-                android:textColor="@color/white"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/textView25"
-                android:layout_width="78dp"
-                android:layout_height="24dp"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="68dp"
-                android:fontFamily="@font/alata"
-                android:text="@string/subtotall"
-                android:textColor="@color/green"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="@+id/imageView15"
-                app:layout_constraintTop_toBottomOf="@+id/imageView22" />
-
-            <TextView
-                android:id="@+id/textView26"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="68dp"
-                android:layout_marginEnd="16dp"
-                android:fontFamily="@font/alata"
-                android:text="@string/_164_000_00_cop"
-                app:layout_constraintEnd_toEndOf="@+id/imageView15"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toEndOf="@+id/textView25"
-                app:layout_constraintTop_toBottomOf="@+id/imageView22" />
-
-            <TextView
-                android:id="@+id/textView27"
-                android:layout_width="287dp"
-                android:layout_height="66dp"
-                android:layout_marginStart="4dp"
-                android:layout_marginTop="48dp"
-                android:fontFamily="@font/alata"
-                android:text="@string/recuerda_que_nuestros_tiempos_de_entrega_se_establecen_entre_los_4_y_15_d_as_h_biles_despu_s_de_la_compra"
-                android:textAlignment="center"
-                android:textSize="12sp"
-                app:layout_constraintStart_toStartOf="@+id/imageView15"
-                app:layout_constraintTop_toBottomOf="@+id/button" />
+        <!--            <ImageView-->
+        <!--                android:id="@+id/ivFondoImagen3"-->
+        <!--                android:layout_width="740dp"-->
+        <!--                android:layout_height="460dp"-->
+        <!--                android:contentDescription="@string/imagen_fondo"-->
+        <!--                android:scaleType="centerCrop"-->
+        <!--                android:translationY="-25dp"-->
+        <!--                app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--                app:layout_constraintEnd_toEndOf="parent"-->
+        <!--                app:layout_constraintHorizontal_bias="0.501"-->
+        <!--                app:layout_constraintStart_toStartOf="parent"-->
+        <!--                app:layout_constraintTop_toTopOf="parent"-->
+        <!--                app:layout_constraintVertical_bias="0.0"-->
+        <!--                app:srcCompat="@drawable/fondo1" />-->
 
 
-            <ImageView
-                android:id="@+id/imageView9"
-                android:layout_width="44dp"
-                android:layout_height="36dp"
-                android:layout_marginTop="40dp"
-                android:layout_marginEnd="24dp"
-                android:contentDescription="@string/todoooooooooooooo"
-                app:layout_constraintEnd_toEndOf="@+id/imageView15"
-                app:layout_constraintTop_toTopOf="@+id/imageView18"
-                app:srcCompat="@drawable/icono_flecha" />
+        <!--            <ImageView-->
+        <!--                android:id="@+id/imageView2"-->
+        <!--                android:layout_width="495dp"-->
+        <!--                android:layout_height="939dp"-->
+        <!--                android:contentDescription="@string/degradado"-->
+        <!--                app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--                app:layout_constraintEnd_toEndOf="parent"-->
+        <!--                app:layout_constraintStart_toStartOf="parent"-->
+        <!--                app:layout_constraintTop_toTopOf="parent"-->
+        <!--                app:layout_constraintVertical_bias="0.0"-->
+        <!--                app:srcCompat="@drawable/degradado_mascara" />-->
 
-            <ImageView
-                android:id="@+id/imageView12"
-                android:layout_width="44dp"
-                android:layout_height="36dp"
-                android:layout_marginTop="60dp"
-                android:layout_marginEnd="24dp"
-                android:contentDescription="@string/todooooooooooooooooooooo"
-                app:layout_constraintEnd_toEndOf="@+id/imageView15"
-                app:layout_constraintTop_toBottomOf="@+id/imageView18"
-                app:srcCompat="@drawable/icono_flecha" />
+        <!--            <ImageView-->
+        <!--                android:id="@+id/imageView11"-->
+        <!--                android:layout_width="32dp"-->
+        <!--                android:layout_height="25dp"-->
+        <!--                android:layout_marginTop="40dp"-->
+        <!--                android:layout_marginEnd="52dp"-->
+        <!--                android:contentDescription="@string/Todo"-->
+        <!--                app:layout_constraintEnd_toStartOf="@+id/img_main_logo3"-->
+        <!--                app:layout_constraintTop_toTopOf="parent"-->
+        <!--                app:srcCompat="@drawable/ic_menu_lines"-->
+        <!--                app:tint="@color/green" />-->
 
-            <View
-                android:id="@+id/divider"
-                android:layout_width="277dp"
-                android:layout_height="1dp"
-                android:layout_marginStart="93dp"
-                android:layout_marginTop="342dp"
-                android:layout_marginEnd="77dp"
-                android:layout_marginBottom="524dp"
-                android:background="?android:attr/listDivider"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.722"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0" />
+        <!--            <ImageView-->
+        <!--                android:id="@+id/imageView14"-->
+        <!--                android:layout_width="32dp"-->
+        <!--                android:layout_height="28dp"-->
+        <!--                android:layout_marginStart="36dp"-->
+        <!--                android:layout_marginTop="36dp"-->
+        <!--                android:contentDescription="@string/Todo"-->
+        <!--                app:layout_constraintStart_toStartOf="@+id/imageView13"-->
+        <!--                app:layout_constraintTop_toTopOf="@+id/imageView2"-->
+        <!--                app:srcCompat="@drawable/ic_cart_shopping"-->
+        <!--                app:tint="@color/green" />-->
 
-            <View
-                android:id="@+id/divider2"
-                android:layout_width="277dp"
-                android:layout_height="1dp"
-                android:layout_marginStart="12dp"
-                android:layout_marginTop="36dp"
-                android:background="?android:attr/listDivider"
-                app:layout_constraintStart_toStartOf="@+id/imageView15"
-                app:layout_constraintTop_toBottomOf="@+id/ivFondoImagen3" />
+        <!--            <ImageView-->
+        <!--                android:id="@+id/imageView13"-->
+        <!--                android:layout_width="35dp"-->
+        <!--                android:layout_height="28dp"-->
+        <!--                android:layout_marginStart="8dp"-->
+        <!--                android:layout_marginTop="36dp"-->
+        <!--                android:contentDescription="@string/Todo"-->
+        <!--                app:layout_constraintStart_toEndOf="@+id/img_main_logo3"-->
+        <!--                app:layout_constraintTop_toTopOf="parent"-->
+        <!--                app:srcCompat="@drawable/ic_location_pin"-->
+        <!--                app:tint="@color/green" />-->
 
-            <View
-                android:id="@+id/divider3"
-                android:layout_width="277dp"
-                android:layout_height="1dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="32dp"
-                android:background="?android:attr/listDivider"
-                app:layout_constraintStart_toStartOf="@+id/imageView15"
-                app:layout_constraintTop_toBottomOf="@+id/button" />
+        <!--            <ImageView-->
+        <!--                android:id="@+id/img_main_logo3"-->
+        <!--                android:layout_width="140dp"-->
+        <!--                android:layout_height="110dp"-->
+        <!--                android:layout_marginStart="124dp"-->
+        <!--                android:contentDescription="@string/imagen_fondo"-->
+        <!--                app:layout_constraintStart_toStartOf="parent"-->
+        <!--                app:layout_constraintTop_toTopOf="parent"-->
+        <!--                app:srcCompat="@drawable/logo2" />-->
 
-            <ImageView
-                android:id="@+id/imageView18"
-                android:layout_width="22dp"
-                android:layout_height="27dp"
-                android:layout_marginStart="56dp"
-                android:layout_marginTop="28dp"
-                android:contentDescription="@string/simbolodemas"
-                app:layout_constraintStart_toEndOf="@+id/textView19"
-                app:layout_constraintTop_toBottomOf="@+id/textView18"
-                app:srcCompat="@drawable/ic_plus" />
+        <!--            <TextView-->
+        <!--                android:id="@+id/textView14"-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_marginStart="148dp"-->
+        <!--                android:layout_marginTop="16dp"-->
+        <!--                android:layout_marginEnd="156dp"-->
+        <!--                android:fontFamily="@font/alata"-->
+        <!--                android:text="@string/tu_carrito1"-->
+        <!--                android:textColor="@color/green"-->
+        <!--                android:textSize="24sp"-->
+        <!--                android:textStyle="bold"-->
+        <!--                app:layout_constraintEnd_toEndOf="parent"-->
+        <!--                app:layout_constraintHorizontal_bias="1.0"-->
+        <!--                app:layout_constraintStart_toStartOf="parent"-->
+        <!--                app:layout_constraintTop_toBottomOf="@+id/img_main_logo3" />-->
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        <!--            <ImageView-->
+        <!--                android:id="@+id/imageView15"-->
+        <!--                android:layout_width="297dp"-->
+        <!--                android:layout_height="578dp"-->
+        <!--                android:layout_marginTop="24dp"-->
+        <!--                android:contentDescription="@string/todi"-->
+        <!--                app:layout_constraintEnd_toEndOf="parent"-->
+        <!--                app:layout_constraintStart_toStartOf="parent"-->
+        <!--                app:layout_constraintTop_toBottomOf="@+id/textView14"-->
+        <!--                app:srcCompat="@drawable/form_view" />-->
+
+        <!--            <ImageView-->
+        <!--                android:id="@+id/imageView16"-->
+        <!--                android:layout_width="109dp"-->
+        <!--                android:layout_height="105dp"-->
+        <!--                android:layout_marginStart="12dp"-->
+        <!--                android:layout_marginTop="32dp"-->
+        <!--                android:contentDescription="@string/todoo"-->
+        <!--                app:layout_constraintStart_toStartOf="@+id/imageView15"-->
+        <!--                app:layout_constraintTop_toTopOf="@+id/imageView15"-->
+        <!--                app:srcCompat="@drawable/desodorante2" />-->
+
+        <!--            <TextView-->
+        <!--                android:id="@+id/textView12"-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_marginStart="20dp"-->
+        <!--                android:layout_marginTop="32dp"-->
+        <!--                android:fontFamily="@font/alata"-->
+        <!--                android:text="@string/desodorante_rollon"-->
+        <!--                app:layout_constraintStart_toEndOf="@+id/imageView16"-->
+        <!--                app:layout_constraintTop_toTopOf="@+id/imageView15" />-->
+
+
+        <!--            <TextView-->
+        <!--                android:id="@+id/textView13"-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_marginStart="20dp"-->
+        <!--                android:fontFamily="@font/alata"-->
+        <!--                android:text="@string/_64_00000"-->
+        <!--                app:layout_constraintStart_toEndOf="@+id/imageView16"-->
+        <!--                app:layout_constraintTop_toBottomOf="@+id/textView12" />-->
+
+        <!--            <TextView-->
+        <!--                android:id="@+id/textView15"-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_marginStart="20dp"-->
+        <!--                android:fontFamily="@font/alata"-->
+        <!--                android:text="@string/_1_quitar"-->
+        <!--                app:layout_constraintStart_toEndOf="@+id/imageView16"-->
+        <!--                app:layout_constraintTop_toBottomOf="@+id/textView13" />-->
+
+        <!--            <ImageView-->
+        <!--                android:id="@+id/imageView17"-->
+        <!--                android:layout_width="105dp"-->
+        <!--                android:layout_height="101dp"-->
+        <!--                android:layout_marginStart="16dp"-->
+        <!--                android:layout_marginTop="28dp"-->
+        <!--                android:contentDescription="@string/todito"-->
+        <!--                app:layout_constraintStart_toStartOf="@+id/imageView15"-->
+        <!--                app:layout_constraintTop_toBottomOf="@+id/imageView16"-->
+        <!--                app:srcCompat="@drawable/fragancia1" />-->
+
+
+        <!--            <TextView-->
+        <!--                android:id="@+id/textView16"-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_marginStart="20dp"-->
+        <!--                android:layout_marginTop="188dp"-->
+        <!--                android:fontFamily="@font/alata"-->
+        <!--                android:text="@string/eau_de_toilette_sprey"-->
+        <!--                app:layout_constraintStart_toEndOf="@+id/imageView17"-->
+        <!--                app:layout_constraintTop_toTopOf="@+id/imageView15"-->
+        <!--                tools:ignore="MissingConstraints" />-->
+
+        <!--            <TextView-->
+        <!--                android:id="@+id/textView17"-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_marginStart="20dp"-->
+        <!--                android:fontFamily="@font/alata"-->
+        <!--                android:text="@string/_50_00000"-->
+        <!--                app:layout_constraintStart_toEndOf="@+id/imageView17"-->
+        <!--                app:layout_constraintTop_toBottomOf="@+id/textView16" />-->
+
+        <!--            <TextView-->
+        <!--                android:id="@+id/textView18"-->
+        <!--                android:layout_width="100dp"-->
+        <!--                android:layout_height="25dp"-->
+        <!--                android:layout_marginStart="20dp"-->
+        <!--                android:fontFamily="@font/alata"-->
+        <!--                android:text="@string/_2_quitar"-->
+        <!--                app:layout_constraintStart_toEndOf="@+id/imageView17"-->
+        <!--                app:layout_constraintTop_toBottomOf="@+id/textView17" />-->
+
+        <!--            <TextView-->
+        <!--                android:id="@+id/textView19"-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_marginStart="16dp"-->
+        <!--                android:layout_marginTop="20dp"-->
+        <!--                android:fontFamily="@font/alata"-->
+        <!--                android:text="@string/tarifa_de_env_o_estimadas"-->
+        <!--                app:layout_constraintStart_toStartOf="@+id/imageView15"-->
+        <!--                app:layout_constraintTop_toBottomOf="@+id/imageView17" />-->
+
+        <!--            <ImageView-->
+        <!--                android:id="@+id/imageView21"-->
+        <!--                android:layout_width="255dp"-->
+        <!--                android:layout_height="37dp"-->
+        <!--                android:layout_marginStart="119dp"-->
+        <!--                android:layout_marginTop="12dp"-->
+        <!--                android:contentDescription="@string/todoooo"-->
+        <!--                app:layout_constraintStart_toStartOf="@+id/imageView2"-->
+        <!--                app:layout_constraintTop_toTopOf="@+id/divider2"-->
+        <!--                app:srcCompat="@drawable/form_view_white" />-->
+
+        <!--            <ImageView-->
+        <!--                android:id="@+id/imageView22"-->
+        <!--                android:layout_width="255dp"-->
+        <!--                android:layout_height="37dp"-->
+        <!--                android:layout_marginStart="24dp"-->
+        <!--                android:layout_marginTop="12dp"-->
+        <!--                android:contentDescription="@string/todooooooooo"-->
+        <!--                app:layout_constraintStart_toStartOf="@+id/imageView15"-->
+        <!--                app:layout_constraintTop_toBottomOf="@+id/imageView21"-->
+        <!--                app:srcCompat="@drawable/form_view_white" />-->
+
+        <!--            <TextView-->
+        <!--                android:id="@+id/textView20"-->
+        <!--                android:layout_width="70dp"-->
+        <!--                android:layout_height="19dp"-->
+        <!--                android:layout_marginStart="32dp"-->
+        <!--                android:layout_marginTop="16dp"-->
+        <!--                android:fontFamily="@font/alata"-->
+        <!--                android:text="@string/colombian"-->
+        <!--                app:layout_constraintStart_toStartOf="@+id/imageView15"-->
+        <!--                app:layout_constraintTop_toTopOf="@+id/textView22" />-->
+
+        <!--            <TextView-->
+        <!--                android:id="@+id/textView21"-->
+        <!--                android:layout_width="72dp"-->
+        <!--                android:layout_height="26dp"-->
+        <!--                android:layout_marginStart="32dp"-->
+        <!--                android:layout_marginTop="44dp"-->
+        <!--                android:fontFamily="@font/alata"-->
+        <!--                android:text="@string/bogota"-->
+        <!--                app:layout_constraintStart_toStartOf="@+id/imageView15"-->
+        <!--                app:layout_constraintTop_toTopOf="@+id/textView20" />-->
+
+        <!--            <TextView-->
+        <!--                android:id="@+id/textView22"-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_marginStart="32dp"-->
+        <!--                android:layout_marginTop="12dp"-->
+        <!--                android:fontFamily="@font/alata"-->
+        <!--                android:text="@string/paisregion"-->
+        <!--                android:textColor="#8E8888"-->
+        <!--                android:textSize="10sp"-->
+        <!--                app:layout_constraintStart_toStartOf="@+id/imageView15"-->
+        <!--                app:layout_constraintTop_toTopOf="@+id/divider2"-->
+        <!--                tools:ignore="SmallSp" />-->
+
+        <!--            <TextView-->
+        <!--                android:id="@+id/textView24"-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_marginStart="32dp"-->
+        <!--                android:fontFamily="@font/alata"-->
+        <!--                android:text="@string/ciudadprovincia"-->
+        <!--                android:textColor="#8E8888"-->
+        <!--                android:textSize="10sp"-->
+        <!--                app:layout_constraintStart_toStartOf="@+id/imageView15"-->
+        <!--                app:layout_constraintTop_toTopOf="@+id/imageView22"-->
+        <!--                tools:ignore="SmallSp" />-->
+
+        <!--            <Button-->
+        <!--                android:id="@+id/button"-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_marginStart="104dp"-->
+        <!--                android:layout_marginTop="12dp"-->
+        <!--                android:backgroundTint="@color/white"-->
+        <!--                android:fontFamily="@font/alata"-->
+        <!--                android:text="@string/calculare"-->
+        <!--                android:textColor="#0B0B0B"-->
+        <!--                android:textStyle="bold"-->
+        <!--                app:layout_constraintStart_toStartOf="@+id/imageView15"-->
+        <!--                app:layout_constraintTop_toBottomOf="@+id/imageView22" />-->
+
+        <!--            <Button-->
+        <!--                android:id="@+id/button2"-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_marginStart="177dp"-->
+        <!--                android:layout_marginTop="720dp"-->
+        <!--                android:layout_marginEnd="157dp"-->
+        <!--                android:layout_marginBottom="39dp"-->
+        <!--                android:backgroundTint="@color/green"-->
+        <!--                android:fontFamily="@font/alata"-->
+        <!--                android:text="@string/pagarpedido"-->
+        <!--                android:textColor="@color/white"-->
+        <!--                android:textStyle="bold"-->
+        <!--                app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--                app:layout_constraintEnd_toEndOf="parent"-->
+        <!--                app:layout_constraintStart_toStartOf="parent"-->
+        <!--                app:layout_constraintTop_toTopOf="parent" />-->
+
+        <!--            <TextView-->
+        <!--                android:id="@+id/textView25"-->
+        <!--                android:layout_width="78dp"-->
+        <!--                android:layout_height="24dp"-->
+        <!--                android:layout_marginStart="32dp"-->
+        <!--                android:layout_marginTop="68dp"-->
+        <!--                android:fontFamily="@font/alata"-->
+        <!--                android:text="@string/subtotall"-->
+        <!--                android:textColor="@color/green"-->
+        <!--                android:textSize="16sp"-->
+        <!--                android:textStyle="bold"-->
+        <!--                app:layout_constraintStart_toStartOf="@+id/imageView15"-->
+        <!--                app:layout_constraintTop_toBottomOf="@+id/imageView22" />-->
+
+        <!--            <TextView-->
+        <!--                android:id="@+id/textView26"-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_marginTop="68dp"-->
+        <!--                android:layout_marginEnd="16dp"-->
+        <!--                android:fontFamily="@font/alata"-->
+        <!--                android:text="@string/_164_000_00_cop"-->
+        <!--                app:layout_constraintEnd_toEndOf="@+id/imageView15"-->
+        <!--                app:layout_constraintHorizontal_bias="1.0"-->
+        <!--                app:layout_constraintStart_toEndOf="@+id/textView25"-->
+        <!--                app:layout_constraintTop_toBottomOf="@+id/imageView22" />-->
+
+        <!--            <TextView-->
+        <!--                android:id="@+id/textView27"-->
+        <!--                android:layout_width="287dp"-->
+        <!--                android:layout_height="66dp"-->
+        <!--                android:layout_marginStart="4dp"-->
+        <!--                android:layout_marginTop="48dp"-->
+        <!--                android:fontFamily="@font/alata"-->
+        <!--                android:text="@string/recuerda_que_nuestros_tiempos_de_entrega_se_establecen_entre_los_4_y_15_d_as_h_biles_despu_s_de_la_compra"-->
+        <!--                android:textAlignment="center"-->
+        <!--                android:textSize="12sp"-->
+        <!--                app:layout_constraintStart_toStartOf="@+id/imageView15"-->
+        <!--                app:layout_constraintTop_toBottomOf="@+id/button" />-->
+
+
+        <!--            <ImageView-->
+        <!--                android:id="@+id/imageView9"-->
+        <!--                android:layout_width="44dp"-->
+        <!--                android:layout_height="36dp"-->
+        <!--                android:layout_marginTop="40dp"-->
+        <!--                android:layout_marginEnd="24dp"-->
+        <!--                android:contentDescription="@string/todoooooooooooooo"-->
+        <!--                app:layout_constraintEnd_toEndOf="@+id/imageView15"-->
+        <!--                app:layout_constraintTop_toTopOf="@+id/imageView18"-->
+        <!--                app:srcCompat="@drawable/icono_flecha" />-->
+
+        <!--            <ImageView-->
+        <!--                android:id="@+id/imageView12"-->
+        <!--                android:layout_width="44dp"-->
+        <!--                android:layout_height="36dp"-->
+        <!--                android:layout_marginTop="60dp"-->
+        <!--                android:layout_marginEnd="24dp"-->
+        <!--                android:contentDescription="@string/todooooooooooooooooooooo"-->
+        <!--                app:layout_constraintEnd_toEndOf="@+id/imageView15"-->
+        <!--                app:layout_constraintTop_toBottomOf="@+id/imageView18"-->
+        <!--                app:srcCompat="@drawable/icono_flecha" />-->
+
+        <!--            <View-->
+        <!--                android:id="@+id/divider"-->
+        <!--                android:layout_width="277dp"-->
+        <!--                android:layout_height="1dp"-->
+        <!--                android:layout_marginStart="93dp"-->
+        <!--                android:layout_marginTop="342dp"-->
+        <!--                android:layout_marginEnd="77dp"-->
+        <!--                android:layout_marginBottom="524dp"-->
+        <!--                android:background="?android:attr/listDivider"-->
+        <!--                app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--                app:layout_constraintEnd_toEndOf="parent"-->
+        <!--                app:layout_constraintHorizontal_bias="0.722"-->
+        <!--                app:layout_constraintStart_toStartOf="parent"-->
+        <!--                app:layout_constraintTop_toTopOf="parent"-->
+        <!--                app:layout_constraintVertical_bias="0.0" />-->
+
+        <!--            <View-->
+        <!--                android:id="@+id/divider2"-->
+        <!--                android:layout_width="277dp"-->
+        <!--                android:layout_height="1dp"-->
+        <!--                android:layout_marginStart="12dp"-->
+        <!--                android:layout_marginTop="36dp"-->
+        <!--                android:background="?android:attr/listDivider"-->
+        <!--                app:layout_constraintStart_toStartOf="@+id/imageView15"-->
+        <!--                app:layout_constraintTop_toBottomOf="@+id/ivFondoImagen3" />-->
+
+        <!--            <View-->
+        <!--                android:id="@+id/divider3"-->
+        <!--                android:layout_width="277dp"-->
+        <!--                android:layout_height="1dp"-->
+        <!--                android:layout_marginStart="8dp"-->
+        <!--                android:layout_marginTop="32dp"-->
+        <!--                android:background="?android:attr/listDivider"-->
+        <!--                app:layout_constraintStart_toStartOf="@+id/imageView15"-->
+        <!--                app:layout_constraintTop_toBottomOf="@+id/button" />-->
+
+        <!--            <ImageView-->
+        <!--                android:id="@+id/imageView18"-->
+        <!--                android:layout_width="22dp"-->
+        <!--                android:layout_height="27dp"-->
+        <!--                android:layout_marginStart="56dp"-->
+        <!--                android:layout_marginTop="28dp"-->
+        <!--                android:contentDescription="@string/simbolodemas"-->
+        <!--                app:layout_constraintStart_toEndOf="@+id/textView19"-->
+        <!--                app:layout_constraintTop_toBottomOf="@+id/textView18"-->
+        <!--                app:srcCompat="@drawable/ic_plus" />-->
+
+        <!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
     </ScrollView>
 
 

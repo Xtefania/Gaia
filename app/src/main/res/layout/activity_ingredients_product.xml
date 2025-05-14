@@ -177,55 +177,55 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/v_linea_members" />
 
-        <TextView
-            android:id="@+id/tv_members_product_p1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/text_members_p1"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_members_product_t1" />
+<!--        <TextView-->
+<!--            android:id="@+id/tv_members_product_p1"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="@string/text_members_p1"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.0"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/tv_members_product_t1" />-->
 
-        <TextView
-            android:id="@+id/tv_members_product_t2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:text="@string/text_members_t2"
-            app:layout_constraintEnd_toEndOf="@+id/tv_members"
-            app:layout_constraintStart_toStartOf="@+id/tv_members"
-            app:layout_constraintTop_toBottomOf="@+id/tv_members_product_p1" />
+<!--        <TextView-->
+<!--            android:id="@+id/tv_members_product_t2"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="24dp"-->
+<!--            android:text="@string/text_members_t2"-->
+<!--            app:layout_constraintEnd_toEndOf="@+id/tv_members"-->
+<!--            app:layout_constraintStart_toStartOf="@+id/tv_members"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/tv_members_product_p1" />-->
 
-        <TextView
-            android:id="@+id/tv_members_product_p2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/text_members_p2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_members_product_t2" />
+<!--        <TextView-->
+<!--            android:id="@+id/tv_members_product_p2"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="@string/text_members_p2"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.0"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/tv_members_product_t2" />-->
 
-        <TextView
-            android:id="@+id/tv_members_product_t3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:text="@string/text_members_t3"
-            app:layout_constraintEnd_toEndOf="@+id/card_members"
-            app:layout_constraintStart_toStartOf="@+id/card_members"
-            app:layout_constraintTop_toBottomOf="@+id/tv_members_product_p2" />
+<!--        <TextView-->
+<!--            android:id="@+id/tv_members_product_t3"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="24dp"-->
+<!--            android:text="@string/text_members_t3"-->
+<!--            app:layout_constraintEnd_toEndOf="@+id/card_members"-->
+<!--            app:layout_constraintStart_toStartOf="@+id/card_members"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/tv_members_product_p2" />-->
 
-        <TextView
-            android:id="@+id/tv_members_product_p3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/text_members_p3"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_members_product_t3" />
+<!--        <TextView-->
+<!--            android:id="@+id/tv_members_product_p3"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="@string/text_members_p3"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.0"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/tv_members_product_t3" />-->
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

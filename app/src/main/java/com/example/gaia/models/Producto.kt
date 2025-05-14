@@ -4,9 +4,8 @@ data class Producto(
     val id: Int,
     val nombre: String,
     val descripcion: String,
-    val precio: String,
+    val precio: Double,
     val ingredientes: String,
-    val imagenResId: Int? = null
+    val imagen: String,
+    val subcategoriaId: Int
 )
-
-
