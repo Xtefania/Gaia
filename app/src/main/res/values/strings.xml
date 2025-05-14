@@ -132,4 +132,5 @@
     <string name="horarios">Horarios:\nLunes a Sábado: 10:00 a.m. a 8:00 p.m. |\nDomingos y Festivos 11:00 a.m. a 7:00 p.m.</string>
     <string name="contacto">Contacto: +57 300757575</string>
     <string name="simbolodemas">TODO</string>
+    <string name="cerrar_sesion">Cerrar sesión</string>
 </resources>

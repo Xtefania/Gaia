@@ -90,7 +90,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_welcome" />
 
     <Button
-        android:id="@+id/bt_inicio_sesion"
+        android:id="@+id/bt_recuperarContr"
         android:layout_width="260dp"
         android:layout_height="48dp"
         android:layout_marginTop="36dp"
