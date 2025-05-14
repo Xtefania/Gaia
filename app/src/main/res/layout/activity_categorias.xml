@@ -11,9 +11,6 @@
         tools:ignore="ExtraText">
 
         <!-- Incluir el layout base con fondo y cabecera -->
-        <include
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
 
         <!-- Aquí va el contenido específico de esta activity -->
 
@@ -79,19 +76,21 @@
             app:tint="@color/green"
             tools:ignore="DuplicateIds" />
 
+
         <ImageButton
             android:id="@+id/btn_menu"
             android:layout_width="33dp"
             android:layout_height="34dp"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="32dp"
             android:background="@null"
             android:contentDescription="@string/botonmenu"
             android:scaleType="fitCenter"
             android:src="@drawable/ic_menu_lines"
+            app:layout_constraintStart_toStartOf="@+id/imageView"
+            app:layout_constraintTop_toTopOf="parent"
             app:tint="@color/green"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="24dp" />
-
+            tools:ignore="MissingConstraints" />
 
         <TextView
             android:id="@+id/textView"
