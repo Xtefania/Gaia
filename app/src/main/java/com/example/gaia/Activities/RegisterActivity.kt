@@ -124,8 +124,6 @@ class RegisterActivity : AppCompatActivity() {
 
     private fun registrarUsuario() {
 
-        //FALTAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA FOTOOOOOOOOOOOOOOOOOO????????????????????????????????????
-
         val nombre = nombreEditText.text.toString().trim() // trim() elimina espacios al principio y al final
         val apellido = apellidoEditText.text.toString().trim()
         val email = emailEditText.text.toString().trim()
@@ -134,7 +132,6 @@ class RegisterActivity : AppCompatActivity() {
         val telefono = telefonoEditText.text.toString().trim()
         val fechaNacimiento = fechaNacimientoEditText.text.toString().trim()
         val genero = generoEditText.text.toString().trim()
-
 
 
         // Validación
@@ -155,7 +152,7 @@ class RegisterActivity : AppCompatActivity() {
             Toast.makeText(this, "Correo electrónico no válido", Toast.LENGTH_SHORT).show()
             return
         }
-       
+
         if (password != repetirPassword) {
             Toast.makeText(this, "Las contraseñas no coinciden", Toast.LENGTH_SHORT).show()
             return
@@ -167,7 +164,7 @@ class RegisterActivity : AppCompatActivity() {
         }
 
 
-            // SharedPreferences
+        // SharedPreferences
         val sharedPreferences = getSharedPreferences("UsuariosApp", MODE_PRIVATE)
         if (sharedPreferences.contains(email)) {
             Toast.makeText(this, "Ya existe un usuario con este correo", Toast.LENGTH_SHORT).show()
@@ -175,10 +172,12 @@ class RegisterActivity : AppCompatActivity() {
         }
 
         val editor = sharedPreferences.edit()
+        editor.putString(email, password)
         editor.putString("nombre", nombre)
         editor.putString("apellido", apellido)
-        editor.putString("email", email)
-        editor.putString("password", hashearContrasena(password))
+        //editor.putString("email", email)
+        //editor.putString("password", password)
+        //editor.putString("password", hashearContrasena(password))
         editor.putString("telefono", telefono)
         editor.putString("fechaNacimiento", fechaNacimiento)
         editor.putString("genero", genero)
@@ -201,7 +200,7 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     // Función hashearContrasena()
-    fun hashearContrasena(contrasena: String): String? {
+    /*fun hashearContrasena(contrasena: String): String? {
         try {
             val digest = MessageDigest.getInstance("SHA-256")
             val bytesHash = digest.digest(contrasena.toByteArray())
@@ -217,5 +216,5 @@ class RegisterActivity : AppCompatActivity() {
             e.printStackTrace()
             return null
         }
-    }
+    }*/
 }

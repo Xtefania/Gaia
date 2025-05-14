@@ -297,6 +297,22 @@
             app:layout_constraintTop_toBottomOf="@+id/textView5"
             tools:ignore="DuplicateIds" />
 
+    <Button
+        android:id="@+id/btn_cerrarsesion"
+        android:layout_width="160dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="28dp"
+        android:backgroundTint="@color/grey"
+        android:fontFamily="@font/alata"
+        android:text="@string/cerrar_sesion"
+        android:textColor="@color/green"
+        android:textSize="14sp"
+        app:icon="@drawable/ic_cerrarsesion"
+        app:iconTint="@null"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
 
         <ImageView
             android:id="@+id/imageView7"
