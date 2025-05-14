@@ -133,4 +133,11 @@
     <string name="contacto">Contacto: +57 300757575</string>
     <string name="simbolodemas">TODO</string>
     <string name="cerrar_sesion">Cerrar sesión</string>
+    <string name="botoncarrito">botoncarrito</string>
+    <string name="botonubicacion">botonubicacion</string>
+    <string name="botonmenu">botonmenu</string>
+    <string name="titulogenerico">titulogenerico</string>
+    <string name="logogaia">logogaia</string>
+    <string name="fondodegrado">fondodegrado</string>
+    <string name="background">background</string>
 </resources>
