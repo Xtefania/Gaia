@@ -1,5 +1,13 @@
 package com.example.gaia.adapters
 
+import android.view.LayoutInflater
+import androidx.recyclerview.widget.RecyclerView
+
+private val <Categorias> Categorias.productos: Any
+    get() {
+        TODO("Not yet implemented")
+    }
+
 //import android.view.LayoutInflater
 //import android.view.View
 //import android.view.ViewGroup
@@ -34,4 +42,4 @@ package com.example.gaia.adapters
 //
 //    override fun getItemCount(): Int = productos.size
 //}
-
+/////// ana recicleview

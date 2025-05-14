@@ -2,6 +2,7 @@ package com.example.gaia.Activities
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import com.example.gaia.R
@@ -50,14 +51,14 @@ class CategoriesActivity : AppCompatActivity() {
         }
 
         //  - Vista carrito
-        val carrito = findViewById<ImageView>(R.id.imageView6)
+        val carrito = findViewById<ImageButton>(R.id.btnCarrito)
         carrito.setOnClickListener {
             val intent = Intent(this, CarritoActivity::class.java)
             startActivity(intent)
         }
 
         //  - Vista ubicación
-        val btnUbicacion = findViewById<ImageView>(R.id.imageView4)
+        val btnUbicacion = findViewById<ImageButton>(R.id.botonubicacion)
         btnUbicacion.setOnClickListener {
             val intent = Intent(this, UbicacionActivity::class.java)
             startActivity(intent)
