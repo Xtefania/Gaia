@@ -16,6 +16,7 @@ public class DbHelper extends SQLiteOpenHelper {
     public static final String TABLE_CATEGORIAS = "t_categorias";
     public static final String TABLE_SUBCATEGORIAS = "t_subcategorias";
     public static final String TABLE_PRODUCTOS = "t_productos";
+    public static final String TABLE_CARRITO = "t_carrito";
 
     public DbHelper(@Nullable Context context) {
         super(context, DATABASE_NOMBRE, null, DATABASE_VERSION);
@@ -45,34 +46,41 @@ public class DbHelper extends SQLiteOpenHelper {
                 "imagen TEXT, " +
                 "subcategoria_id INTEGER NOT NULL, " +
                 "FOREIGN KEY (subcategoria_id) REFERENCES " + TABLE_SUBCATEGORIAS + "(id));");
+
+        db.execSQL("CREATE TABLE " + TABLE_CARRITO + " (" +
+                "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                "producto_id INTEGER NOT NULL, " +
+                "cantidad INTEGER NOT NULL DEFAULT 1, " +
+                "FOREIGN KEY(producto_id) REFERENCES t_productos(id));");
         //endregion
 
-        //region CATEGORIAS
+        //region - CATEGORIAS
         db.execSQL("INSERT INTO t_categorias (nombre) VALUES ('Maquillaje');");      // id = 1
         db.execSQL("INSERT INTO t_categorias (nombre) VALUES ('Cuidado diario');");  // id = 2
         db.execSQL("INSERT INTO t_categorias (nombre) VALUES ('Fragancias');");      // id = 3
         //endregion
 
-        //region SUBCATEGORIAS MAQUILLAJE
+        //region - SUBCATEGORIAS MAQUILLAJE
         db.execSQL("INSERT INTO t_subcategorias (nombre, categoria_id) VALUES ('Labiales', 1);");       // id = 1
         db.execSQL("INSERT INTO t_subcategorias (nombre, categoria_id) VALUES ('Rubores', 1);");        // id = 2
         db.execSQL("INSERT INTO t_subcategorias (nombre, categoria_id) VALUES ('Sombras', 1);");        // id = 3
         db.execSQL("INSERT INTO t_subcategorias (nombre, categoria_id) VALUES ('Delineadores', 1);");   // id = 4
         //endregion
 
-        //region SUBCATEGORIAS CUIDADO DIARIO
+        //region - SUBCATEGORIAS CUIDADO DIARIO
         db.execSQL("INSERT INTO t_subcategorias (nombre, categoria_id) VALUES ('Jabones', 2);");          // id = 5
         db.execSQL("INSERT INTO t_subcategorias (nombre, categoria_id) VALUES ('Desodorantes', 2);");     // id = 6
         db.execSQL("INSERT INTO t_subcategorias (nombre, categoria_id) VALUES ('Exfoliantes', 2);");      // id = 7
         db.execSQL("INSERT INTO t_subcategorias (nombre, categoria_id) VALUES ('Cremas corporales', 2);");// id = 8
         //endregion
 
-        //region SUBCATEGORIAS FRAGANCIAS
+        //region - SUBCATEGORIAS FRAGANCIAS
         db.execSQL("INSERT INTO t_subcategorias (nombre, categoria_id) VALUES ('Perfumes', 3);");           // id = 9
         db.execSQL("INSERT INTO t_subcategorias (nombre, categoria_id) VALUES ('Brumas corporales', 3);"); // id = 10
         db.execSQL("INSERT INTO t_subcategorias (nombre, categoria_id) VALUES ('Aceites esenciales', 3);"); // id = 11
         db.execSQL("INSERT INTO t_subcategorias (nombre, categoria_id) VALUES ('Colonias', 3);");           // id = 12
         //endregion
+
 
         //region PRODUCTOS
 

@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.example.gaia.R
+import com.example.gaia.db.DbCarrito
 import com.example.gaia.db.DbProductos
 import com.example.gaia.models.Producto
 
@@ -86,7 +87,14 @@ class InfoProductActivity : AppCompatActivity() {
         }
 
         findViewById<Button>(R.id.btn_anadir_carrito).setOnClickListener {
-            startActivity(Intent(this, CarritoActivity::class.java))
+            producto?.let {
+                val dbCarrito = DbCarrito(this)
+                dbCarrito.agregarAlCarrito(it.id)
+                Toast.makeText(this, "Producto agregado al carrito", Toast.LENGTH_SHORT).show()
+                startActivity(Intent(this, CarritoActivity::class.java))
+            } ?: run {
+                Toast.makeText(this, "Producto inválido", Toast.LENGTH_SHORT).show()
+            }
         }
 
         // Descripción

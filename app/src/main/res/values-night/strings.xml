@@ -60,7 +60,7 @@
     <string name="_50_000">$ 50.000</string>
     <string name="tu_carrito">Tu carrito</string>
     <string name="desodorante_roll_on">Desodorante Roll-on</string>
-    <string name="quitar">Quitar</string>
+    <string name="quitar"><u>Quitar</u></string>
     <string name="eau_de_parfum">Eau De Parfum</string>
     <string name="Todo">todo</string>
     <string name="tu_carrito1">Tu Carrito</string>
@@ -140,4 +140,9 @@
     <string name="logogaia">logogaia</string>
     <string name="fondodegrado">fondodegrado</string>
     <string name="background">background</string>
+    <string name="tarifa">Tarifa:</string>
+    <string name="flecha_menos_producto">flecha_menos_producto</string>
+    <string name="flecha_mas_producto">flecha_mas_producto</string>
+    <string name="ciudad">Ciudad</string>
+    <string name="_16_000_000">$16.000,000</string>
 </resources>

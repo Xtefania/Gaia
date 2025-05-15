@@ -1,58 +1,280 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:padding="8dp">
+    android:layout_height="wrap_content">
 
-    <ImageView
-        android:id="@+id/imageViewProducto"
-        android:layout_width="109dp"
-        android:layout_height="105dp"
-        android:layout_marginStart="8dp"
-        android:contentDescription="@string/todoo"
+    <LinearLayout
+        android:id="@+id/contenedorHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/desodorante2" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/textViewNombre"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/alata"
-        android:text="Nombre del Producto"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/imageViewProducto"
-        app:layout_constraintTop_toTopOf="parent" />
+        <ImageView
+            android:id="@+id/imageViewProducto"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:contentDescription="@string/todoo"
+            android:src="@drawable/desodorante2" />
 
-    <TextView
-        android:id="@+id/textViewPrecio"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:fontFamily="@font/alata"
-        android:text="$64.000"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/imageViewProducto"
-        app:layout_constraintTop_toBottomOf="@+id/textViewNombre" />
+        <LinearLayout
+            android:id="@+id/layoutTextos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/textViewAccion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:fontFamily="@font/alata"
-        android:text="1 quitar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/imageViewProducto"
-        app:layout_constraintTop_toBottomOf="@+id/textViewPrecio"
-        app:layout_constraintVertical_bias="0.0" />
+            <TextView
+                android:id="@+id/textViewNombre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/alata"
+                android:text="Nombre del Producto" />
 
+            <TextView
+                android:id="@+id/textViewPrecio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:fontFamily="@font/alata"
+                android:text="$64.000" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="0dp"
+                app:layout_constraintStart_toEndOf="@+id/imageViewProducto"
+                app:layout_constraintTop_toBottomOf="@+id/textViewPrecio">
+
+
+                <LinearLayout
+                    android:id="@+id/linearLayout2"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:background="@color/grey"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="0dp"
+                    app:layout_constraintStart_toEndOf="@+id/imageViewProducto"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewPrecio">
+
+                    <ImageView
+                        android:id="@+id/iv_flecha_menos"
+                        android:layout_width="15dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="2dp"
+                        android:contentDescription="@string/flecha_menos_producto"
+                        android:rotation="90"
+                        app:srcCompat="@drawable/icono_flecha" />
+
+                    <TextView
+                        android:id="@+id/tv_cantidad"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="2dp"
+                        android:fontFamily="@font/alata"
+                        android:text="100" />
+
+                    <ImageView
+                        android:id="@+id/iv_flecha_mas"
+                        android:layout_width="15dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="2dp"
+                        android:contentDescription="@string/flecha_mas_producto"
+                        android:rotation="270"
+                        app:srcCompat="@drawable/icono_flecha" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/textViewAccion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:fontFamily="@font/alata"
+                    android:text="@string/quitar"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/linearLayout"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewPrecio"
+                    app:layout_constraintVertical_bias="0.25" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <!--            <LinearLayout-->
+        <!--                android:id="@+id/linearLayout2"-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="30dp"-->
+        <!--                android:layout_marginTop="4dp"-->
+        <!--                android:background="@color/grey"-->
+        <!--                android:gravity="center_vertical"-->
+        <!--                android:orientation="horizontal">-->
+
+        <!--                <ImageView-->
+        <!--                    android:id="@+id/iv_flecha_menos"-->
+        <!--                    android:layout_width="15dp"-->
+        <!--                    android:layout_height="wrap_content"-->
+        <!--                    android:layout_marginEnd="2dp"-->
+        <!--                    android:contentDescription="@string/flecha_menos_producto"-->
+        <!--                    android:rotation="90"-->
+        <!--                    android:src="@drawable/icono_flecha" />-->
+
+        <!--                <TextView-->
+        <!--                    android:id="@+id/tv_cantidad"-->
+        <!--                    android:layout_width="wrap_content"-->
+        <!--                    android:layout_height="wrap_content"-->
+        <!--                    android:layout_marginHorizontal="2dp"-->
+        <!--                    android:fontFamily="@font/alata"-->
+        <!--                    android:text="100" />-->
+
+        <!--                <ImageView-->
+        <!--                    android:id="@+id/iv_flecha_mas"-->
+        <!--                    android:layout_width="15dp"-->
+        <!--                    android:layout_height="wrap_content"-->
+        <!--                    android:layout_marginStart="2dp"-->
+        <!--                    android:contentDescription="@string/flecha_mas_producto"-->
+        <!--                    android:rotation="270"-->
+        <!--                    android:src="@drawable/icono_flecha" />-->
+        <!--            </LinearLayout>-->
+
+        <!--            <TextView-->
+        <!--                android:id="@+id/textViewAccion"-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_marginStart="32dp"-->
+        <!--                android:layout_marginTop="8dp"-->
+        <!--                android:fontFamily="@font/alata"-->
+        <!--                android:text="@string/quitar"-->
+        <!--                android:textUnderline="true" />-->
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <!--<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--    xmlns:tools="http://schemas.android.com/tools"-->
+    <!--    android:layout_width="match_parent"-->
+    <!--    android:layout_height="wrap_content">-->
+
+    <!--    <ImageView-->
+    <!--        android:id="@+id/imageViewProducto"-->
+    <!--        android:layout_width="110dp"-->
+    <!--        android:layout_height="110dp"-->
+    <!--        android:contentDescription="@string/todoo"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent"-->
+    <!--        app:layout_constraintVertical_bias="0.0"-->
+    <!--        app:srcCompat="@drawable/desodorante2" />-->
+
+    <!--    <LinearLayout-->
+    <!--        android:id="@+id/layoutTextos"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginStart="16dp"-->
+    <!--        android:orientation="vertical"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="0.5"-->
+    <!--        app:layout_constraintStart_toEndOf="@id/imageViewProducto"-->
+    <!--        app:layout_constraintTop_toTopOf="parent"-->
+    <!--        app:layout_constraintVertical_bias="0.5">-->
+
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/textViewNombre"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:fontFamily="@font/alata"-->
+    <!--            android:text="Nombre del Producto"-->
+    <!--            app:layout_constraintEnd_toEndOf="parent"-->
+    <!--            app:layout_constraintHorizontal_bias="0.0"-->
+    <!--            app:layout_constraintStart_toEndOf="@+id/imageViewProducto"-->
+    <!--            app:layout_constraintTop_toTopOf="parent" />-->
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/textViewPrecio"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginTop="2dp"-->
+    <!--            android:fontFamily="@font/alata"-->
+    <!--            android:text="$64.000"-->
+    <!--            app:layout_constraintEnd_toEndOf="parent"-->
+    <!--            app:layout_constraintHorizontal_bias="0.0"-->
+    <!--            app:layout_constraintStart_toEndOf="@+id/imageViewProducto"-->
+    <!--            app:layout_constraintTop_toBottomOf="@+id/textViewNombre" />-->
+
+
+    <!--        <LinearLayout-->
+    <!--            android:id="@+id/linearLayout"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:gravity="center_vertical"-->
+    <!--            android:orientation="horizontal"-->
+    <!--            android:padding="0dp"-->
+    <!--            app:layout_constraintStart_toEndOf="@+id/imageViewProducto"-->
+    <!--            app:layout_constraintTop_toBottomOf="@+id/textViewPrecio">-->
+
+
+    <!--            <LinearLayout-->
+    <!--                android:id="@+id/linearLayout2"-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="30dp"-->
+    <!--                android:background="@color/grey"-->
+    <!--                android:gravity="center_vertical"-->
+    <!--                android:orientation="horizontal"-->
+    <!--                android:padding="0dp"-->
+    <!--                app:layout_constraintStart_toEndOf="@+id/imageViewProducto"-->
+    <!--                app:layout_constraintTop_toBottomOf="@+id/textViewPrecio">-->
+
+    <!--                <ImageView-->
+    <!--                    android:id="@+id/iv_flecha_menos"-->
+    <!--                    android:layout_width="15dp"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:layout_marginEnd="2dp"-->
+    <!--                    android:contentDescription="@string/flecha_menos_producto"-->
+    <!--                    android:rotation="90"-->
+    <!--                    app:srcCompat="@drawable/icono_flecha" />-->
+
+    <!--                <TextView-->
+    <!--                    android:id="@+id/tv_cantidad"-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:layout_marginHorizontal="2dp"-->
+    <!--                    android:fontFamily="@font/alata"-->
+    <!--                    android:text="100" />-->
+
+    <!--                <ImageView-->
+    <!--                    android:id="@+id/iv_flecha_mas"-->
+    <!--                    android:layout_width="15dp"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:layout_marginStart="2dp"-->
+    <!--                    android:contentDescription="@string/flecha_mas_producto"-->
+    <!--                    android:rotation="270"-->
+    <!--                    app:srcCompat="@drawable/icono_flecha" />-->
+    <!--            </LinearLayout>-->
+
+    <!--            <TextView-->
+    <!--                android:id="@+id/textViewAccion"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_marginStart="32dp"-->
+    <!--                android:fontFamily="@font/alata"-->
+    <!--                android:text="@string/quitar"-->
+    <!--                app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--                app:layout_constraintStart_toEndOf="@+id/linearLayout"-->
+    <!--                app:layout_constraintTop_toBottomOf="@+id/textViewPrecio"-->
+    <!--                app:layout_constraintVertical_bias="0.25" />-->
+    <!--        </LinearLayout>-->
+
+
+    <!--    </LinearLayout>-->
+    <!--</androidx.constraintlayout.widget.ConstraintLayout>-->
