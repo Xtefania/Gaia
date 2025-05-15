@@ -9,6 +9,7 @@ import com.example.gaia.R
 import com.example.gaia.MainActivity
 import androidx.appcompat.app.AppCompatActivity
 import android.widget.Toast
+import android.widget.EditText
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.auth.api.signin.GoogleSignIn
@@ -47,7 +48,39 @@ class LoginActivity : AppCompatActivity() {
             signIn()
         }
 
-        // Navegación
+
+        /*//- Vista categorias de productos - CON USUARIO
+        val btnLogin2 = findViewById<Button>(R.id.btn_inicio_sesion2)
+        val emailEditText = findViewById<EditText>(R.id.et_campo_correo)
+
+        btnLogin2.setOnClickListener {
+            val email = emailEditText.text.toString().trim()
+
+            if (email.isEmpty()) {
+                Toast.makeText(this, "Por favor ingresa tu correo", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            val prefs = getSharedPreferences("UsuariosApp", MODE_PRIVATE)
+            val userDataStr = prefs.getString(email, null)
+
+            if (userDataStr != null) {
+                // Usuario existe, guardar como usuario actual
+                prefs.edit().putString("usuario_actual", email).apply()
+
+                // Ir a Categorías
+                val intent = Intent(this, CategoriesActivity::class.java)
+                startActivity(intent)
+                finish()
+            } else {
+                Toast.makeText(this, "Correo no registrado", Toast.LENGTH_SHORT).show()
+            }
+        }*/
+
+
+
+
+
 
         //  - Vista recuperar contraseña
         val tvPassword = findViewById<TextView>(R.id.tv_contrasena_olv)
@@ -56,7 +89,9 @@ class LoginActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        //  - Vista categorias de productos
+
+
+        //- Vista categorias de productos - SIN USUARIO
         val btnLogin2 = findViewById<Button>(R.id.btn_inicio_sesion2)
         btnLogin2.setOnClickListener {
             val intent = Intent(this, CategoriesActivity::class.java)

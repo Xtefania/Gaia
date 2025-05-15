@@ -7,6 +7,7 @@ import android.widget.EditText
 import android.widget.Button
 import android.content.Context
 import android.widget.Toast
+import org.json.JSONObject
 
 class OlvidoContrasenaActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,10 +26,17 @@ class OlvidoContrasenaActivity : AppCompatActivity() {
             }
 
             val prefs = getSharedPreferences("UsuariosApp", Context.MODE_PRIVATE)
-            val password = prefs.getString(emailIngresado, null)
+            val userDataStr = prefs.getString(emailIngresado, null)
 
-            if (password != null) {
-                Toast.makeText(this, "Tu contraseña es: $password", Toast.LENGTH_LONG).show()
+            if (userDataStr != null) {
+                val userData = JSONObject(userDataStr)
+                val password = userData.optString("password", null)
+
+                if (password != null) {
+                    Toast.makeText(this, "Tu contraseña es: $password", Toast.LENGTH_LONG).show()
+                } else {
+                    Toast.makeText(this, "No se encontró una contraseña asociada", Toast.LENGTH_SHORT).show()
+                }
             } else {
                 Toast.makeText(this, "Correo no registrado", Toast.LENGTH_SHORT).show()
             }

@@ -18,6 +18,9 @@ import java.util.Calendar
 import java.security.MessageDigest
 import java.security.NoSuchAlgorithmException
 import java.util.HexFormat
+import org.json.JSONObject
+import java.io.File
+import java.io.FileOutputStream
 
 class RegisterActivity : AppCompatActivity() {
 
@@ -82,15 +85,47 @@ class RegisterActivity : AppCompatActivity() {
 
         // Agregar foto perfil
         agregarFotoImageView.setOnClickListener {
-            val intent = Intent(Intent.ACTION_PICK)
+            val intent = Intent(Intent.ACTION_OPEN_DOCUMENT)
+            intent.addCategory(Intent.CATEGORY_OPENABLE)
             intent.type = "image/*"
-            intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
+            intent.flags = Intent.FLAG_GRANT_READ_URI_PERMISSION or Intent.FLAG_GRANT_PERSISTABLE_URI_PERMISSION
             startActivityForResult(intent, 100)
         }
 
     }
 
+
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if (requestCode == 100 && resultCode == RESULT_OK && data != null) {
+            val imageUri: Uri? = data.data
+            if (imageUri != null) {
+                try {
+                    // Copiamos el contenido del URI a un archivo interno
+                    val inputStream = contentResolver.openInputStream(imageUri)
+                    val file = File(filesDir, "foto_perfil.jpg")
+                    val outputStream = FileOutputStream(file)
+
+                    inputStream?.copyTo(outputStream)
+
+                    inputStream?.close()
+                    outputStream.close()
+
+                    val savedUri = Uri.fromFile(file)
+                    agregarFotoImageView.setImageURI(savedUri)
+                    uriFotoPerfil = savedUri
+
+                } catch (e: Exception) {
+                    Toast.makeText(this, "No se pudo acceder a la imagen", Toast.LENGTH_SHORT).show()
+                    e.printStackTrace()
+                }
+            }
+        }
+    }
+
+    //para eliminaaaaaaaaar
+    /*override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
         if (requestCode == 100 && resultCode == RESULT_OK) {
@@ -100,7 +135,7 @@ class RegisterActivity : AppCompatActivity() {
             }
         }
     }
-
+*/
 
     // Mayor de edad
     private fun esMayorDeEdad(fechaNacimiento: String): Boolean {
@@ -171,8 +206,26 @@ class RegisterActivity : AppCompatActivity() {
             return
         }
 
+        // Crear JSON con los datos del usuario
+        val usuario = JSONObject()
+        usuario.put("nombre", nombre)
+        usuario.put("apellido", apellido)
+        usuario.put("email", email)
+        usuario.put("password", password)
+        usuario.put("telefono", telefono)
+        usuario.put("fechaNacimiento", fechaNacimiento)
+        usuario.put("genero", genero)
+        usuario.put("fotoPerfilUri", uriFotoPerfil?.toString() ?: "")
+
+
+        // Guardar en SharedPreferences
+
         val editor = sharedPreferences.edit()
-        editor.putString(email, password)
+        editor.putString(email, usuario.toString())       // Guardamos el usuario con su email como clave
+        editor.putString("usuario_actual", email)         // Este será el usuario que inició sesión
+
+        //ELIMINAAAR
+        /*editor.putString(email, password)
         editor.putString("nombre", nombre)
         editor.putString("apellido", apellido)
         //editor.putString("email", email)
@@ -180,7 +233,7 @@ class RegisterActivity : AppCompatActivity() {
         //editor.putString("password", hashearContrasena(password))
         editor.putString("telefono", telefono)
         editor.putString("fechaNacimiento", fechaNacimiento)
-        editor.putString("genero", genero)
+        editor.putString("genero", genero)*/
         uriFotoPerfil?.let {
             editor.putString("fotoPerfilUri", it.toString())
         }

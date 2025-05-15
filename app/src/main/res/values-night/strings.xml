@@ -145,4 +145,9 @@
     <string name="flecha_mas_producto">flecha_mas_producto</string>
     <string name="ciudad">Ciudad</string>
     <string name="_16_000_000">$16.000,000</string>
+    <string name="mi_cuenta">Mi Cuenta</string>
+    <string name="guardar">Guardar</string>
+    <string name="btnmicuenta">btnmicuenta</string>
+    <string name="eliminar">eliminar</string>
+    <string name="eliminar_cuenta">Eliminar cuenta</string>
 </resources>

@@ -76,6 +76,13 @@ class CategoriesActivity : AppCompatActivity() {
         btnCerrarSesion.setOnClickListener {
             cerrarSesion(this)
         }
+
+        //  - Vista Mi Cuenta - perfil
+        val micuenta = findViewById<ImageButton>(R.id.btn_micuenta)
+        micuenta.setOnClickListener {
+            val intent = Intent(this, MiCuentaActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     // Función de cierre de sesión
