@@ -16,7 +16,7 @@ class SplashActivity : AppCompatActivity() {
         setContentView(R.layout.activity_splash)
 
         // Borrar la base de datos (para pruebas)
-//        deleteDatabase("gaia.db");
+        deleteDatabase("gaia.db");
 
         Handler(Looper.getMainLooper()).postDelayed({
             val intent = Intent(this, MainHActivity::class.java)

@@ -150,4 +150,5 @@
     <string name="btnmicuenta">btnmicuenta</string>
     <string name="eliminar">eliminar</string>
     <string name="eliminar_cuenta">Eliminar cuenta</string>
+    <string name="nombre_del_producto">Nombre del Producto</string>
 </resources>
