@@ -70,7 +70,7 @@
     <string name="ciudad_provincia">Ciudad/provincia</string>
     <string name="colombia">Colombia</string>
     <string name="bogot">Bogotá</string>
-    <string name="subtotal">Subtotal</string>
+    <string name="subtotal">Subtotal:</string>
     <string name="_64_000_00_cop">$ 64.000,00 COP</string>
     <string name="tarifa_16_000_00">Tarifa: $ 16.000,00</string>
     <string name="recuerda_que_nuestros_tiempos_de_entrega_se_establecen_entre_los_4_y_15_d_as_h_biles_despu_s_de_la_compr">Recuerda que nuestros tiempos de entrega se establecen entre los 4 y 15 días hábiles después de la comprá</string>
@@ -151,4 +151,31 @@
     <string name="eliminar">eliminar</string>
     <string name="eliminar_cuenta">Eliminar cuenta</string>
     <string name="nombre_del_producto">Nombre del Producto</string>
+    <string name="cantidad_producto">100</string>
+    <string name="total">Total:</string>
+    <string name="no_disponible">No disponible</string>
+    <string-array name="lista_paises">
+        <item>Seleccione una opción</item>
+        <item>Colombia</item>
+        <item>Argentina</item>
+        <item>Brasil</item>
+    </string-array>
+    <string-array name="ciudades_colombia">
+        <item>Seleccione una opción</item>
+        <item>Bogotá</item>
+        <item>Medellín</item>
+        <item>Cali</item>
+    </string-array>
+    <string-array name="ciudades_argentina">
+        <item>Seleccione una opción</item>
+        <item>Buenos Aires</item>
+        <item>Córdoba</item>
+        <item>Rosario</item>
+    </string-array>
+    <string-array name="ciudades_brasil">
+        <item>Seleccione una opción</item>
+        <item>São Paulo</item>
+        <item>Rio de Janeiro</item>
+        <item>Belo Horizonte</item>
+    </string-array>
 </resources>

@@ -62,7 +62,7 @@ public class DbCarrito extends DbHelper {
                         cursor.getInt(cursor.getColumnIndexOrThrow("id")),
                         cursor.getString(cursor.getColumnIndexOrThrow("imagen")),
                         cursor.getString(cursor.getColumnIndexOrThrow("nombre")),
-                        cursor.getDouble(cursor.getColumnIndexOrThrow("precio")),
+                        cursor.getInt(cursor.getColumnIndexOrThrow("precio")),
                         cursor.getInt(cursor.getColumnIndexOrThrow("cantidad"))
 //                        cursor.getString(cursor.getColumnIndexOrThrow("descripcion")),
 //                        cursor.getString(cursor.getColumnIndexOrThrow("ingredientes")),

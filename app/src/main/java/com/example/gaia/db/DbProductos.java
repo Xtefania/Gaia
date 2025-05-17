@@ -45,7 +45,7 @@ public class DbProductos extends DbHelper {
                             cursor.getInt(cursor.getColumnIndexOrThrow("id")),
                             cursor.getString(cursor.getColumnIndexOrThrow("nombre")),
                             cursor.getString(cursor.getColumnIndexOrThrow("descripcion")),
-                            cursor.getDouble(cursor.getColumnIndexOrThrow("precio")),
+                            cursor.getInt(cursor.getColumnIndexOrThrow("precio")),
                             cursor.getString(cursor.getColumnIndexOrThrow("ingredientes")),
                             cursor.getString(cursor.getColumnIndexOrThrow("imagen")),
                             cursor.getInt(cursor.getColumnIndexOrThrow("subcategoria_id"))
@@ -79,7 +79,7 @@ public class DbProductos extends DbHelper {
                         cursor.getInt(cursor.getColumnIndexOrThrow("id")),
                         cursor.getString(cursor.getColumnIndexOrThrow("nombre")),
                         cursor.getString(cursor.getColumnIndexOrThrow("descripcion")),
-                        cursor.getDouble(cursor.getColumnIndexOrThrow("precio")),
+                        cursor.getInt(cursor.getColumnIndexOrThrow("precio")),
                         cursor.getString(cursor.getColumnIndexOrThrow("ingredientes")),
                         cursor.getString(cursor.getColumnIndexOrThrow("imagen")),
                         cursor.getInt(cursor.getColumnIndexOrThrow("subcategoria_id"))
