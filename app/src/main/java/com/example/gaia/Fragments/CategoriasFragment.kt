@@ -8,6 +8,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.TextView
+import androidx.fragment.app.commit
+import com.example.gaia.Activities.ListProductActivity
 import com.example.gaia.Activities.LoginActivity
 import com.example.gaia.R
 import com.google.android.gms.auth.api.signin.GoogleSignIn
@@ -37,8 +40,7 @@ class CategoriasFragment : Fragment() {
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.activity_categorias, container, false)
@@ -52,6 +54,33 @@ class CategoriasFragment : Fragment() {
         btnCerrarSesion.setOnClickListener {
             cerrarSesion(requireContext())
         }
+
+        super.onViewCreated(view, savedInstanceState)
+
+        val buttonIds = listOf(
+            R.id.textView2,
+            R.id.textView3,
+            R.id.textView4,
+            R.id.textView5,
+            R.id.textView6,
+            R.id.textView7,
+            R.id.textView9,
+            R.id.textView10,
+            R.id.textView11,
+            R.id.textView8,
+        )
+
+        for (id in buttonIds) {
+            val textView = view.findViewById<TextView>(id)
+            textView.setOnClickListener {
+                parentFragmentManager.commit {
+                    replace(R.id.frameContainer, InfoProductFragment())
+                    setReorderingAllowed(true)
+                    addToBackStack("fromCategorias")
+                }
+            }
+        }
+
     }
 
     private fun cerrarSesion(context: Context) {
@@ -80,12 +109,11 @@ class CategoriasFragment : Fragment() {
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            CategoriasFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
+        fun newInstance(param1: String, param2: String) = CategoriasFragment().apply {
+            arguments = Bundle().apply {
+                putString(ARG_PARAM1, param1)
+                putString(ARG_PARAM2, param2)
             }
+        }
     }
 }

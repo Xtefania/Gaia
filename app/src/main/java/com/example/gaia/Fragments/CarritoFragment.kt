@@ -1,60 +1,212 @@
 package com.example.gaia.Fragments
 
+import ProductoCarritoAdapter
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.*
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.gaia.R
+import com.example.gaia.db.DbCarrito
+import com.example.gaia.models.ProductoCarrito
+import java.text.NumberFormat
+import java.util.Locale
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [CarritoFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class CarritoFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private lateinit var recyclerViewProducto: RecyclerView
+    private lateinit var adapterProducto: ProductoCarritoAdapter
+    private lateinit var listaProductos: MutableList<ProductoCarrito>
+
+    private lateinit var spinnerPaises: Spinner
+    private lateinit var spinnerCiudades: Spinner
+    private var paisSeleccionado: String = ""
+    private var ciudadSeleccionada: String = ""
+
+    private val tarifasEnvioUbicacion = mapOf(
+        "Colombia" to mapOf("Bogotá" to 1000, "Medellín" to 2000, "Cali" to 3000),
+        "Argentina" to mapOf("Buenos Aires" to 1000, "Córdoba" to 2000, "Rosario" to 3000),
+        "Brasil" to mapOf("São Paulo" to 1000, "Rio de Janeiro" to 2000, "Brasília" to 3000)
+    )
+
+    private lateinit var tvSubtotalProductos: TextView
+    private lateinit var tvTarifaEnvioPrecio: TextView
+    private lateinit var tvTotal: TextView
+    private lateinit var btnCalcular: Button
+
+    private val formatoCOP = NumberFormat.getNumberInstance(Locale("es", "CO"))
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.activity_carrito, container, false)
+        val view = inflater.inflate(R.layout.activity_carrito, container, false)
+        initViews(view)
+        recyclerViewProductosCarrito()
+        spinnerPais()
+        calcularSubtotalProductos()
+        calcularTarifaEnvio()
+        return view
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment CarritoFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            CarritoFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
+    private fun initViews(view: View) {
+        recyclerViewProducto = view.findViewById(R.id.recyclerViewCarrito)
+        spinnerPaises = view.findViewById(R.id.opciones_list_item1)
+        spinnerCiudades = view.findViewById(R.id.opciones_list_item2)
+        tvSubtotalProductos = view.findViewById(R.id.tv_subtotal_precio)
+        tvTarifaEnvioPrecio = view.findViewById(R.id.tv_tarfia_precio)
+        tvTotal = view.findViewById(R.id.tv_total_precio)
+        btnCalcular = view.findViewById(R.id.btn_calcular)
+    }
+
+    private fun recyclerViewProductosCarrito() {
+        recyclerViewProducto.layoutManager = LinearLayoutManager(requireContext())
+        val dbCarrito = DbCarrito(requireContext())
+        listaProductos = dbCarrito.obtenerProductosCarrito().toMutableList()
+        adapterProducto = ProductoCarritoAdapter(listaProductos, requireContext())
+        recyclerViewProducto.adapter = adapterProducto
+    }
+
+    private fun spinnerPais() {
+        paisSeleccionado = resources.getStringArray(R.array.lista_paises)[0]
+
+        val adapterPaises = ArrayAdapter.createFromResource(
+            requireContext(),
+            R.array.lista_paises,
+            android.R.layout.simple_spinner_item
+        )
+
+        adapterPaises.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        spinnerPaises.adapter = adapterPaises
+
+        spinnerPaises.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(
+                parent: AdapterView<*>, view: View?, position: Int, id: Long
+            ) {
+                paisSeleccionado = parent.getItemAtPosition(position) as String
+                spinnerCiudades(paisSeleccionado)
             }
+
+            override fun onNothingSelected(parent: AdapterView<*>) {}
+        }
+    }
+
+    private fun spinnerCiudades(pais: String) {
+        val ciudadesArrayId = when (pais) {
+            "Colombia" -> R.array.ciudades_colombia
+            "Argentina" -> R.array.ciudades_argentina
+            "Brasil" -> R.array.ciudades_brasil
+            else -> R.array.ciudades_colombia
+        }
+
+        val adapterCiudades = ArrayAdapter.createFromResource(
+            requireContext(),
+            ciudadesArrayId,
+            android.R.layout.simple_spinner_item
+        )
+
+        adapterCiudades.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        spinnerCiudades.adapter = adapterCiudades
+
+        ciudadSeleccionada = resources.getStringArray(ciudadesArrayId)[0]
+
+        spinnerCiudades.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(
+                parent: AdapterView<*>, view: View?, position: Int, id: Long
+            ) {
+                ciudadSeleccionada = parent.getItemAtPosition(position) as String
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>) {}
+        }
+    }
+
+    private fun calcularSubtotalProductos() {
+        val subtotal = listaProductos.sumOf { it.precio * it.cantidad }
+        tvSubtotalProductos.text = "$ ${formatoCOP.format(subtotal)}"
+    }
+
+    private fun calcularTarifaEnvio() {
+        btnCalcular.setOnClickListener {
+            val tarifa = tarifasEnvioUbicacion[paisSeleccionado]?.get(ciudadSeleccionada)
+            if (tarifa != null) {
+                tvTarifaEnvioPrecio.text = "$ ${formatoCOP.format(tarifa)}"
+            } else {
+                tvTarifaEnvioPrecio.text = "No disponible"
+            }
+            calcularTotal()
+        }
+    }
+
+    private fun calcularTotal() {
+        val subtotal = tvSubtotalProductos.text.toString().filter { it.isDigit() }.toIntOrNull() ?: 0
+        val tarifaEnvio = tvTarifaEnvioPrecio.text.toString().filter { it.isDigit() }.toIntOrNull() ?: 0
+        val total = subtotal + tarifaEnvio
+        tvTotal.text = "$ ${formatoCOP.format(total)}"
     }
 }
+
+
+//package com.example.gaia.Fragments
+//
+//import android.os.Bundle
+//import androidx.fragment.app.Fragment
+//import android.view.LayoutInflater
+//import android.view.View
+//import android.view.ViewGroup
+//import com.example.gaia.R
+//
+//// TODO: Rename parameter arguments, choose names that match
+//// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+//private const val ARG_PARAM1 = "param1"
+//private const val ARG_PARAM2 = "param2"
+//
+///**
+// * A simple [Fragment] subclass.
+// * Use the [CarritoFragment.newInstance] factory method to
+// * create an instance of this fragment.
+// */
+//class CarritoFragment : Fragment() {
+//    // TODO: Rename and change types of parameters
+//    private var param1: String? = null
+//    private var param2: String? = null
+//
+//    override fun onCreate(savedInstanceState: Bundle?) {
+//        super.onCreate(savedInstanceState)
+//        arguments?.let {
+//            param1 = it.getString(ARG_PARAM1)
+//            param2 = it.getString(ARG_PARAM2)
+//        }
+//    }
+//
+//    override fun onCreateView(
+//        inflater: LayoutInflater, container: ViewGroup?,
+//        savedInstanceState: Bundle?
+//    ): View? {
+//        // Inflate the layout for this fragment
+//        return inflater.inflate(R.layout.activity_carrito, container, false)
+//    }
+//
+//    companion object {
+//        /**
+//         * Use this factory method to create a new instance of
+//         * this fragment using the provided parameters.
+//         *
+//         * @param param1 Parameter 1.
+//         * @param param2 Parameter 2.
+//         * @return A new instance of fragment CarritoFragment.
+//         */
+//        // TODO: Rename and change types and number of parameters
+//        @JvmStatic
+//        fun newInstance(param1: String, param2: String) =
+//            CarritoFragment().apply {
+//                arguments = Bundle().apply {
+//                    putString(ARG_PARAM1, param1)
+//                    putString(ARG_PARAM2, param2)
+//                }
+//            }
+//    }
+//}

@@ -84,15 +84,15 @@ class DescriptionProductActivity : AppCompatActivity() {
         btnInfoProducto.setOnClickListener { startActivity(InfoProductActivity::class.java) }
 
         // Ir a ingredientes del producto
-        findViewById<ImageView>(R.id.btn_plus_members).setOnClickListener {
-            producto?.let {
-                val intent = Intent(this, IngredientsProductActivity::class.java)
-                intent.putExtra("ID_PRODUCTO", idProducto)
-                startActivity(intent)
-            } ?: run {
-                Toast.makeText(this, "Producto no encontrado", Toast.LENGTH_SHORT).show()
-            }
-        }
+//        findViewById<ImageView>(R.id.btn_plus_members).setOnClickListener {
+//            producto?.let {
+//                val intent = Intent(this, IngredientsProductActivity::class.java)
+//                intent.putExtra("ID_PRODUCTO", idProducto)
+//                startActivity(intent)
+//            } ?: run {
+//                Toast.makeText(this, "Producto no encontrado", Toast.LENGTH_SHORT).show()
+//            }
+//        }
     }
 
     /**

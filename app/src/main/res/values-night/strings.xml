@@ -8,12 +8,12 @@
     <string name="continuar_google">Continuar con Google</string>
     <string name="correo_electronico">Correo electrónico</string>
     <string name="contrasena">Contraseña</string>
-    <string name="titulo_producto">Jabón sólido Karite Leche</string>
+    <string name="titulo_producto">Título del producto</string>
     <string name="icono_menu">icono_menu</string>
     <string name="icono_locacion">icono_locación</string>
     <string name="icono_carrito_compra">icono_carrito_compra</string>
     <string name="imagen_producto">imagen_producto</string>
-    <string name="precio_producto">$24.000</string>
+    <string name="precio_producto">$0</string>
     <string name="descripcion">Descripción</string>
     <string name="icono_mas">icono_mas</string>
     <string name="ingredientes">Ingredientes</string>
@@ -159,6 +159,7 @@
     <string name="_0_000">_0_000</string>
     <string name="imagen_logo">imagen_logo</string>
     <string name="iconno_menu">iconno_menu</string>
+    <string name="descripcion_producto">Descripción del producto</string>
     <string-array name="lista_paises">
         <item>Seleccione una opción</item>
         <item>Colombia</item>
