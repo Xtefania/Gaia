@@ -7,9 +7,6 @@ plugins {
 android {
     namespace = "com.example.gaia"
     compileSdk = 35
-    defaultConfig {
-        applicationId = "com.example.gaia"
-    }
 
     defaultConfig {
         applicationId = "com.example.gaia"
@@ -30,6 +27,11 @@ android {
             )
         }
     }
+
+    buildFeatures {
+    viewBinding = true
+}
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
