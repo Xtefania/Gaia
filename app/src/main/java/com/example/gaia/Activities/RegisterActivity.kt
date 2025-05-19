@@ -124,18 +124,6 @@ class RegisterActivity : AppCompatActivity() {
         }
     }
 
-    //para eliminaaaaaaaaar
-    /*override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-
-        if (requestCode == 100 && resultCode == RESULT_OK) {
-            uriFotoPerfil = data?.data
-            uriFotoPerfil?.let {
-                agregarFotoImageView.setImageURI(it)
-            }
-        }
-    }
-*/
 
     // Mayor de edad
     private fun esMayorDeEdad(fechaNacimiento: String): Boolean {
@@ -224,16 +212,6 @@ class RegisterActivity : AppCompatActivity() {
         editor.putString(email, usuario.toString())       // Guardamos el usuario con su email como clave
         editor.putString("usuario_actual", email)         // Este será el usuario que inició sesión
 
-        //ELIMINAAAR
-        /*editor.putString(email, password)
-        editor.putString("nombre", nombre)
-        editor.putString("apellido", apellido)
-        //editor.putString("email", email)
-        //editor.putString("password", password)
-        //editor.putString("password", hashearContrasena(password))
-        editor.putString("telefono", telefono)
-        editor.putString("fechaNacimiento", fechaNacimiento)
-        editor.putString("genero", genero)*/
         uriFotoPerfil?.let {
             editor.putString("fotoPerfilUri", it.toString())
         }

@@ -6,7 +6,6 @@ import android.widget.Button
 import android.widget.TextView
 import android.util.Log
 import com.example.gaia.R
-import com.example.gaia.MainActivity
 import androidx.appcompat.app.AppCompatActivity
 import android.widget.Toast
 import android.widget.EditText
@@ -69,7 +68,7 @@ class LoginActivity : AppCompatActivity() {
                 prefs.edit().putString("usuario_actual", email).apply()
 
                 // Ir a Categorías
-                val intent = Intent(this, CategoriesActivity::class.java)
+                val intent = Intent(this, DisenoFragmActivity::class.java)
                 startActivity(intent)
                 finish()
             } else {
@@ -94,7 +93,7 @@ class LoginActivity : AppCompatActivity() {
         //- Vista categorias de productos - SIN USUARIO
         val btnLogin2 = findViewById<Button>(R.id.btn_inicio_sesion2)
         btnLogin2.setOnClickListener {
-            val intent = Intent(this, CategoriesActivity::class.java)
+            val intent = Intent(this, DisenoFragmActivity::class.java)
             startActivity(intent)
         }
 
@@ -130,7 +129,7 @@ class LoginActivity : AppCompatActivity() {
             Toast.makeText(this, "Bienvenido ${account.displayName}", Toast.LENGTH_SHORT).show()
 
             // - Vista categorias de productos desde Botón Google
-            intent = Intent(this, CategoriesActivity::class.java)
+            intent = Intent(this, DisenoFragmActivity::class.java)
             intent.putExtra("USER_EMAIL", account.email)
             intent.putExtra("USER_NAME", account.displayName)
             startActivity(intent)

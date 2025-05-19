@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!--Inicio fondo-->
+    <!--    Inicio fondo -->
 
     <ImageView
         android:id="@+id/iv_fondo_imagen"
@@ -30,7 +30,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
-    <!--Fin fondo -->
+    <!--    Fin fondo -->
 
     <!-- Inicio Header -->
 
@@ -124,6 +124,34 @@
                 android:layout_height="wrap_content"
                 android:nestedScrollingEnabled="false" />
             <!--    Fin Tarjetas productos -->
+
+            <!--    Inicio subtotal -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="15dp">
+
+                <TextView
+                    android:id="@+id/tv_subtotal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:fontFamily="@font/alata"
+                    android:text="@string/subtotal"
+                    android:textColor="@color/green"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tv_subtotal_precio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/alata"
+                    android:text="@string/_16_000_000"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
 
             <!--    Inicio Tarifas -->
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -267,6 +295,7 @@
                 android:textColor="#0B0B0B"
                 android:textStyle="bold" />
 
+            <!--    Inicio Tarifa (Valor) -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -289,13 +318,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/alata"
-                    android:text="@string/_16_000_000"
+                    android:text="@string/no_disponible"
                     android:textColor="@color/black"
                     android:textSize="14sp" />
 
             </LinearLayout>
+            <!--    Fin Tarifa (Valor) -->
 
-            <!--    Inicio Subtotal -->
+
+            <!--    Inicio Total -->
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/item_subtotal"
                 android:layout_width="match_parent"
@@ -304,12 +335,12 @@
                 android:background="@android:color/transparent">
 
                 <TextView
-                    android:id="@+id/tv_subtotal"
+                    android:id="@+id/tv_total"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginBottom="8dp"
                     android:fontFamily="@font/alata"
-                    android:text="@string/subtotal"
+                    android:text="@string/total"
                     android:textColor="@color/green"
                     android:textSize="16sp"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -320,12 +351,12 @@
                     app:layout_constraintVertical_bias="0.0" />
 
                 <TextView
-                    android:id="@+id/tv_subtotal_precio"
+                    android:id="@+id/tv_total_precio"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
                     android:fontFamily="@font/alata"
-                    android:text="@string/_64_000_00"
+                    android:text="@string/no_disponible"
                     android:textColor="@color/green"
                     android:textSize="16sp"
                     app:layout_constraintBottom_toBottomOf="parent"

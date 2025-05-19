@@ -4,11 +4,9 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.util.Log;
 
 import androidx.annotation.Nullable;
 
-import com.example.gaia.models.Producto;
 import com.example.gaia.models.ProductoCarrito;
 
 import java.util.ArrayList;
@@ -24,12 +22,8 @@ public class DbCarrito extends DbHelper {
         this.context = context;
     }
 
-    /**
-     * Agrega un producto por su ID a la tabla carrito.
-     *
-     * @param productoId El ID del producto.
-     */
-    public void agregarAlCarrito(int productoId) {
+    // Agrega un producto por su ID a la tabla carrito
+    public void agregarProductoAlCarrito(int productoId) {
         SQLiteDatabase db = this.getWritableDatabase();
 
         Cursor cursor = db.rawQuery("SELECT cantidad FROM t_carrito WHERE producto_id = ?", new String[]{String.valueOf(productoId)});
@@ -51,11 +45,7 @@ public class DbCarrito extends DbHelper {
         db.close();
     }
 
-    /**
-     * Obtiene los productos guardados en el carrito.
-     *
-     * @return Lista de productos con la cantidad guardada en el carrito.
-     */
+    // Obtiene los productos guardados en el carrito
     public List<ProductoCarrito> obtenerProductosCarrito() {
         List<ProductoCarrito> lista = new ArrayList<>();
         SQLiteDatabase db = this.getReadableDatabase();
@@ -70,13 +60,13 @@ public class DbCarrito extends DbHelper {
             do {
                 ProductoCarrito producto = new ProductoCarrito(
                         cursor.getInt(cursor.getColumnIndexOrThrow("id")),
-                        cursor.getString(cursor.getColumnIndexOrThrow("nombre")),
-                        cursor.getString(cursor.getColumnIndexOrThrow("descripcion")),
-                        cursor.getDouble(cursor.getColumnIndexOrThrow("precio")),
-                        cursor.getString(cursor.getColumnIndexOrThrow("ingredientes")),
                         cursor.getString(cursor.getColumnIndexOrThrow("imagen")),
-                        cursor.getInt(cursor.getColumnIndexOrThrow("subcategoria_id")),
-                        cursor.getInt(cursor.getColumnIndexOrThrow("cantidad"))  // ← ¡Muy importante!
+                        cursor.getString(cursor.getColumnIndexOrThrow("nombre")),
+                        cursor.getInt(cursor.getColumnIndexOrThrow("precio")),
+                        cursor.getInt(cursor.getColumnIndexOrThrow("cantidad"))
+//                        cursor.getString(cursor.getColumnIndexOrThrow("descripcion")),
+//                        cursor.getString(cursor.getColumnIndexOrThrow("ingredientes")),
+//                        cursor.getInt(cursor.getColumnIndexOrThrow("subcategoria_id")),
                 );
 
                 lista.add(producto);
@@ -87,5 +77,15 @@ public class DbCarrito extends DbHelper {
         db.close();
 
         return lista;
+    }
+
+    // Elimina un producto del carrito por su ID
+    public void quitarProductoDelCarrito(int productoId) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        // Elimina el producto cuyo producto_id coincida
+        db.delete("t_carrito", "producto_id = ?", new String[]{String.valueOf(productoId)});
+
+        db.close();
     }
 }

@@ -58,7 +58,7 @@ class DescriptionProductActivity : AppCompatActivity() {
      */
     private fun loadProductData(idProducto: Int) {
         val dbProductos = DbProductos(this)
-        producto = dbProductos.getProductoById(idProducto)
+        producto = dbProductos.getProductById(idProducto)
 
         producto?.let {
             tvDescripcion.text = it.descripcion

@@ -30,43 +30,50 @@ class InfoProductActivity : AppCompatActivity() {
         setContentView(R.layout.activity_info_product)
 
         initViews()
+
+        // Obtener el id del producto dinamicamente
+//        idProducto = intent.getIntExtra("ID_PRODUCTO", -1)
+//        if (idProducto != -1) {
+//            loadProductData(idProducto)
+//        } else {
+//            Toast.makeText(this, "ID inválido", Toast.LENGTH_SHORT).show()
+//            finish()
+//        }
+
         loadProductData()
+
         setupListeners()
     }
 
-    /**
-     * Inicializa referencias a los elementos del layout
-     */
+    // Inicializa referencias a los elementos del layout
     private fun initViews() {
         ivImagenProducto = findViewById(R.id.imagen_producto)
         tvTituloProducto = findViewById(R.id.tv_titulo_producto)
         tvPrecioProducto = findViewById(R.id.tv_price_product)
     }
 
-    /**
-     * Carga los datos del producto desde la base de datos
-     */
+    // Carga los datos del producto ID
     private fun loadProductData() {
         val dbProductos = DbProductos(this)
-        producto = dbProductos.getProductoById(idProducto)
+        producto = dbProductos.getProductById(idProducto)
 
         if (producto != null) {
-            tvTituloProducto.text = producto?.nombre
-            tvPrecioProducto.text = producto?.precio.toString()
-
-            // Obtener el nombre de la imagen desde la base de datos
+            // Obtener el nombre de la imagen
             val imageName = producto?.imagen
 
             // Obtener el ID del recurso drawable usando el nombre
             val imageResId = resources.getIdentifier(imageName, "drawable", packageName)
 
-            // Asignar el recurso al ImageView
-            val imageView = findViewById<ImageView>(R.id.imagen_producto)
-
+            // Si encontró la imagen en drawable, usarla, sino usar imagen por defecto
             if (imageResId != 0) {
-                imageView.setImageResource(imageResId)
+                ivImagenProducto.setImageResource(imageResId)
+            } else {
+                // Aquí asignas la imagen por defecto
+                ivImagenProducto.setImageResource(R.drawable.img_product_not_found)
             }
 
+            tvTituloProducto.text = producto?.nombre
+            tvPrecioProducto.text = producto?.precio.toString()
         } else {
             Toast.makeText(this, "Producto no encontrado", Toast.LENGTH_SHORT).show()
             startActivity(Intent(this, ListProductActivity::class.java))
@@ -74,22 +81,13 @@ class InfoProductActivity : AppCompatActivity() {
         }
     }
 
-    /**
-     * Configura acciones de los botones
-     */
+    // Configuración de los botones (acciones)
     private fun setupListeners() {
-        findViewById<ImageView>(R.id.btn_location).setOnClickListener {
-            startActivity(Intent(this, UbicacionActivity::class.java))
-        }
-
-        findViewById<ImageView>(R.id.btn_cart).setOnClickListener {
-            startActivity(Intent(this, CarritoActivity::class.java))
-        }
-
+        // Agregar producto al carrito
         findViewById<Button>(R.id.btn_anadir_carrito).setOnClickListener {
             producto?.let {
                 val dbCarrito = DbCarrito(this)
-                dbCarrito.agregarAlCarrito(it.id)
+                dbCarrito.agregarProductoAlCarrito(it.id)
                 Toast.makeText(this, "Producto agregado al carrito", Toast.LENGTH_SHORT).show()
                 startActivity(Intent(this, CarritoActivity::class.java))
             } ?: run {
@@ -97,7 +95,7 @@ class InfoProductActivity : AppCompatActivity() {
             }
         }
 
-        // Descripción
+        // Redireccionar a la descripción del producto
         findViewById<ConstraintLayout>(R.id.card_description).setOnClickListener {
             producto?.let {
                 val intent = Intent(this, DescriptionProductActivity::class.java)
@@ -108,7 +106,7 @@ class InfoProductActivity : AppCompatActivity() {
             }
         }
 
-        // Ingredientes
+        // Redireccionar a los ingredientes del producto
         findViewById<ConstraintLayout>(R.id.card_members).setOnClickListener {
             producto?.let {
                 val intent = Intent(this, IngredientsProductActivity::class.java)
@@ -118,5 +116,14 @@ class InfoProductActivity : AppCompatActivity() {
                 Toast.makeText(this, "Producto no encontrado", Toast.LENGTH_SHORT).show()
             }
         }
+
+        findViewById<ImageView>(R.id.btn_location).setOnClickListener {
+            startActivity(Intent(this, UbicacionActivity::class.java))
+        }
+
+        findViewById<ImageView>(R.id.btn_cart).setOnClickListener {
+            startActivity(Intent(this, CarritoActivity::class.java))
+        }
     }
 }
+
