@@ -232,7 +232,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:fontFamily="@font/alata"
-                    android:text="@string/paisregion"
+                    android:text="@string/pa_s"
                     android:textColor="#8E8888"
                     android:textSize="10sp"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -295,23 +295,45 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
             <!--    Fin Select Ciudad -->
 
-            <Button
-                android:id="@+id/btn_calcular"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:backgroundTint="@color/white"
-                android:fontFamily="@font/alata"
-                android:text="@string/calculare"
-                android:textColor="#0B0B0B"
-                android:textStyle="bold" />
+                android:gravity="center_vertical|center_horizontal"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_calcular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:backgroundTint="@color/white"
+                    android:fontFamily="@font/alata"
+                    android:text="@string/calculare"
+                    android:textColor="#0B0B0B"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/btn_limpiar"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:contentDescription="@string/icono_menu"
+                    android:src="@drawable/ic_clean"
+                    app:layout_constraintEnd_toStartOf="@+id/img_main_logo"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/green" />
+            </LinearLayout>
+
 
             <!--    Inicio Tarifa (Valor) -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:padding="8dp">
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="10dp">
 
                 <TextView
                     android:id="@+id/tv_tarifa"
@@ -332,7 +354,6 @@
                     android:text="@string/no_disponible"
                     android:textColor="@color/black"
                     android:textSize="14sp" />
-
             </LinearLayout>
             <!--    Fin Tarifa (Valor) -->
 

@@ -1,6 +1,7 @@
 package com.example.gaia.Fragments
 
 import ProductoCarritoAdapter
+import android.app.AlertDialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -32,20 +33,23 @@ class CarritoFragment : Fragment() {
         "Brasil" to mapOf("São Paulo" to 1000, "Rio de Janeiro" to 2000, "Brasília" to 3000)
     )
 
+    // Variables Layout
     private lateinit var tvSubtotalProductos: TextView
     private lateinit var tvTarifaEnvioPrecio: TextView
+    private lateinit var tvTextoTotal: TextView
     private lateinit var tvTotal: TextView
     private lateinit var btnCalcular: Button
+    private lateinit var btnLimpiar: ImageView
 
     private val formatoCOP = NumberFormat.getNumberInstance(Locale("es", "CO"))
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.activity_carrito, container, false)
         initViews(view)
         recyclerViewProductosCarrito(view)
+        setupListeners(view)
         spinnerPais()
         calcularSubtotalProductos()
         calcularTarifaEnvio()
@@ -58,8 +62,11 @@ class CarritoFragment : Fragment() {
         spinnerCiudades = view.findViewById(R.id.opciones_list_item2)
         tvSubtotalProductos = view.findViewById(R.id.tv_subtotal_precio)
         tvTarifaEnvioPrecio = view.findViewById(R.id.tv_tarfia_precio)
+        tvTextoTotal = view.findViewById(R.id.tv_total)
         tvTotal = view.findViewById(R.id.tv_total_precio)
         btnCalcular = view.findViewById(R.id.btn_calcular)
+        btnLimpiar = view.findViewById(R.id.btn_limpiar)
+        btnLimpiar.visibility = View.GONE
     }
 
     private fun recyclerViewProductosCarrito(view: View) {
@@ -88,9 +95,13 @@ class CarritoFragment : Fragment() {
                     override fun onProductoQuitado() {
                         actualizarVistaSegunLista()
                         calcularSubtotalProductos()
+
+                        // Verificar si ya no queda ningún producto
+                        if (listaProductos.isEmpty()) {
+                            reiniciarFormulario()
+                        }
                     }
-                }
-            )
+                })
 
             recyclerView.layoutManager = LinearLayoutManager(requireContext())
             recyclerView.adapter = adapterProducto
@@ -111,9 +122,7 @@ class CarritoFragment : Fragment() {
         paisSeleccionado = resources.getStringArray(R.array.lista_paises)[0]
 
         val adapterPaises = ArrayAdapter.createFromResource(
-            requireContext(),
-            R.array.lista_paises,
-            android.R.layout.simple_spinner_item
+            requireContext(), R.array.lista_paises, android.R.layout.simple_spinner_item
         )
 
         adapterPaises.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
@@ -125,6 +134,7 @@ class CarritoFragment : Fragment() {
             ) {
                 paisSeleccionado = parent.getItemAtPosition(position) as String
                 spinnerCiudades(paisSeleccionado)
+                verificarMostrarBtnLimpiar()
             }
 
             override fun onNothingSelected(parent: AdapterView<*>) {}
@@ -140,9 +150,7 @@ class CarritoFragment : Fragment() {
         }
 
         val adapterCiudades = ArrayAdapter.createFromResource(
-            requireContext(),
-            ciudadesArrayId,
-            android.R.layout.simple_spinner_item
+            requireContext(), ciudadesArrayId, android.R.layout.simple_spinner_item
         )
 
         adapterCiudades.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
@@ -155,6 +163,7 @@ class CarritoFragment : Fragment() {
                 parent: AdapterView<*>, view: View?, position: Int, id: Long
             ) {
                 ciudadSeleccionada = parent.getItemAtPosition(position) as String
+                verificarMostrarBtnLimpiar()
             }
 
             override fun onNothingSelected(parent: AdapterView<*>) {}
@@ -164,10 +173,19 @@ class CarritoFragment : Fragment() {
     private fun calcularSubtotalProductos() {
         val subtotal = listaProductos.sumOf { it.precio * it.cantidad }
         tvSubtotalProductos.text = "$ ${formatoCOP.format(subtotal)}"
+
+        calcularTotal()
     }
 
     private fun calcularTarifaEnvio() {
         btnCalcular.setOnClickListener {
+            if (paisSeleccionado == "Seleccione una opción" || ciudadSeleccionada == "Seleccione una opción") {
+                AlertDialog.Builder(requireContext()).setTitle("Faltan datos")
+                    .setMessage("Por favor selecciona un país y una ciudad antes de calcular la tarifa.")
+                    .setPositiveButton("Aceptar", null).show()
+                return@setOnClickListener
+            }
+
             val tarifa = tarifasEnvioUbicacion[paisSeleccionado]?.get(ciudadSeleccionada)
             if (tarifa != null) {
                 tvTarifaEnvioPrecio.text = "$ ${formatoCOP.format(tarifa)}"
@@ -184,6 +202,44 @@ class CarritoFragment : Fragment() {
         val tarifaEnvio =
             tvTarifaEnvioPrecio.text.toString().filter { it.isDigit() }.toIntOrNull() ?: 0
         val total = subtotal + tarifaEnvio
+
+        if (tarifaEnvio == 0) {
+            tvTextoTotal.text = "Total sin tarifa:"
+        } else {
+            tvTextoTotal.text = "Total:"
+        }
+
         tvTotal.text = "$ ${formatoCOP.format(total)}"
+    }
+
+    private fun verificarMostrarBtnLimpiar() {
+        if (paisSeleccionado != "Seleccione una opción" || ciudadSeleccionada != "Seleccione una opción") {
+            btnLimpiar.visibility = View.VISIBLE
+        } else {
+            btnLimpiar.visibility = View.GONE
+        }
+    }
+
+    // Clicks, navegación, etc
+    private fun setupListeners(view: View) {
+        btnLimpiar.setOnClickListener {
+            reiniciarFormulario()
+        }
+    }
+
+    private fun reiniciarFormulario() {
+        // Reiniciar spinners
+        spinnerPaises.setSelection(0)
+        paisSeleccionado = "Seleccione una opción"
+
+        spinnerCiudades.setSelection(0)
+        ciudadSeleccionada = "Seleccione una opción"
+
+        // Ocultar botón de limpiar
+        verificarMostrarBtnLimpiar()
+
+        tvTarifaEnvioPrecio.text = null
+
+        calcularTotal()
     }
 }

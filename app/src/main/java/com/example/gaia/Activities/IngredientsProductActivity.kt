@@ -23,7 +23,7 @@ class IngredientsProductActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         // - Vista principal
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_ingredients_product)
+        setContentView(R.layout.activity_ingredientes_producto)
 
         initViews()
 
@@ -42,7 +42,7 @@ class IngredientsProductActivity : AppCompatActivity() {
      * Inicializa referencias a los elementos del layout
      */
     private fun initViews() {
-        tvIngredientes = findViewById(R.id.tv_members_product_t1)
+        tvIngredientes = findViewById(R.id.tv_ingredientes_producto)
     }
 
     /**
@@ -88,15 +88,15 @@ class IngredientsProductActivity : AppCompatActivity() {
         }
 
         //  - Vista descripción producto
-        val descriptionProduct = findViewById<ImageView>(R.id.btn_minus_members)
-        descriptionProduct.setOnClickListener {
-            producto?.let {
-                val intent = Intent(this, DescriptionProductActivity::class.java)
-                intent.putExtra("ID_PRODUCTO", idProducto)
-                startActivity(intent)
-            } ?: run {
-                Toast.makeText(this, "Producto no encontrado", Toast.LENGTH_SHORT).show()
-            }
-        }
+//        val descriptionProduct = findViewById<ImageView>(R.id.btn_minus_members)
+//        descriptionProduct.setOnClickListener {
+//            producto?.let {
+//                val intent = Intent(this, DescriptionProductActivity::class.java)
+//                intent.putExtra("ID_PRODUCTO", idProducto)
+//                startActivity(intent)
+//            } ?: run {
+//                Toast.makeText(this, "Producto no encontrado", Toast.LENGTH_SHORT).show()
+//            }
+//        }
     }
 }

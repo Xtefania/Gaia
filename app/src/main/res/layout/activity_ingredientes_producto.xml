@@ -49,10 +49,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:paddingHorizontal="15dp"
-        android:textAlignment="center"
         android:fontFamily="@font/alata"
+        android:paddingHorizontal="15dp"
         android:text="@string/titulo_producto"
+        android:textAlignment="center"
         android:textColor="@color/green"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -102,7 +102,7 @@
             app:layout_constraintVertical_bias="0.0" />
 
         <ImageView
-            android:id="@+id/btn_minus_members"
+            android:id="@+id/btn_menos_ingredientes"
             android:layout_width="15dp"
             android:layout_height="15dp"
             android:contentDescription="@string/icono_mas"
@@ -127,7 +127,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/tv_members_product_t1"
+            android:id="@+id/tv_ingredientes_producto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -136,57 +136,6 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/v_linea_members" />
-
-<!--        <TextView-->
-<!--            android:id="@+id/tv_members_product_p1"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="@string/text_members_p1"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintHorizontal_bias="0.0"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toBottomOf="@+id/tv_members_product_t1" />-->
-
-<!--        <TextView-->
-<!--            android:id="@+id/tv_members_product_t2"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginTop="24dp"-->
-<!--            android:text="@string/text_members_t2"-->
-<!--            app:layout_constraintEnd_toEndOf="@+id/tv_members"-->
-<!--            app:layout_constraintStart_toStartOf="@+id/tv_members"-->
-<!--            app:layout_constraintTop_toBottomOf="@+id/tv_members_product_p1" />-->
-
-<!--        <TextView-->
-<!--            android:id="@+id/tv_members_product_p2"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="@string/text_members_p2"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintHorizontal_bias="0.0"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toBottomOf="@+id/tv_members_product_t2" />-->
-
-<!--        <TextView-->
-<!--            android:id="@+id/tv_members_product_t3"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginTop="24dp"-->
-<!--            android:text="@string/text_members_t3"-->
-<!--            app:layout_constraintEnd_toEndOf="@+id/card_members"-->
-<!--            app:layout_constraintStart_toStartOf="@+id/card_members"-->
-<!--            app:layout_constraintTop_toBottomOf="@+id/tv_members_product_p2" />-->
-
-<!--        <TextView-->
-<!--            android:id="@+id/tv_members_product_p3"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="@string/text_members_p3"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintHorizontal_bias="0.0"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toBottomOf="@+id/tv_members_product_t3" />-->
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

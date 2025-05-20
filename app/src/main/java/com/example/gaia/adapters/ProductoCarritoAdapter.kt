@@ -9,6 +9,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.gaia.R
 import com.example.gaia.db.DbCarrito
 import com.example.gaia.models.ProductoCarrito
+import java.text.NumberFormat
+import java.util.Locale
 
 class ProductoCarritoAdapter(
     private val lista: MutableList<ProductoCarrito>,
@@ -17,6 +19,8 @@ class ProductoCarritoAdapter(
     private val listenerProductoQuitado: OnProductoQuitadoListener
 ) : RecyclerView.Adapter<ProductoCarritoAdapter.ProductoViewHolder>() {
 
+    // Formato precios
+    private val formatoCOP = NumberFormat.getNumberInstance(Locale("es", "CO"))
 
     inner class ProductoViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         // Variables layout
@@ -49,7 +53,7 @@ class ProductoCarritoAdapter(
             holder.imagen.setImageResource(R.drawable.img_product_not_found)
         }
         holder.nombre.text = producto.nombre
-        holder.precio.text = producto.precio.toString()
+        holder.precio.text = "$ ${formatoCOP.format(producto.precio)}"
         holder.cantidad.text = producto.cantidad.toString()
 
         // Acciones extras

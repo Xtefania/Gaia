@@ -28,7 +28,7 @@ class MainHActivity : AppCompatActivity() {
             val db = dbHelper.writableDatabase
 
             if (db != null) {
-                Toast.makeText(this, "DB creada correctamente", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(this, "DB creada correctamente", Toast.LENGTH_SHORT).show();
 
                 //  - Vista iniciar sesión
                 val intent = Intent(this, LoginActivity::class.java)

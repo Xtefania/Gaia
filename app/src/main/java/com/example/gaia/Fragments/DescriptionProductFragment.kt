@@ -8,6 +8,8 @@ import com.example.gaia.*
 import com.example.gaia.db.DbProductos
 import com.example.gaia.db.DbCarrito
 import com.example.gaia.models.Producto
+import java.text.NumberFormat
+import java.util.Locale
 
 class DescriptionProductFragment : Fragment() {
 
@@ -22,6 +24,9 @@ class DescriptionProductFragment : Fragment() {
     // Variables Producto
     private var idProducto = 0
     private var producto: Producto? = null
+
+    // Formato precios
+    private val formatoCOP = NumberFormat.getNumberInstance(Locale("es", "CO"))
 
     // Crear la vista del fragmento
     override fun onCreateView(
@@ -62,9 +67,9 @@ class DescriptionProductFragment : Fragment() {
         producto = dbProductos.getProductById(idProducto)
 
         producto?.let {
-            tituloProducto.text = it.nombre
-            precioProducto.text = it.precio.toString()
-            descripcionProducto.text = it.descripcion
+            tituloProducto.text = producto?.nombre
+            precioProducto.text = "$ ${formatoCOP.format(producto?.precio)}"
+            descripcionProducto.text = producto?.descripcion
         } ?: run {
             Toast.makeText(requireContext(), "Producto no encontrado", Toast.LENGTH_SHORT).show()
         }

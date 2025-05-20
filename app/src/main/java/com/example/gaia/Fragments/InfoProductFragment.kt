@@ -30,7 +30,7 @@ class InfoProductFragment : Fragment() {
     private var idProducto = 0
     private var producto: Producto? = null
 
-    // Formato
+    // Formato precios
     private val formatoCOP = NumberFormat.getNumberInstance(Locale("es", "CO"))
 
     override fun onCreateView(

@@ -159,7 +159,8 @@
     <string name="_0_000">_0_000</string>
     <string name="imagen_logo">imagen_logo</string>
     <string name="iconno_menu">iconno_menu</string>
-    <string name="descripcion_producto">Descripción del producto</string>
+    <string name="descripcion_producto">Descripcion del producto</string>
+    <string name="pa_s">País</string>
     <string-array name="lista_paises">
         <item>Seleccione una opción</item>
         <item>Colombia</item>
