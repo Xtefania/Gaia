@@ -1,6 +1,5 @@
 package com.example.gaia.Fragments
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,27 +8,28 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import com.example.gaia.R
 import com.example.gaia.db.DbCarrito
 import com.example.gaia.db.DbProductos
 import com.example.gaia.models.Producto
-import com.example.gaia.Activities.*
 
 class InfoProductFragment : Fragment() {
 
-    private var idProducto = 1
+    // Variables Layout
+    private lateinit var imagenProducto: ImageView
+    private lateinit var tituloProducto: TextView
+    private lateinit var precioProducto: TextView
+    private lateinit var btnDescripcion: ImageView
+    private lateinit var btnIngredientes: ImageView
+    private lateinit var btnAñadirCarrito: Button
+
+    // Variables Producto
+    private var idProducto = 0
     private var producto: Producto? = null
 
-    private lateinit var ivImagenProducto: ImageView
-    private lateinit var tvTituloProducto: TextView
-    private lateinit var tvPrecioProducto: TextView
-
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(R.layout.activity_info_product, container, false)
     }
@@ -39,84 +39,92 @@ class InfoProductFragment : Fragment() {
 
         initViews(view)
 
-        // Obtener el id dinámicamente si es necesario
-        // idProducto = arguments?.getInt("ID_PRODUCTO") ?: -1
+        // Obtener el idProducto de argumentos del fragmento
+        idProducto = arguments?.getInt("ID_PRODUCTO") ?: -1
+        if (idProducto != -1) {
+            loadProductData(idProducto)
+        } else {
+            Toast.makeText(requireContext(), "ID inválido", Toast.LENGTH_SHORT).show()
+            activity?.onBackPressed()
+        }
 
-        loadProductData()
         setupListeners(view)
     }
 
+    // Inicializando referencias a los elementos del layout
     private fun initViews(view: View) {
-        ivImagenProducto = view.findViewById(R.id.imagen_producto)
-        tvTituloProducto = view.findViewById(R.id.tv_titulo_producto)
-        tvPrecioProducto = view.findViewById(R.id.tv_price_product)
+        imagenProducto = view.findViewById(R.id.imagen_producto)
+        tituloProducto = view.findViewById(R.id.tv_titulo_producto)
+        precioProducto = view.findViewById(R.id.tv_price_product)
+        btnDescripcion = view.findViewById(R.id.btn_plus_descripcion)
+        btnIngredientes = view.findViewById(R.id.btn_plus_ìngredientes)
+        btnAñadirCarrito = view.findViewById(R.id.btn_anadir_carrito)
     }
 
-    private fun loadProductData() {
+    // Cargar datos del producto
+    private fun loadProductData(idProducto: Int) {
         val dbProductos = DbProductos(requireContext())
         producto = dbProductos.getProductById(idProducto)
 
-        if (producto != null) {
-//            val imageName = producto?.imagen
-//            val imageResId =
-//                resources.getIdentifier(imageName, "drawable", requireContext().packageName)
+        producto?.let {
+            val imageName = producto?.imagen
+            val imageResId =
+                resources.getIdentifier(imageName, "drawable", requireContext().packageName)
+            if (imageResId != 0) {
+                imagenProducto.setImageResource(imageResId)
+            } else {
+                imagenProducto.setImageResource(R.drawable.img_product_not_found)
+            }
 
-//            if (imageResId != 0) {
-//                ivImagenProducto.setImageResource(imageResId)
-//            } else {
-//                ivImagenProducto.setImageResource(R.drawable.img_product_not_found)
-//            }
-
-            tvTituloProducto.text = producto?.nombre
-            tvPrecioProducto.text = producto?.precio.toString()
-        } else {
+            tituloProducto.text = producto?.nombre
+            precioProducto.text = producto?.precio.toString()
+        } ?: run {
             Toast.makeText(requireContext(), "Producto no encontrado", Toast.LENGTH_SHORT).show()
-//            startActivity(Intent(requireContext(), ListProductActivity::class.java))
-//            requireActivity().finish()
         }
     }
 
+    // Clicks, navegación, etc
     private fun setupListeners(view: View) {
-//        view.findViewById<Button>(R.id.btn_anadir_carrito).setOnClickListener {
-//            producto?.let {
-//                val dbCarrito = DbCarrito(requireContext())
-//                dbCarrito.agregarProductoAlCarrito(it.id)
-//                Toast.makeText(requireContext(), "Producto agregado al carrito", Toast.LENGTH_SHORT)
-//                    .show()
-//                startActivity(Intent(requireContext(), CarritoActivity::class.java))
-//            } ?: run {
-//                Toast.makeText(requireContext(), "Producto inválido", Toast.LENGTH_SHORT).show()
-//            }
-//        }
-//
-//        view.findViewById<ConstraintLayout>(R.id.card_description).setOnClickListener {
-//            producto?.let {
-//                val intent = Intent(requireContext(), DescriptionProductActivity::class.java)
-//                intent.putExtra("ID_PRODUCTO", idProducto)
-//                startActivity(intent)
-//            } ?: run {
-//                Toast.makeText(requireContext(), "Producto no encontrado", Toast.LENGTH_SHORT)
-//                    .show()
-//            }
-//        }
-//
-//        view.findViewById<ConstraintLayout>(R.id.card_members).setOnClickListener {
-//            producto?.let {
-//                val intent = Intent(requireContext(), IngredientsProductActivity::class.java)
-//                intent.putExtra("ID_PRODUCTO", idProducto)
-//                startActivity(intent)
-//            } ?: run {
-//                Toast.makeText(requireContext(), "Producto no encontrado", Toast.LENGTH_SHORT)
-//                    .show()
-//            }
-//        }
-//
-//        view.findViewById<ImageView>(R.id.btn_location).setOnClickListener {
-//            startActivity(Intent(requireContext(), UbicacionActivity::class.java))
-//        }
-//
-//        view.findViewById<ImageView>(R.id.btn_cart).setOnClickListener {
-//            startActivity(Intent(requireContext(), CarritoActivity::class.java))
-//        }
+        btnDescripcion.setOnClickListener {
+            val fragment = DescriptionProductFragment()
+            val bundle = Bundle()
+            bundle.putInt("ID_PRODUCTO", idProducto)
+            fragment.arguments = bundle
+
+            parentFragmentManager.beginTransaction().replace(R.id.frameContainer, fragment)
+                .addToBackStack(null).commit()
+        }
+
+        btnIngredientes.setOnClickListener {
+            val fragment = IngredientsProductFragment()
+            val bundle = Bundle()
+            bundle.putInt("ID_PRODUCTO", idProducto)
+            fragment.arguments = bundle
+
+            parentFragmentManager.beginTransaction().replace(R.id.frameContainer, fragment)
+                .addToBackStack(null).commit()
+        }
+
+        btnAñadirCarrito.setOnClickListener {
+            producto?.let {
+                // Agregar producto al carrito
+                val dbCarrito = DbCarrito(requireContext())
+                dbCarrito.agregarProductoAlCarrito(it.id)
+                Toast.makeText(requireContext(), "Producto agregado al carrito", Toast.LENGTH_SHORT)
+                    .show()
+
+                // Ir al CarritoFragment
+                val fragment = CarritoFragment()
+                val bundle = Bundle()
+                fragment.arguments = bundle
+
+                parentFragmentManager.beginTransaction()
+                    .replace(R.id.frameContainer, fragment)
+                    .addToBackStack(null)
+                    .commit()
+            } ?: run {
+                Toast.makeText(requireContext(), "Producto inválido", Toast.LENGTH_SHORT).show()
+            }
+        }
     }
 }

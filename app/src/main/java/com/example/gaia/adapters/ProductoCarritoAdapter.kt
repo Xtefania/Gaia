@@ -13,7 +13,9 @@ import com.example.gaia.models.ProductoCarrito
 class ProductoCarritoAdapter(
     private val lista: MutableList<ProductoCarrito>,
     private val context: Context,
+    private val listener: OnCantidadCambiadaListener
 ) : RecyclerView.Adapter<ProductoCarritoAdapter.ProductoViewHolder>() {
+
 
     inner class ProductoViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         // Variables layout
@@ -51,19 +53,33 @@ class ProductoCarritoAdapter(
 
         // Acciones extras
 
-        // Gestionar cantidad (Más)
         holder.flechaMas.setOnClickListener {
             producto.cantidad++
+            DbCarrito(context).actualizarCantidadProducto(producto.id, producto.cantidad)
             notifyItemChanged(position)
         }
 
-        // Gestionar cantidad (Menos)
         holder.flechaMenos.setOnClickListener {
-            if (producto.cantidad > 0) {
+            if (producto.cantidad > 1) {
                 producto.cantidad--
+                DbCarrito(context).actualizarCantidadProducto(producto.id, producto.cantidad)
                 notifyItemChanged(position)
             }
         }
+
+        // Gestionar cantidad (Más)
+//        holder.flechaMas.setOnClickListener {
+//            producto.cantidad++
+//            notifyItemChanged(position)
+//        }
+//
+//        // Gestionar cantidad (Menos)
+//        holder.flechaMenos.setOnClickListener {
+//            if (producto.cantidad > 0) {
+//                producto.cantidad--
+//                notifyItemChanged(position)
+//            }
+//        }
 
         // Quitar producto
         holder.quitar.setOnClickListener {
@@ -79,5 +95,21 @@ class ProductoCarritoAdapter(
         Toast.makeText(context, "Producto eliminado", Toast.LENGTH_SHORT).show()
     }
 
+//    fun actualizarCantidadProducto(idProducto: Int, nuevaCantidad: Int): Boolean {
+//        val db = this.writableDatabase
+//        val values = ContentValues()
+//        values.put("cantidad", nuevaCantidad)
+//
+//        val result = db.update("t_carrito", values, "id = ?", arrayOf(idProducto.toString()))
+//        db.close()
+//        return result > 0
+//    }
+
+
     override fun getItemCount(): Int = lista.size
+
+    interface OnCantidadCambiadaListener {
+        fun onCantidadCambiada()
+    }
+
 }

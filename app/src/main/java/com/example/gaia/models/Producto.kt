@@ -7,5 +7,5 @@ data class Producto(
     val precio: Int,
     val ingredientes: String,
     val imagen: String,
-    val subcategoriaId: Int
+    val categoriaId: Int
 )

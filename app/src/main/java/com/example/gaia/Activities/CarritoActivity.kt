@@ -69,7 +69,7 @@ class CarritoActivity : AppCompatActivity() {
         initViews()
 
         // Renderiza productos
-        recyclerViewProductosCarrito()
+//        recyclerViewProductosCarrito()
 
         // Renderiza listas ubicación para la tarifa
         spinnerPais()
@@ -90,16 +90,16 @@ class CarritoActivity : AppCompatActivity() {
     }
 
     // RecyclerView Productos Carrito
-    private fun recyclerViewProductosCarrito() {
-        // Establecer el LayoutManager para definir cómo se muestran los elementos (lista vertical)
-        recyclerViewProducto.layoutManager = LinearLayoutManager(this)
-        val dbCarrito = DbCarrito(this)
-        // Lista mutable para poder modificarla si es necesario
-        listaProductos = dbCarrito.obtenerProductosCarrito().toMutableList()
-        adapterProducto = ProductoCarritoAdapter(listaProductos, this)
-        // Asignar el adaptador al RecyclerView para que pueda mostrar los productos
-        recyclerViewProducto.adapter = adapterProducto
-    }
+//    private fun recyclerViewProductosCarrito() {
+//        // Establecer el LayoutManager para definir cómo se muestran los elementos (lista vertical)
+//        recyclerViewProducto.layoutManager = LinearLayoutManager(this)
+//        val dbCarrito = DbCarrito(this)
+//        // Lista mutable para poder modificarla si es necesario
+//        listaProductos = dbCarrito.obtenerProductosCarrito().toMutableList()
+//        adapterProducto = ProductoCarritoAdapter(listaProductos, this)
+//        // Asignar el adaptador al RecyclerView para que pueda mostrar los productos
+//        recyclerViewProducto.adapter = adapterProducto
+//    }
 
     // Configura el Spinner de países con su lista y comportamiento
     private fun spinnerPais() {

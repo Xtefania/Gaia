@@ -79,6 +79,18 @@ public class DbCarrito extends DbHelper {
         return lista;
     }
 
+    // Actualiza la cantidad de un producto específico en el carrito
+    public boolean actualizarCantidadProducto(int productoId, int nuevaCantidad) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues valores = new ContentValues();
+        valores.put("cantidad", nuevaCantidad);
+
+        int filasAfectadas = db.update("t_carrito", valores, "producto_id = ?", new String[]{String.valueOf(productoId)});
+        db.close();
+        return filasAfectadas > 0;
+    }
+
+
     // Elimina un producto del carrito por su ID
     public void quitarProductoDelCarrito(int productoId) {
         SQLiteDatabase db = this.getWritableDatabase();

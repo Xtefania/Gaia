@@ -8,6 +8,7 @@ import android.util.Log;
 import androidx.annotation.Nullable;
 
 import com.example.gaia.models.Producto;
+import com.example.gaia.models.ProductoItem;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,70 +29,71 @@ public class DbProductos extends DbHelper {
     // val dbProductos = DbProductos(this)
     // variableResultado = dbProductos.metodo(parametro)
 
-    // Metodo obtener todos los producto de una categoria
-    public List<Producto> getProductsBySubcategory(int idSubcategory) {
-        List<Producto> productos = new ArrayList<>();
-        SQLiteDatabase db = null;
-        Cursor cursor = null;
+    public List<ProductoItem> obtenerProductosConCategorias() {
+        List<ProductoItem> lista = new ArrayList<>();
+        SQLiteDatabase db = this.getReadableDatabase();
 
-        try {
-            db = this.getReadableDatabase();
-            String query = "SELECT * FROM " + TABLE_PRODUCTOS + " WHERE subcategoria_id = ?";
-            cursor = db.rawQuery(query, new String[]{String.valueOf(idSubcategory)});
+        // Consulta todas las categorías
+        String queryCategorias = "SELECT id, nombre FROM " + TABLE_CATEGORIAS;
+        Cursor cursorCategorias = db.rawQuery(queryCategorias, null);
 
-            if (cursor != null && cursor.moveToFirst()) {
-                do {
-                    Producto producto = new Producto(
-                            cursor.getInt(cursor.getColumnIndexOrThrow("id")),
-                            cursor.getString(cursor.getColumnIndexOrThrow("nombre")),
-                            cursor.getString(cursor.getColumnIndexOrThrow("descripcion")),
-                            cursor.getInt(cursor.getColumnIndexOrThrow("precio")),
-                            cursor.getString(cursor.getColumnIndexOrThrow("ingredientes")),
-                            cursor.getString(cursor.getColumnIndexOrThrow("imagen")),
-                            cursor.getInt(cursor.getColumnIndexOrThrow("subcategoria_id"))
-                    );
-                    productos.add(producto);
-                } while (cursor.moveToNext());
-            }
-        } catch (Exception e) {
-            Log.e(TAG, "Error al obtener productos por subcategoria", e);
-        } finally {
-            if (cursor != null) cursor.close();
-            if (db != null && db.isOpen()) db.close();
+        if (cursorCategorias.moveToFirst()) {
+            do {
+                int categoriaId = cursorCategorias.getInt(0);
+                String nombreCategoria = cursorCategorias.getString(1);
+
+                // Agrega el título de la categoría como sección
+                lista.add(new ProductoItem.Titulo(nombreCategoria));
+
+                // Consulta los productos asociados directamente a esta categoría
+                String queryProductos = "SELECT id, nombre, precio, imagen FROM " + TABLE_PRODUCTOS + " WHERE categoria_id = ?";
+                Cursor cursorProd = db.rawQuery(queryProductos, new String[]{String.valueOf(categoriaId)});
+
+                if (cursorProd.moveToFirst()) {
+                    do {
+                        int id = cursorProd.getInt(0); // ID del producto
+                        String nombre = cursorProd.getString(1);
+                        String precio = String.valueOf(cursorProd.getInt(2));
+                        String imagen = cursorProd.getString(3); // nombre del recurso drawable
+
+                        // Obtiene el ID del recurso drawable
+                        int imageResId = context.getResources().getIdentifier(imagen, "drawable", context.getPackageName());
+
+                        // Agrega el producto a la lista con todos los parámetros necesarios
+                        lista.add(new ProductoItem.ProductoVisual(id, nombre, "$" + precio, imageResId));
+
+                    } while (cursorProd.moveToNext());
+                }
+
+                cursorProd.close();
+
+            } while (cursorCategorias.moveToNext());
         }
 
-        return productos;
+        cursorCategorias.close();
+        return lista;
     }
 
-    // Metodo obtener producto por ID
     public Producto getProductById(int id) {
-        SQLiteDatabase db = null;
-        Cursor cursor = null;
+        SQLiteDatabase db = this.getReadableDatabase();
         Producto producto = null;
 
-        try {
-            db = this.getReadableDatabase();
-            String query = "SELECT * FROM " + TABLE_PRODUCTOS + " WHERE id = ?";
-            cursor = db.rawQuery(query, new String[]{String.valueOf(id)});
+        String query = "SELECT id, nombre, descripcion, precio, ingredientes, imagen, categoria_id FROM " + TABLE_PRODUCTOS + " WHERE id = ?";
+        Cursor cursor = db.rawQuery(query, new String[]{String.valueOf(id)});
 
-            if (cursor != null && cursor.moveToFirst()) {
-                producto = new Producto(
-                        cursor.getInt(cursor.getColumnIndexOrThrow("id")),
-                        cursor.getString(cursor.getColumnIndexOrThrow("nombre")),
-                        cursor.getString(cursor.getColumnIndexOrThrow("descripcion")),
-                        cursor.getInt(cursor.getColumnIndexOrThrow("precio")),
-                        cursor.getString(cursor.getColumnIndexOrThrow("ingredientes")),
-                        cursor.getString(cursor.getColumnIndexOrThrow("imagen")),
-                        cursor.getInt(cursor.getColumnIndexOrThrow("subcategoria_id"))
-                );
-            }
-        } catch (Exception e) {
-            Log.e(TAG, "Error al obtener el producto por ID", e);
-        } finally {
-            if (cursor != null) cursor.close();
-            if (db != null && db.isOpen()) db.close();
+        if (cursor.moveToFirst()) {
+            producto = new Producto(
+                    cursor.getInt(0),    // id
+                    cursor.getString(1), // nombre
+                    cursor.getString(2), // descripcion
+                    cursor.getInt(3),    // precio
+                    cursor.getString(4), // ingredientes
+                    cursor.getString(5), // imagen
+                    cursor.getInt(6)     // categoriaId
+            );
         }
-
+        cursor.close();
+        db.close();
         return producto;
     }
 }
