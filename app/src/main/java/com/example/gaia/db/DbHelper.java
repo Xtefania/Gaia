@@ -72,7 +72,7 @@ public class DbHelper extends SQLiteOpenHelper {
 
         db.execSQL("INSERT INTO t_productos (nombre, descripcion, precio, ingredientes, imagen, categoria_id) VALUES (" + "'Rubor Terracota', 'Rubor compacto con tono cálido y natural.', 15000, 'Aceite de jojoba, óxido de hierro, arcilla', 'rubor_terracota', 2);");
 
-        db.execSQL("INSERT INTO t_productos (nombre, descripcion, precio, ingredientes, imagen, categoria_id) VALUES (" + "'Rubor Natural Rosa Claro', 'Rubor suave con ingredientes orgánicos.', 1200, 'Arcilla rosa, aceite de oliva, mica', 'rubor_claro', 2);");
+        db.execSQL("INSERT INTO t_productos (nombre, descripcion, precio, ingredientes, imagen, categoria_id) VALUES (" + "'Rubor Natural Rosa Claro NOMBRE EXTRAMADAMENTE LARGO PARA PRUEBAS', 'Rubor suave con ingredientes orgánicos.', 1200, 'Arcilla rosa, aceite de oliva, mica', 'rubor_claro', 2);");
 
         // Sombras (Subcategoría ID: 3)
         db.execSQL("INSERT INTO t_productos (nombre, descripcion, precio, ingredientes, imagen, categoria_id) VALUES (" + "'Sombra de Ojos Orgánica', 'Sombra de ojos mineral con pigmentos naturales.', 1200, 'Mica, arcilla, óxido de zinc', 'sombra_organica', 3);");

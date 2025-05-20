@@ -81,7 +81,7 @@ class CarritoActivity : AppCompatActivity() {
 
     // Inicializa referencias a los elementos del layout
     private fun initViews() {
-        recyclerViewProducto = findViewById(R.id.recyclerViewCarrito)
+//        recyclerViewProducto = findViewById(R.id.recyclerViewCarrito)
         spinnerPaises = findViewById(R.id.opciones_list_item1)
         spinnerCiudades = findViewById(R.id.opciones_list_item2)
         tvSubtotalProductos = findViewById(R.id.tv_subtotal_precio)

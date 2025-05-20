@@ -79,24 +79,6 @@ class CarritoFragment : Fragment() {
         recyclerViewProducto.adapter = adapterProducto
     }
 
-
-//    private fun recyclerViewProductosCarrito() {
-//        val adapter = ProductoCarritoAdapter(
-//            lista,
-//            requireContext(),
-//            object : ProductoCarritoAdapter.OnCantidadCambiadaListener {
-//                override fun onCantidadCambiada() {
-//                    calcularSubtotalProductos()
-//                }
-//            })
-//
-//        recyclerViewProducto.layoutManager = LinearLayoutManager(requireContext())
-//        val dbCarrito = DbCarrito(requireContext())
-//        listaProductos = dbCarrito.obtenerProductosCarrito().toMutableList()
-//        adapterProducto = ProductoCarritoAdapter(listaProductos, requireContext())
-//        recyclerViewProducto.adapter = adapterProducto
-//    }
-
     private fun spinnerPais() {
         paisSeleccionado = resources.getStringArray(R.array.lista_paises)[0]
 

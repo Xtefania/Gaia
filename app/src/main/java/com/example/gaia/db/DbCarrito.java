@@ -50,24 +50,13 @@ public class DbCarrito extends DbHelper {
         List<ProductoCarrito> lista = new ArrayList<>();
         SQLiteDatabase db = this.getReadableDatabase();
 
-        String query = "SELECT p.id, p.nombre, p.descripcion, p.precio, p.ingredientes, p.imagen, p.subcategoria_id, c.cantidad " +
-                "FROM t_productos p " +
-                "INNER JOIN t_carrito c ON p.id = c.producto_id";
+        String query = "SELECT p.id, p.nombre, p.precio, p.imagen, c.cantidad " + "FROM t_productos p " + "INNER JOIN t_carrito c ON p.id = c.producto_id";
 
         Cursor cursor = db.rawQuery(query, null);
 
         if (cursor.moveToFirst()) {
             do {
-                ProductoCarrito producto = new ProductoCarrito(
-                        cursor.getInt(cursor.getColumnIndexOrThrow("id")),
-                        cursor.getString(cursor.getColumnIndexOrThrow("imagen")),
-                        cursor.getString(cursor.getColumnIndexOrThrow("nombre")),
-                        cursor.getInt(cursor.getColumnIndexOrThrow("precio")),
-                        cursor.getInt(cursor.getColumnIndexOrThrow("cantidad"))
-//                        cursor.getString(cursor.getColumnIndexOrThrow("descripcion")),
-//                        cursor.getString(cursor.getColumnIndexOrThrow("ingredientes")),
-//                        cursor.getInt(cursor.getColumnIndexOrThrow("subcategoria_id")),
-                );
+                ProductoCarrito producto = new ProductoCarrito(cursor.getInt(cursor.getColumnIndexOrThrow("id")), cursor.getString(cursor.getColumnIndexOrThrow("imagen")), cursor.getString(cursor.getColumnIndexOrThrow("nombre")), cursor.getInt(cursor.getColumnIndexOrThrow("precio")), cursor.getInt(cursor.getColumnIndexOrThrow("cantidad")));
 
                 lista.add(producto);
             } while (cursor.moveToNext());
@@ -78,6 +67,41 @@ public class DbCarrito extends DbHelper {
 
         return lista;
     }
+
+
+//    public List<ProductoCarrito> obtenerProductosCarrito() {
+//        List<ProductoCarrito> lista = new ArrayList<>();
+//        SQLiteDatabase db = this.getReadableDatabase();
+//
+//        String query = "SELECT p.id, p.nombre, p.descripcion, p.precio, p.ingredientes, p.imagen, c.cantidad " +
+//                "FROM t_productos p " +
+//                "INNER JOIN t_carrito c ON p.id = c.producto_id";
+//
+//        Cursor cursor = db.rawQuery(query, null);
+//
+//        if (cursor.moveToFirst()) {
+//            do {
+//                ProductoCarrito producto = new ProductoCarrito(
+//                        cursor.getInt(cursor.getColumnIndexOrThrow("id")),
+//                        cursor.getString(cursor.getColumnIndexOrThrow("imagen")),
+//                        cursor.getString(cursor.getColumnIndexOrThrow("nombre")),
+//                        cursor.getInt(cursor.getColumnIndexOrThrow("precio")),
+//                        cursor.getInt(cursor.getColumnIndexOrThrow("cantidad"))
+
+    /// /                        cursor.getString(cursor.getColumnIndexOrThrow("descripcion")),
+    /// /                        cursor.getString(cursor.getColumnIndexOrThrow("ingredientes")),
+    /// /                        cursor.getInt(cursor.getColumnIndexOrThrow("subcategoria_id")),
+//                );
+//
+//                lista.add(producto);
+//            } while (cursor.moveToNext());
+//        }
+//
+//        cursor.close();
+//        db.close();
+//
+//        return lista;
+//    }
 
     // Actualiza la cantidad de un producto específico en el carrito
     public boolean actualizarCantidadProducto(int productoId, int nuevaCantidad) {

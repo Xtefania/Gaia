@@ -147,7 +147,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/alata"
-                    android:text="@string/_16_000_000"
+                    android:text="@string/precio_producto"
                     android:textColor="@color/black"
                     android:textSize="14sp" />
 
