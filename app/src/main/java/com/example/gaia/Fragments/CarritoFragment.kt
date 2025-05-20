@@ -45,7 +45,7 @@ class CarritoFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.activity_carrito, container, false)
         initViews(view)
-        recyclerViewProductosCarrito()
+        recyclerViewProductosCarrito(view)
         spinnerPais()
         calcularSubtotalProductos()
         calcularTarifaEnvio()
@@ -62,21 +62,49 @@ class CarritoFragment : Fragment() {
         btnCalcular = view.findViewById(R.id.btn_calcular)
     }
 
-    private fun recyclerViewProductosCarrito() {
+    private fun recyclerViewProductosCarrito(view: View) {
         val dbCarrito = DbCarrito(requireContext())
         listaProductos = dbCarrito.obtenerProductosCarrito().toMutableList()
 
-        adapterProducto = ProductoCarritoAdapter(
-            listaProductos,
-            requireContext(),
-            object : ProductoCarritoAdapter.OnCantidadCambiadaListener {
-                override fun onCantidadCambiada() {
-                    calcularSubtotalProductos()
-                }
-            })
+        val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerViewCarrito)
+        val tvSinProductos = view.findViewById<TextView>(R.id.tv_sin_productos)
 
-        recyclerViewProducto.layoutManager = LinearLayoutManager(requireContext())
-        recyclerViewProducto.adapter = adapterProducto
+        if (listaProductos.isEmpty()) {
+            recyclerView.visibility = View.GONE
+            tvSinProductos.visibility = View.VISIBLE
+        } else {
+            recyclerView.visibility = View.VISIBLE
+            tvSinProductos.visibility = View.GONE
+
+            adapterProducto = ProductoCarritoAdapter(
+                listaProductos,
+                requireContext(),
+                object : ProductoCarritoAdapter.OnCantidadCambiadaListener {
+                    override fun onCantidadCambiada() {
+                        calcularSubtotalProductos()
+                    }
+                },
+                object : ProductoCarritoAdapter.OnProductoQuitadoListener {
+                    override fun onProductoQuitado() {
+                        actualizarVistaSegunLista()
+                        calcularSubtotalProductos()
+                    }
+                }
+            )
+
+            recyclerView.layoutManager = LinearLayoutManager(requireContext())
+            recyclerView.adapter = adapterProducto
+        }
+    }
+
+    private fun actualizarVistaSegunLista() {
+        if (listaProductos.isEmpty()) {
+            recyclerViewProducto.visibility = View.GONE
+            view?.findViewById<TextView>(R.id.tv_sin_productos)?.visibility = View.VISIBLE
+        } else {
+            recyclerViewProducto.visibility = View.VISIBLE
+            view?.findViewById<TextView>(R.id.tv_sin_productos)?.visibility = View.GONE
+        }
     }
 
     private fun spinnerPais() {

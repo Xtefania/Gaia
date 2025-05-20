@@ -31,7 +31,7 @@ class InfoProductFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.activity_info_product, container, false)
+        return inflater.inflate(R.layout.activity_info_producto, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

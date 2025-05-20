@@ -123,6 +123,23 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:nestedScrollingEnabled="false" />
+
+            <!--            <androidx.recyclerview.widget.RecyclerView-->
+            <!--                android:id="@+id/recyclerViewCarrito"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:nestedScrollingEnabled="false" />-->
+
+            <TextView
+                android:id="@+id/tv_sin_productos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:text="No hay productos en el carrito"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:visibility="gone" />
             <!--    Fin Tarjetas productos -->
 
             <!--    Inicio subtotal -->

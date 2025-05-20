@@ -13,7 +13,8 @@ import com.example.gaia.models.ProductoCarrito
 class ProductoCarritoAdapter(
     private val lista: MutableList<ProductoCarrito>,
     private val context: Context,
-    private val listener: OnCantidadCambiadaListener
+    private val listener: OnCantidadCambiadaListener,
+    private val listenerProductoQuitado: OnProductoQuitadoListener
 ) : RecyclerView.Adapter<ProductoCarritoAdapter.ProductoViewHolder>() {
 
 
@@ -53,33 +54,23 @@ class ProductoCarritoAdapter(
 
         // Acciones extras
 
+        // Incrementar cantidad
         holder.flechaMas.setOnClickListener {
             producto.cantidad++
             DbCarrito(context).actualizarCantidadProducto(producto.id, producto.cantidad)
             notifyItemChanged(position)
+            listener.onCantidadCambiada()
         }
 
+        // Decrementar cantidad
         holder.flechaMenos.setOnClickListener {
             if (producto.cantidad > 1) {
                 producto.cantidad--
                 DbCarrito(context).actualizarCantidadProducto(producto.id, producto.cantidad)
                 notifyItemChanged(position)
+                listener.onCantidadCambiada()
             }
         }
-
-        // Gestionar cantidad (Más)
-//        holder.flechaMas.setOnClickListener {
-//            producto.cantidad++
-//            notifyItemChanged(position)
-//        }
-//
-//        // Gestionar cantidad (Menos)
-//        holder.flechaMenos.setOnClickListener {
-//            if (producto.cantidad > 0) {
-//                producto.cantidad--
-//                notifyItemChanged(position)
-//            }
-//        }
 
         // Quitar producto
         holder.quitar.setOnClickListener {
@@ -93,18 +84,8 @@ class ProductoCarritoAdapter(
         lista.removeAt(position)
         notifyItemRemoved(position)
         Toast.makeText(context, "Producto eliminado", Toast.LENGTH_SHORT).show()
+        listenerProductoQuitado.onProductoQuitado()
     }
-
-//    fun actualizarCantidadProducto(idProducto: Int, nuevaCantidad: Int): Boolean {
-//        val db = this.writableDatabase
-//        val values = ContentValues()
-//        values.put("cantidad", nuevaCantidad)
-//
-//        val result = db.update("t_carrito", values, "id = ?", arrayOf(idProducto.toString()))
-//        db.close()
-//        return result > 0
-//    }
-
 
     override fun getItemCount(): Int = lista.size
 
@@ -112,4 +93,7 @@ class ProductoCarritoAdapter(
         fun onCantidadCambiada()
     }
 
+    interface OnProductoQuitadoListener {
+        fun onProductoQuitado()
+    }
 }
