@@ -47,7 +47,7 @@ class IngredientsProductFragment : Fragment() {
             Toast.makeText(requireContext(), "ID inválido", Toast.LENGTH_SHORT).show()
         }
 
-        setupListeners(view)
+//        setupListeners(view)
     }
 
     private fun initViews(view: View) {
