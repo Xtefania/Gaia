@@ -14,7 +14,6 @@ public class DbHelper extends SQLiteOpenHelper {
 
     // Nombres de las tablas
     public static final String TABLE_CATEGORIAS = "t_categorias";
-    public static final String TABLE_SUBCATEGORIAS = "t_subcategorias";
     public static final String TABLE_PRODUCTOS = "t_productos";
     public static final String TABLE_CARRITO = "t_carrito";
 
