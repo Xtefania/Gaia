@@ -1,34 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".Activities.UbicacionActivity">
 
-
+    <!-- Fondo -->
     <ImageView
         android:id="@+id/iv_fondo_imagen2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:contentDescription="@string/imagen_fondo"
         android:scaleType="centerCrop"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/fondo2" />
 
+    <!-- Máscara de color -->
     <View
         android:id="@+id/v_fondo_color2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:background="@drawable/degradado_mascara"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
+    <!-- Iconos superiores -->
     <ImageView
         android:id="@+id/btn_menu"
         android:layout_width="25dp"
@@ -37,22 +40,32 @@
         android:layout_marginTop="45dp"
         android:contentDescription="@string/icono_menu"
         android:src="@drawable/ic_menu_lines"
-        app:layout_constraintEnd_toStartOf="@+id/iv_imagen_logo2"
-        app:layout_constraintHorizontal_bias="0.1"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:tint="@color/green" />
+
+    <ImageView
+        android:id="@+id/iv_imagen_logo2"
+        android:layout_width="140dp"
+        android:layout_height="110dp"
+        android:layout_marginTop="4dp"
+        android:contentDescription="@string/imagen_fondo"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btn_menu"
+        app:layout_constraintEnd_toStartOf="@id/btn_location2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:srcCompat="@drawable/logo2" />
 
     <ImageView
         android:id="@+id/btn_location2"
         android:layout_width="25dp"
         android:layout_height="25dp"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="44dp"
+        android:layout_marginStart="16dp"
         android:contentDescription="@string/icono_locacion"
         android:src="@drawable/ic_location_pin"
-        app:layout_constraintStart_toEndOf="@+id/iv_imagen_logo2"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/iv_imagen_logo2"
         app:tint="@color/green" />
 
     <ImageView
@@ -63,23 +76,12 @@
         android:layout_marginEnd="30dp"
         android:contentDescription="@string/icono_carrito_compra"
         android:src="@drawable/ic_cart_shopping"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btn_location2"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btn_location2"
+        app:layout_constraintEnd_toEndOf="parent"
         app:tint="@color/green" />
 
-    <ImageView
-        android:id="@+id/iv_imagen_logo2"
-        android:layout_width="140dp"
-        android:layout_height="110dp"
-        android:layout_marginTop="4dp"
-        android:contentDescription="@string/imagen_fondo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo2" />
-
+    <!-- Título -->
     <TextView
         android:id="@+id/textView14"
         android:layout_width="wrap_content"
@@ -89,52 +91,51 @@
         android:text="@string/encuentra_tu_tienda"
         android:textColor="@color/green"
         android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_imagen_logo2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_imagen_logo2" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
-    <ImageView
-        android:id="@+id/iv_imagen_map"
-        android:layout_width="578dp"
-        android:layout_height="309dp"
-        android:layout_marginTop="200dp"
-        android:contentDescription="@string/imagen_fondo"
-        app:layout_constraintEnd_toEndOf="parent"
+    <!-- Fragmento del Mapa -->
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="0dp"
+        android:layout_height="300dp"
+        app:layout_constraintTop_toBottomOf="@id/textView14"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/map" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
+    <!-- Separador -->
     <View
         android:id="@+id/separador_mapa"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="1dp"
         android:layout_marginTop="16dp"
         android:background="@android:color/darker_gray"
-        app:layout_constraintTop_toBottomOf="@id/iv_imagen_map"
+        app:layout_constraintTop_toBottomOf="@id/map"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent" />
 
+    <!-- Información de la tienda -->
     <LinearLayout
         android:id="@+id/layout_tienda_info"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/degradado_mascara"
         android:orientation="vertical"
+        android:background="@drawable/degradado_mascara"
         android:padding="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintTop_toBottomOf="@id/separador_mapa"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/separador_mapa">
+        app:layout_constraintEnd_toEndOf="parent">
 
         <TextView
             android:id="@+id/text_direccion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
             android:text="@string/direccion"
             android:textColor="#000000"
-            android:textSize="16sp"
-            android:layout_marginBottom="16dp"
-            android:background="@android:color/transparent" />
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/text_horario"
@@ -143,8 +144,7 @@
             android:text="@string/horarios"
             android:textColor="#000000"
             android:textSize="16sp"
-            android:layout_marginBottom="16dp"
-            android:background="@android:color/transparent" />
+            android:layout_marginBottom="16dp" />
 
         <TextView
             android:id="@+id/text_contacto"
@@ -152,10 +152,8 @@
             android:layout_height="wrap_content"
             android:text="@string/contacto"
             android:textColor="#000000"
-            android:textSize="16sp"
-            android:background="@android:color/transparent" />
+            android:textSize="16sp" />
 
     </LinearLayout>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
