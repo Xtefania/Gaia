@@ -31,7 +31,8 @@ public class DbHelper extends SQLiteOpenHelper {
 
         db.execSQL("CREATE TABLE " + TABLE_PRODUCTOS + " (" + "id INTEGER PRIMARY KEY AUTOINCREMENT, " + "nombre TEXT NOT NULL, " + "descripcion TEXT, " + "precio INTEGER, " + "ingredientes TEXT, " + "imagen TEXT, " + "categoria_id INTEGER NOT NULL, " + "FOREIGN KEY (categoria_id) REFERENCES " + TABLE_CATEGORIAS + "(id));");
 
-        db.execSQL("CREATE TABLE " + TABLE_CARRITO + " (" + "id INTEGER PRIMARY KEY AUTOINCREMENT, " + "producto_id INTEGER NOT NULL, " + "cantidad INTEGER NOT NULL DEFAULT 1, " + "FOREIGN KEY(producto_id) REFERENCES " + TABLE_PRODUCTOS + "(id));");
+        db.execSQL("CREATE TABLE IF NOT EXISTS t_carrito (" + "id INTEGER PRIMARY KEY AUTOINCREMENT, " + "producto_id INTEGER NOT NULL, " + "cantidad INTEGER NOT NULL DEFAULT 1, " + "FOREIGN KEY(producto_id) REFERENCES t_productos(id)" + ");");
+        db.execSQL("CREATE UNIQUE INDEX IF NOT EXISTS idx_carrito_producto_id ON t_carrito(producto_id);");
         //endregion
 
         //region CREAR REGISTRO TABLAS

@@ -48,7 +48,7 @@ class IngredientsProductFragment : Fragment() {
             // Opcional: regresar atrás o cerrar fragmento
         }
 
-        setupListeners(view)
+//        setupListeners(view)
     }
 
     private fun initViews(view: View) {
