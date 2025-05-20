@@ -56,6 +56,7 @@ class IngredientsProductFragment : Fragment() {
             loadProductData(idProducto)
         } else {
             Toast.makeText(requireContext(), "ID inválido", Toast.LENGTH_SHORT).show()
+            // Opcional: regresar atrás o cerrar fragmento
         }
 
         setupListeners(view)
