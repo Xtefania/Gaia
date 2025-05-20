@@ -13,8 +13,6 @@ import com.example.gaia.R
 import com.example.gaia.db.DbCarrito
 import com.example.gaia.db.DbProductos
 import com.example.gaia.models.Producto
-import java.text.NumberFormat
-import java.util.Locale
 
 class InfoProductFragment : Fragment() {
 
@@ -29,9 +27,6 @@ class InfoProductFragment : Fragment() {
     // Variables Producto
     private var idProducto = 0
     private var producto: Producto? = null
-
-    // Formato
-    private val formatoCOP = NumberFormat.getNumberInstance(Locale("es", "CO"))
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
@@ -82,7 +77,7 @@ class InfoProductFragment : Fragment() {
             }
 
             tituloProducto.text = producto?.nombre
-            precioProducto.text = "$ ${formatoCOP.format(producto?.precio)}"
+            precioProducto.text = producto?.precio.toString()
         } ?: run {
             Toast.makeText(requireContext(), "Producto no encontrado", Toast.LENGTH_SHORT).show()
         }

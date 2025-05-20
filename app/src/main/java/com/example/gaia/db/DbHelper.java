@@ -49,31 +49,31 @@ public class DbHelper extends SQLiteOpenHelper {
 
         db.execSQL("INSERT INTO t_productos (nombre, descripcion, precio, ingredientes, imagen, categoria_id) VALUES (" + "'Labial de Remolacha', 'Labial con color natural extraído de vegetales, hidratante y nutritivo.', 1200, 'Aceite de coco, cera de abejas, extracto de remolacha', 'labial_remolacha', 1);");
 
-        db.execSQL("INSERT INTO t_productos (nombre, descripcion, precio, ingredientes, imagen, categoria_id) VALUES (" + "'Rubor Mineral Rosa', 'Textura ligera con pigmentos naturales para un acabado fresco.', 1400, 'Arcilla rosa, óxido de zinc, mica natural', 'rubor_rosaIMG', 1);");
+        db.execSQL("INSERT INTO t_productos (nombre, descripcion, precio, ingredientes, imagen, categoria_id) VALUES (" + "'Rubor Mineral Rosa', 'Textura ligera con pigmentos naturales para un acabado fresco.', 1400, 'Arcilla rosa, óxido de zinc, mica natural', 'rubor_rosa', 1);");
 
-        db.execSQL("INSERT INTO t_productos (nombre, descripcion, precio, ingredientes, imagen, categoria_id) VALUES (" + "'Sombras Brillantes', 'Acabado metálico con ingredientes naturales.', 1500, 'Mica, aceite de jojoba, arcilla diferentes colores', 'sombrasIMG', 1);");
+        db.execSQL("INSERT INTO t_productos (nombre, descripcion, precio, ingredientes, imagen, categoria_id) VALUES (" + "'Sombras Brillantes', 'Acabado metálico con ingredientes naturales.', 1500, 'Mica, aceite de jojoba, arcilla diferentes colores', 'sombras', 1);");
 
 
         // ==================================
         // REGION PRODUCTOS CUIDADO DIARIO
         // ==================================
 
-        db.execSQL("INSERT INTO t_productos (nombre, descripcion, precio, ingredientes, imagen, categoria_id) VALUES (" + "'Crema Hidratante Facial', 'Crema ligera para hidratar y proteger la piel todo el día.', 1800, 'Aloe vera, aceite de jojoba, manteca de karité', 'crema_hidratanteIMG', 2);");
+        db.execSQL("INSERT INTO t_productos (nombre, descripcion, precio, ingredientes, imagen, categoria_id) VALUES (" + "'Crema Hidratante Facial', 'Crema ligera para hidratar y proteger la piel todo el día.', 1800, 'Aloe vera, aceite de jojoba, manteca de karité', 'crema_hidratante', 2);");
 
-        db.execSQL("INSERT INTO t_productos (nombre, descripcion, precio, ingredientes, imagen, categoria_id) VALUES (" + "'Gel Limpiador Suave', 'Gel facial con ingredientes naturales que limpia sin resecar.', 1200, 'Extracto de pepino, aloe vera, aceite de almendra', 'gel_limpiadorIMG', 2);");
+        db.execSQL("INSERT INTO t_productos (nombre, descripcion, precio, ingredientes, imagen, categoria_id) VALUES (" + "'Gel Limpiador Suave', 'Gel facial con ingredientes naturales que limpia sin resecar.', 1200, 'Extracto de pepino, aloe vera, aceite de almendra', 'gel_limpiador', 2);");
 
-        db.execSQL("INSERT INTO t_productos (nombre, descripcion, precio, ingredientes, imagen, categoria_id) VALUES (" + "'Tónico Facial Natural', 'Tónico refrescante que equilibra y tonifica la piel.', 1400, 'Agua de rosas, hamamelis, extracto de manzanilla', 'tonico_facialIMG', 2);");
+        db.execSQL("INSERT INTO t_productos (nombre, descripcion, precio, ingredientes, imagen, categoria_id) VALUES (" + "'Tónico Facial Natural', 'Tónico refrescante que equilibra y tonifica la piel.', 1400, 'Agua de rosas, hamamelis, extracto de manzanilla', 'tonico_facial', 2);");
 
 
         // ==================================
         // REGION PRODUCTOS FRAGANCIAS
         // ==================================
 
-        db.execSQL("INSERT INTO t_productos (nombre, descripcion, precio, ingredientes, imagen, categoria_id) VALUES (" + "'Perfume Floral Natural', 'Fragancia fresca con notas de flores silvestres y cítricos.', 2500, 'Aceite esencial de lavanda, bergamota, rosa', 'perfume_floralIMG', 3);");
+        db.execSQL("INSERT INTO t_productos (nombre, descripcion, precio, ingredientes, imagen, categoria_id) VALUES (" + "'Perfume Floral Natural', 'Fragancia fresca con notas de flores silvestres y cítricos.', 2500, 'Aceite esencial de lavanda, bergamota, rosa', 'perfume_floral', 3);");
 
-        db.execSQL("INSERT INTO t_productos (nombre, descripcion, precio, ingredientes, imagen, categoria_id) VALUES (" + "'Eau de Cologne Cítrica', 'Fragancia ligera y refrescante con aroma a limón y menta.', 2200, 'Aceite esencial de limón, menta, verbena', 'cologne_citricaIMG', 3);");
+        db.execSQL("INSERT INTO t_productos (nombre, descripcion, precio, ingredientes, imagen, categoria_id) VALUES (" + "'Eau de Cologne Cítrica', 'Fragancia ligera y refrescante con aroma a limón y menta.', 2200, 'Aceite esencial de limón, menta, verbena', 'cologne_citrica', 3);");
 
-        db.execSQL("INSERT INTO t_productos (nombre, descripcion, precio, ingredientes, imagen, categoria_id) VALUES (" + "'Aromático Amaderado', 'Perfume con notas cálidas y naturales de madera y especias.', 2800, 'Aceite de cedro, sándalo, canela', 'aromatico_amaderadoIMG', 3);");
+        db.execSQL("INSERT INTO t_productos (nombre, descripcion, precio, ingredientes, imagen, categoria_id) VALUES (" + "'Aromático Amaderado', 'Perfume con notas cálidas y naturales de madera y especias.', 2800, 'Aceite de cedro, sándalo, canela', 'aromatico_amaderado', 3);");
 
         //endregion
     }

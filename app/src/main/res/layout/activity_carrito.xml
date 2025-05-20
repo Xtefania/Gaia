@@ -124,6 +124,12 @@
                 android:layout_height="wrap_content"
                 android:nestedScrollingEnabled="false" />
 
+            <!--            <androidx.recyclerview.widget.RecyclerView-->
+            <!--                android:id="@+id/recyclerViewCarrito"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:nestedScrollingEnabled="false" />-->
+
             <TextView
                 android:id="@+id/tv_sin_productos"
                 android:layout_width="match_parent"
