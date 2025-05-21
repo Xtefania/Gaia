@@ -8,12 +8,12 @@
     <string name="continuar_google">Continuar con Google</string>
     <string name="correo_electronico">Correo electrónico</string>
     <string name="contrasena">Contraseña</string>
-    <string name="titulo_producto">Jabón sólido Karite Leche</string>
+    <string name="titulo_producto">Título del producto</string>
     <string name="icono_menu">icono_menu</string>
     <string name="icono_locacion">icono_locación</string>
     <string name="icono_carrito_compra">icono_carrito_compra</string>
     <string name="imagen_producto">imagen_producto</string>
-    <string name="precio_producto">$24.000</string>
+    <string name="precio_producto">$0</string>
     <string name="descripcion">Descripción</string>
     <string name="icono_mas">icono_mas</string>
     <string name="ingredientes">Ingredientes</string>
@@ -60,7 +60,7 @@
     <string name="_50_000">$ 50.000</string>
     <string name="tu_carrito">Tu carrito</string>
     <string name="desodorante_roll_on">Desodorante Roll-on</string>
-    <string name="quitar">Quitar</string>
+    <string name="quitar"><u>Quitar</u></string>
     <string name="eau_de_parfum">Eau De Parfum</string>
     <string name="Todo">todo</string>
     <string name="tu_carrito1">Tu Carrito</string>
@@ -70,7 +70,7 @@
     <string name="ciudad_provincia">Ciudad/provincia</string>
     <string name="colombia">Colombia</string>
     <string name="bogot">Bogotá</string>
-    <string name="subtotal">Subtotal</string>
+    <string name="subtotal">Subtotal:</string>
     <string name="_64_000_00_cop">$ 64.000,00 COP</string>
     <string name="tarifa_16_000_00">Tarifa: $ 16.000,00</string>
     <string name="recuerda_que_nuestros_tiempos_de_entrega_se_establecen_entre_los_4_y_15_d_as_h_biles_despu_s_de_la_compr">Recuerda que nuestros tiempos de entrega se establecen entre los 4 y 15 días hábiles después de la comprá</string>
@@ -132,4 +132,57 @@
     <string name="horarios">Horarios:\nLunes a Sábado: 10:00 a.m. a 8:00 p.m. |\nDomingos y Festivos 11:00 a.m. a 7:00 p.m.</string>
     <string name="contacto">Contacto: +57 300757575</string>
     <string name="simbolodemas">TODO</string>
+    <string name="cerrar_sesion">Cerrar sesión</string>
+    <string name="botoncarrito">botoncarrito</string>
+    <string name="botonubicacion">botonubicacion</string>
+    <string name="botonmenu">botonmenu</string>
+    <string name="titulogenerico">titulogenerico</string>
+    <string name="logogaia">logogaia</string>
+    <string name="fondodegrado">fondodegrado</string>
+    <string name="background">background</string>
+    <string name="tarifa">Tarifa:</string>
+    <string name="flecha_menos_producto">flecha_menos_producto</string>
+    <string name="flecha_mas_producto">flecha_mas_producto</string>
+    <string name="ciudad">Ciudad</string>
+    <string name="_16_000_000">$16.000,000</string>
+    <string name="mi_cuenta">Mi Cuenta</string>
+    <string name="guardar">Guardar</string>
+    <string name="btnmicuenta">btnmicuenta</string>
+    <string name="eliminar">eliminar</string>
+    <string name="eliminar_cuenta">Eliminar cuenta</string>
+    <string name="nombre_del_producto">Nombre del Producto</string>
+    <string name="cantidad_producto">100</string>
+    <string name="total">Total:</string>
+    <string name="no_disponible">No disponible</string>
+    <string name="expandir_o_contraer">expandir_o_contraer</string>
+    <string name="nombre_del_productos">nombre_del_productos</string>
+    <string name="_0_000">_0_000</string>
+    <string name="imagen_logo">imagen_logo</string>
+    <string name="iconno_menu">iconno_menu</string>
+    <string name="descripcion_producto">Descripcion del producto</string>
+    <string name="pa_s">País</string>
+    <string-array name="lista_paises">
+        <item>Seleccione una opción</item>
+        <item>Colombia</item>
+        <item>Argentina</item>
+        <item>Brasil</item>
+    </string-array>
+    <string-array name="ciudades_colombia">
+        <item>Seleccione una opción</item>
+        <item>Bogotá</item>
+        <item>Medellín</item>
+        <item>Cali</item>
+    </string-array>
+    <string-array name="ciudades_argentina">
+        <item>Seleccione una opción</item>
+        <item>Buenos Aires</item>
+        <item>Córdoba</item>
+        <item>Rosario</item>
+    </string-array>
+    <string-array name="ciudades_brasil">
+        <item>Seleccione una opción</item>
+        <item>São Paulo</item>
+        <item>Rio de Janeiro</item>
+        <item>Belo Horizonte</item>
+    </string-array>
 </resources>

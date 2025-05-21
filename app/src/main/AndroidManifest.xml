@@ -2,12 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
 
     <application
         android:allowBackup="true"
@@ -19,11 +17,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Gaia"
         tools:targetApi="31">
-
-        <meta-data
-            android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyCUom1ulLh6bmZvdhiTghZKWmBfJTsK8cQ" />
-
         <activity
             android:name=".Activities.SplashActivity"
             android:exported="true">
@@ -49,26 +42,8 @@
             android:name=".Activities.OlvidoContrasenaActivity"
             android:exported="false" />
         <activity
-            android:name=".Activities.CategoriesActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Activities.ListProductActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Activities.InfoProductActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Activities.DescriptionProductActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Activities.IngredientsProductActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Activities.CarritoActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Activities.UbicacionActivity"
-            android:exported="false" />
+            android:name=".Activities.DisenoFragmActivity"
+            android:exported="true" />
 
         <meta-data
             android:name="preloaded_fonts"

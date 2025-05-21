@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "469943507061",
+    "project_id": "online-store-gaia",
+    "storage_bucket": "online-store-gaia.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:469943507061:android:14faf85aaea791826a803c",
+        "android_client_info": {
+          "package_name": "com.example.gaia"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "469943507061-k1n49fgfnv5dd727hr6o8opv6od5464h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyALHHf7un6bGXtcMRelN0vQ7X7Dwt_zuTc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "469943507061-k1n49fgfnv5dd727hr6o8opv6od5464h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

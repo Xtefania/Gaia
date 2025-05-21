@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!--    Inicio fondo -->
+    <!--Inicio fondo-->
 
     <ImageView
         android:id="@+id/iv_fondo_imagen"
@@ -30,9 +30,9 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
-    <!--    Fin fondo -->
+    <!--Fin fondo -->
 
-    <!--    Inicio Header -->
+    <!-- Inicio Header -->
 
     <ImageView
         android:id="@+id/btn_menu"
@@ -84,40 +84,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:tint="@color/green" />
 
-    <!--    Fin Header -->
-
-    <ImageView
-        android:id="@+id/imagen_producto"
-        android:layout_width="260dp"
-        android:layout_height="260dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/circle_shape"
-        android:clipToOutline="true"
-        android:contentDescription="@string/imagen_producto"
-        android:outlineProvider="background"
-        android:scaleType="centerCrop"
-        android:src="@drawable/product"
-        app:layout_constraintBottom_toTopOf="@+id/tv_titulo_producto"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/img_main_logo"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/tv_lanzamiento"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/alata"
-        android:text="@string/lanzamiento"
-        android:textColor="@color/white"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="@+id/imagen_producto"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imagen_producto"
-        app:layout_constraintVertical_bias="0.760" />
+    <!-- Fin Header -->
 
     <TextView
         android:id="@+id/tv_titulo_producto"
@@ -125,13 +92,14 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:fontFamily="@font/alata"
+        android:paddingHorizontal="15dp"
         android:text="@string/titulo_producto"
+        android:textAlignment="center"
         android:textColor="@color/green"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/tv_price_product"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imagen_producto" />
+        app:layout_constraintTop_toBottomOf="@+id/img_main_logo" />
 
     <TextView
         android:id="@+id/tv_price_product"
@@ -141,7 +109,6 @@
         android:text="@string/precio_producto"
         android:textColor="@color/green"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/card_description"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_titulo_producto" />
@@ -149,74 +116,21 @@
     <!--    Item descripción -->
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/card_description"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/card_members"
+        android:layout_width="300dp"
+        android:layout_height="350dp"
         android:layout_marginTop="28dp"
-        android:background="@android:color/transparent"
-        app:layout_constraintBottom_toTopOf="@+id/card_members"
+        android:background="@drawable/form_view"
+        android:padding="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_anadir_carrito"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_price_product">
 
         <TextView
-            android:id="@+id/tv_descripcion"
+            android:id="@+id/tv_members"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginBottom="8dp"
-            android:fontFamily="@font/alata"
-            android:text="@string/descripcion"
-            android:textColor="@color/green"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <ImageView
-            android:id="@+id/btn_plus_descripcion"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
-            android:contentDescription="@string/icono_mas"
-            android:src="@drawable/ic_plus"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:tint="@color/green" />
-
-        <View
-            android:id="@+id/v_linea_descripcion"
-            android:layout_width="250dp"
-            android:layout_height="2dp"
-            android:background="@color/green"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <!--    Item ingredientes -->
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/card_members"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@android:color/transparent"
-        app:layout_constraintBottom_toTopOf="@+id/btn_anadir_carrito"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/card_description">
-
-        <TextView
-            android:id="@+id/tv_ingredientes"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginBottom="8dp"
             android:fontFamily="@font/alata"
             android:padding="2dp"
             android:text="@string/ingredientes"
@@ -230,28 +144,40 @@
             app:layout_constraintVertical_bias="0.0" />
 
         <ImageView
-            android:id="@+id/btn_plus_ìngredientes"
+            android:id="@+id/btn_menos_ingredientes"
             android:layout_width="15dp"
             android:layout_height="15dp"
             android:contentDescription="@string/icono_mas"
-            android:src="@drawable/ic_plus"
+            android:src="@drawable/ic_minus"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.037"
             app:tint="@color/green" />
 
         <View
-            android:id="@+id/v_linea_ingredientes"
-            android:layout_width="250dp"
+            android:id="@+id/v_linea_members"
+            android:layout_width="match_parent"
             android:layout_height="2dp"
+            android:layout_marginTop="32dp"
             android:background="@color/green"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_ingredientes_producto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/text_members_t1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/v_linea_members" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -269,7 +195,6 @@
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/card_members" />
 

@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--    Inicio fondo -->
+
+    <ImageView
+        android:id="@+id/iv_fondo_imagen"
+        android:layout_width="781dp"
+        android:layout_height="1089dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.8"
+        app:srcCompat="@drawable/fondo1cc" />
+    <View
+        android:id="@+id/v_fondo_color"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/degradado_mascara"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--Fin fondo-->
+
+    <ImageView
+        android:id="@+id/iv_imagen_logo"
+        android:layout_width="200dp"
+        android:layout_height="107dp"
+        android:layout_marginTop="75dp"
+        android:contentDescription="@string/imagen_fondo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo2" />
+
+
+    <View
+        android:id="@+id/form_background2"
+        android:layout_width="309dp"
+        android:layout_height="537dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/form_view_white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_imagen_logo"
+        app:layout_constraintVertical_bias="0.765" />
+
+    <TextView
+        android:id="@+id/tv_MiCuenta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/mi_cuenta"
+        android:textColor="@color/green"
+        android:fontFamily="@font/alata"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/form_background2"
+        app:layout_constraintStart_toStartOf="@+id/form_background2"
+        app:layout_constraintTop_toTopOf="@+id/form_background2" />
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="315dp"
+        android:layout_height="351dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="@id/form_background2"
+        app:layout_constraintEnd_toEndOf="@id/form_background2"
+        app:layout_constraintStart_toStartOf="@id/form_background2"
+        app:layout_constraintTop_toTopOf="@id/tv_MiCuenta">
+
+        <LinearLayout
+            android:layout_width="301dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="16dp"
+            tools:layout_editor_absoluteX="57dp"
+            tools:layout_editor_absoluteY="237dp">
+
+            <ImageView
+                android:id="@+id/iv_AgregarFoto"
+                android:layout_width="84dp"
+                android:layout_height="84dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="8dp"
+                android:contentDescription="@string/agregar_foto"
+                android:padding="12dp"
+                android:src="@drawable/ic_camera"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.504"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textViewFoto" />
+
+            <!-- Nombre -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:labelFor="@id/editTextNombre"
+                android:text="@string/nombre"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:boxBackgroundColor="#E9E8E8"
+                app:boxStrokeWidth="0dp"
+                app:boxStrokeWidthFocused="2dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextNombre"
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp"
+                    android:inputType="textPersonName"
+                    android:padding="8dp"
+                    android:textSize="14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Apellido -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:labelFor="@id/editTextLastName"
+                android:text="@string/apellido"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:boxBackgroundColor="#E9E8E8"
+                app:boxStrokeWidth="0dp"
+                app:boxStrokeWidthFocused="2dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextLastName"
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp"
+                    android:inputType="textPersonName"
+                    android:padding="8dp"
+                    android:textSize="14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Email -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:labelFor="@id/editTextEmail"
+                android:text="@string/e_mail"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:boxBackgroundColor="#E9E8E8"
+                app:boxStrokeWidth="0dp"
+                app:boxStrokeWidthFocused="2dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp"
+                    android:inputType="textEmailAddress"
+                    android:padding="8dp"
+                    android:textSize="14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Teléfono -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/telefono"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:boxBackgroundColor="#E9E8E8"
+                app:boxStrokeWidth="0dp"
+                app:boxStrokeWidthFocused="2dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextTelefono"
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp"
+                    android:inputType="phone"
+                    android:padding="8dp"
+                    android:textSize="14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Fecha de nacimiento -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/fecha_de_nacimiento"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:boxBackgroundColor="#E9E8E8"
+                app:boxStrokeWidth="0dp"
+                app:boxStrokeWidthFocused="2dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextFechaNacimiento"
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp"
+                    android:clickable="true"
+                    android:focusable="false"
+                    android:inputType="none"
+                    android:padding="8dp"
+                    android:textSize="14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Genero -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/genero_opcional"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:boxBackgroundColor="#E9E8E8"
+                app:boxStrokeWidth="0dp"
+                app:boxStrokeWidthFocused="2dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextGender"
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp"
+                    android:inputType="text"
+                    android:padding="8dp"
+                    android:textSize="14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+            android:id="@+id/btn_guardar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/green"
+            android:text="@string/guardar"
+            android:textColor="@android:color/white" />
+
+            <Button
+                android:id="@+id/btn_eliminar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:backgroundTint="@color/green"
+                android:text="@string/eliminar_cuenta"
+                android:textColor="@android:color/white" />
+
+        </LinearLayout>
+</ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

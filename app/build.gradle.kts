@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -26,6 +27,11 @@ android {
             )
         }
     }
+
+    buildFeatures {
+    viewBinding = true
+}
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
@@ -37,6 +43,7 @@ android {
 
 dependencies {
 
+    implementation ("androidx.fragment:fragment-ktx:1.6.2")
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
