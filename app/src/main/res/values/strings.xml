@@ -161,6 +161,10 @@
     <string name="iconno_menu">iconno_menu</string>
     <string name="descripcion_producto">Descripcion del producto</string>
     <string name="pa_s">País</string>
+    <string name="tomar_foto">Tomar Foto</string>
+    <string name="ver_galer_a">Ver Galería</string>
+    <string name="imagencamara">TODO</string>
+    <string name="abrir_c_mara">Abrir cámara</string>
     <string-array name="lista_paises">
         <item>Seleccione una opción</item>
         <item>Colombia</item>
