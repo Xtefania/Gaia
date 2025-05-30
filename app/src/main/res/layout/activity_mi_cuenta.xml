@@ -7,7 +7,7 @@
 
     <!--    Inicio fondo -->
 
-    <ImageView
+   <!-- <ImageView
         android:id="@+id/iv_fondo_imagen"
         android:layout_width="781dp"
         android:layout_height="1089dp"
@@ -16,7 +16,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.8"
-        app:srcCompat="@drawable/fondo1cc" />
+        app:srcCompat="@drawable/fondo1cc" />-->
     <View
         android:id="@+id/v_fondo_color"
         android:layout_width="wrap_content"
@@ -271,6 +271,23 @@
             android:backgroundTint="@color/green"
             android:text="@string/guardar"
             android:textColor="@android:color/white" />
+
+
+            <Button
+                android:id="@+id/btn_cerrarsesion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:backgroundTint="@color/green"
+                android:fontFamily="@font/alata"
+                android:text="@string/cerrar_sesion"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                app:icon="@drawable/ic_cerrarsesion"
+                app:iconTint="@color/white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
             <Button
                 android:id="@+id/btn_eliminar"

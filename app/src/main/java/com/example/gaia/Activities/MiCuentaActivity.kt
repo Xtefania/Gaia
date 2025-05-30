@@ -1,6 +1,8 @@
 package com.example.gaia.Activities
 
 import android.content.Context
+import android.content.Intent
+import android.content.SharedPreferences
 import android.net.Uri
 import android.os.Bundle
 import android.widget.Button
@@ -10,6 +12,9 @@ import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.example.gaia.R
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInClient
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.material.textfield.TextInputEditText
 import org.json.JSONObject
 
@@ -73,6 +78,13 @@ class MiCuentaActivity : AppCompatActivity() {
         findViewById<Button>(R.id.btn_guardar).setOnClickListener {
             guardarCambios(emailActual)
         }
+
+        val btnCerrarSesion = findViewById<Button>(R.id.btn_cerrarsesion)
+        btnCerrarSesion.setOnClickListener {
+            cerrarSesion(this)
+        }
+
+
     }
 
     private fun setupLaunchers() {
@@ -131,4 +143,32 @@ class MiCuentaActivity : AppCompatActivity() {
 
         Toast.makeText(this, "Cambios guardados", Toast.LENGTH_SHORT).show()
     }
+
+
+
+
+
+    // Función de cierre de sesión
+    private fun cerrarSesion(context: Context) {
+        // Limpiar SharedPreferences
+        val prefs: SharedPreferences = context.getSharedPreferences("mi_pref", Context.MODE_PRIVATE)
+        val editor = prefs.edit()
+        editor.clear()
+        editor.apply()
+
+        // Cerrar sesión de Google
+        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).build()
+        val googleSignInClient: GoogleSignInClient = GoogleSignIn.getClient(context, gso)
+
+        googleSignInClient.signOut().addOnCompleteListener {
+            // Redirigir al MainActivity
+            val intent = Intent(context, LoginActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            context.startActivity(intent)
+        }
+    }
+
+
+
+
 }
