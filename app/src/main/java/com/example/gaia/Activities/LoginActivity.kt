@@ -47,8 +47,8 @@ class LoginActivity : AppCompatActivity() {
             signIn()
         }
 
-
-        /*//- Vista categorias de productos - CON USUARIO
+/*
+        //- Vista categorias de productos - CON USUARIO
         val btnLogin2 = findViewById<Button>(R.id.btn_inicio_sesion2)
         val emailEditText = findViewById<EditText>(R.id.et_campo_correo)
 
@@ -96,7 +96,6 @@ class LoginActivity : AppCompatActivity() {
             val intent = Intent(this, DisenoFragmActivity::class.java)
             startActivity(intent)
         }
-
 
         // - Vista registrar
         val btnRegister = findViewById<TextView>(R.id.tv_registrese)

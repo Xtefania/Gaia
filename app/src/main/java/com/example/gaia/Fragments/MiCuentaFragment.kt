@@ -17,6 +17,8 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.example.gaia.Activities.LoginActivity
 import com.example.gaia.R
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.material.textfield.TextInputEditText
 import org.json.JSONObject
 
@@ -134,6 +136,30 @@ class MiCuentaFragment : Fragment() {
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
             startActivity(intent)
             activity?.finish()
+        }
+
+
+
+
+        val btnCerrarSesion = view.findViewById<Button>(R.id.btn_cerrarsesion)
+
+        btnCerrarSesion.setOnClickListener {
+            cerrarSesion(requireContext())
+        }
+    }
+
+    private fun cerrarSesion(context: Context) {
+        val prefs = context.getSharedPreferences("UsuariosApp", Context.MODE_PRIVATE)
+        prefs.edit().remove("usuario_actual").apply()
+
+
+        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).build()
+        val googleSignInClient = GoogleSignIn.getClient(context, gso)
+
+        googleSignInClient.signOut().addOnCompleteListener {
+            val intent = Intent(context, LoginActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intent)
         }
     }
 
